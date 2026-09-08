@@ -1,154 +1,60 @@
-import React, { useState } from "react";
-import { Sparkles, Phone, ShieldCheck, Mail, Search, ArrowRight, User } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Sparkles, Search, ArrowRight, User, Loader2, AlertCircle } from "lucide-react";
 import HospitalCTA from "../components/Home/HospitalCTA";
-
-const DOCTORS_DATA = [
-  {
-    id: 1,
-    name: "Dr. Anand Prakash Tiwari",
-    role: "Senior Gynaecologist & Infertility Specialist",
-    department: "Obstetrics & Gynaecology",
-    qualification: "MBBS, M.S. (Obs & Gyane)",
-    experience: "15+ Years",
-    image: "/Home/Dr. Anand Prakash.png",
-    specialty: "High-Risk Pregnancy, Normal & Cesarean Delivery, Infertility Treatment, Laparoscopic Gynecological Surgery, PCOS & Menstrual Disorders, Antenatal & Postnatal Care"
-  },
-  {
-  id: 10,
-  name: "Dr. Neepu Chaurasia",
-  role: "Obstetrics & Gynaecology",
-  department: "Gynecologist & Obstetrician",
-  qualification: "MBBS, Diploma in Gynecology & Obstetrics (D.G.O.)",
-  experience: "10+ Years",
-  image: "https://i.pinimg.com/1200x/72/41/a3/7241a3fe9d1687bd6c2a8ce55ca348ce.jpg",
-  specialty: [
-    "Pregnancy Care",
-    "Normal Delivery",
-    "Women's Health",
-    "Menstrual Disorders",
-    "Family Planning",
-    "High-Risk Pregnancy"
-  ]
-},
-{
-  id: 3,
-  name: "Dr. Nidhi Gupta",
-  role: "Gynecologist & Obstetrician",
-   department: "Gynecologist & Obstetrician",
-  qualification: "MBBS, R.M.O.",
-  experience: "8+ Years",
-  image: "https://i.pinimg.com/1200x/72/41/a3/7241a3fe9d1687bd6c2a8ce55ca348ce.jpg",
-  specialty: [
-    "Women's Health",
-    "Pregnancy Care",
-    "Gynecological Consultation",
-    "Antenatal Care",
-    "Postnatal Care",
-    "Routine Gynecology"
-  ]
-},
-{
-  id: 4,
-  name: "Dr. Priyanka Mishra",
-  role: "Obstetrics & Gynaecology",
-  department: "Gynecologist & Obstetrician",
-  qualification: "MBBS, R.M.O.",
-  experience: "7+ Years",
-  image: "https://i.pinimg.com/1200x/72/41/a3/7241a3fe9d1687bd6c2a8ce55ca348ce.jpg",
-  specialty: [
-    "Pregnancy Care",
-    "Women's Wellness",
-    "Gynecological Disorders",
-    "Family Planning",
-    "Antenatal Care",
-    "General Gynecology"
-  ]
-},
-{
-  id: 5,
-  name: "Dr. Nisha Singh",
-  role: "Obstetrics & Gynaecology",
-  department: "Gynecologist & Obstetrician",
-  qualification: "MBBS, R.M.O.",
-  experience: "7+ Years",
-  image: "https://i.pinimg.com/1200x/72/41/a3/7241a3fe9d1687bd6c2a8ce55ca348ce.jpg",
-  specialty: [
-    "Women's Health",
-    "Pregnancy Management",
-    "Routine Gynecological Care",
-    "Antenatal & Postnatal Care",
-    "PCOD Management",
-    "General Obstetrics"
-  ]
-},
-  {
-    id: 2,
-    name: "Dr. Robert Vance",
-    role: "Chief Neurosurgeon",
-    department: "Neurology",
-    qualification: "MBBS, MS, MCh (Neurosurgery)",
-    experience: "18+ Years",
-    image: "https://i.pinimg.com/1200x/72/41/a3/7241a3fe9d1687bd6c2a8ce55ca348ce.jpg",
-    email: "robert.vance@kgnandahospital.com",
-    specialty: "Brain Tumors, Spinal Disorders, Neurotrauma Surgery"
-  },
-  {
-    id: 3,
-    name: "Dr. Alisha Khan",
-    role: "Cardiology Head",
-    department: "Cardiology",
-    qualification: "MBBS, MD (Medicine), DM (Cardiology)",
-    experience: "15+ Years",
-    image: "https://i.pinimg.com/1200x/72/41/a3/7241a3fe9d1687bd6c2a8ce55ca348ce.jpg",
-    email: "alisha.khan@kgnandahospital.com",
-    specialty: "Interventional Cardiology, Heart Failure Management, Angioplasty"
-  },
-  {
-    id: 4,
-    name: "Dr. Sameer Joshi",
-    role: "Senior Pediatrician",
-    department: "Pediatrics",
-    qualification: "MBBS, MD (Pediatrics), DCH",
-    experience: "16+ Years",
-   image: "https://i.pinimg.com/1200x/72/41/a3/7241a3fe9d1687bd6c2a8ce55ca348ce.jpg",
-    email: "sameer.joshi@kgnandahospital.com",
-    specialty: "Neonatal Care, Pediatric Nutrition, Infectious Diseases"
-  },
-  {
-    id: 5,
-    name: "Dr. Elena Rostova",
-    role: "Oncology Expert",
-    department: "Oncology",
-    qualification: "MBBS, MD, DM (Medical Oncology)",
-    experience: "14+ Years",
-    image: "https://i.pinimg.com/1200x/72/41/a3/7241a3fe9d1687bd6c2a8ce55ca348ce.jpg",
-    email: "elena.rostova@kgnandahospital.com",
-    specialty: "Chemotherapy, Immunotherapy, Targeted Cancer Therapies"
-  },
-  {
-    id: 6,
-    name: "Dr. Priya Sharma",
-    role: "Gynaecology Specialist",
-    department: "Obstetrics & Gynaecology",
-    qualification: "MBBS, MS (OBGYN), FMAS",
-    experience: "12+ Years",
-   image: "https://i.pinimg.com/1200x/72/41/a3/7241a3fe9d1687bd6c2a8ce55ca348ce.jpg", // Using a fallback profile
-    email: "priya.sharma@kgnandahospital.com",
-    specialty: "High-risk Pregnancy, Laparoscopic Gynaecology, Infertility Care"
-  }
-];
-
-const DEPARTMENTS = ["All", "General Surgery", "Neurology", "Cardiology", "Pediatrics", "Oncology", "Obstetrics & Gynaecology"];
+import doctorService from "../services/doctorService";
 
 const Team = () => {
+  const [doctors, setDoctors] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
   const [selectedDept, setSelectedDept] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredDoctors = DOCTORS_DATA.filter((doc) => {
+  useEffect(() => {
+    let isMounted = true;
+    async function loadDoctors() {
+      setLoading(true);
+      setError("");
+      try {
+        const fetchedDoctors = await doctorService.getDoctors();
+        if (isMounted) {
+          setDoctors(fetchedDoctors);
+        }
+      } catch (err) {
+        console.error("Failed to load doctor dataset:", err);
+        if (isMounted) {
+          setError(
+            err?.response?.data?.message ||
+              err?.message ||
+              "Failed to connect to backend API /api/doctors"
+          );
+        }
+      } finally {
+        if (isMounted) {
+          setLoading(false);
+        }
+      }
+    }
+    loadDoctors();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  // Compute available departments dynamically from doctor list
+  const departments = [
+    "All",
+    ...Array.from(new Set(doctors.map((doc) => doc.department).filter(Boolean))),
+  ];
+
+  const filteredDoctors = doctors.filter((doc) => {
     const matchesDept = selectedDept === "All" || doc.department === selectedDept;
-    const matchesSearch = doc.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          doc.specialty.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          doc.role.toLowerCase().includes(searchQuery.toLowerCase());
+    const q = searchQuery.toLowerCase();
+    const matchesSearch =
+      (doc.name || "").toLowerCase().includes(q) ||
+      (doc.specialty || "").toLowerCase().includes(q) ||
+      (doc.role || "").toLowerCase().includes(q) ||
+      (doc.department || "").toLowerCase().includes(q);
     return matchesDept && matchesSearch;
   });
 
@@ -158,23 +64,23 @@ const Team = () => {
       <section className="relative overflow-hidden bg-[#003a70] text-white py-36 md:py-44 px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-0 opacity-45">
           <div className="absolute inset-0 bg-gradient-to-r from-[#003a70]/90 via-[#003a70]/60 to-transparent z-10" />
-          <img 
-            src="/Media/M1.png" 
-            alt="Medical Team Background" 
+          <img
+            src="/Media/M1.png"
+            alt="Medical Team Background"
             className="w-full h-full object-cover"
           />
         </div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto text-center sm:text-left space-y-6">
           <div className="inline-flex items-center space-x-2 bg-[#35b6b4]/10 border border-[#35b6b4]/30 text-[#35b6b4] px-4 py-1.5 rounded-full text-xs font-black tracking-widest uppercase">
             <Sparkles size={13} className="text-[#dd5200]" />
             <span>KG Nanda Medical Panel</span>
           </div>
-          
+
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight">
             Meet Our <span className="text-[#35b6b4]">Elite Doctors</span>
           </h1>
-          
+
           <p className="text-gray-300 text-lg sm:text-xl font-medium max-w-2xl leading-relaxed">
             Our multi-speciality team of medical experts, senior consultants, and compassionate surgeons is dedicated to providing clinical excellence and premium patient care.
           </p>
@@ -189,7 +95,7 @@ const Team = () => {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
               type="text"
-              placeholder="Search doctor by name or specialty..."
+              placeholder="Search doctor by name, department or specialty..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-12 pr-4 py-3 bg-[#f6f5ee]/60 border border-gray-200 rounded-xl focus:outline-none focus:border-[#35b6b4] text-[#003a70] font-medium transition-all"
@@ -199,7 +105,9 @@ const Team = () => {
           {/* Metrics */}
           <div className="flex items-center gap-6">
             <div className="text-center md:text-right border-l-2 border-[#35b6b4] pl-4">
-              <span className="block text-2xl font-black text-[#003a70]">150+</span>
+              <span className="block text-2xl font-black text-[#003a70]">
+                {doctors.length ? `${doctors.length}` : "0"}
+              </span>
               <span className="text-xs text-gray-400 font-bold uppercase">Specialists</span>
             </div>
             <div className="text-center md:text-right border-l-2 border-[#dd5200] pl-4">
@@ -209,9 +117,17 @@ const Team = () => {
           </div>
         </div>
 
+        {/* Error Alert */}
+        {error && (
+          <div className="mb-8 p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl flex items-center gap-3 font-medium">
+            <AlertCircle className="w-5 h-5 shrink-0" />
+            <span>API Error: {error}</span>
+          </div>
+        )}
+
         {/* Department Filters */}
         <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
-          {DEPARTMENTS.map((dept) => (
+          {departments.map((dept) => (
             <button
               key={dept}
               onClick={() => setSelectedDept(dept)}
@@ -226,17 +142,22 @@ const Team = () => {
           ))}
         </div>
 
-        {/* Doctors Grid */}
-        {filteredDoctors.length === 0 ? (
+        {/* Loading Indicator */}
+        {loading ? (
+          <div className="text-center py-20 bg-white rounded-2xl border border-gray-200/60 shadow-sm">
+            <Loader2 className="w-10 h-10 mx-auto text-[#35b6b4] animate-spin mb-4" />
+            <p className="text-[#003a70] font-bold text-lg">Fetching live doctor dataset from backend...</p>
+          </div>
+        ) : filteredDoctors.length === 0 ? (
           <div className="text-center py-16 bg-white rounded-2xl border border-gray-200/60">
             <User className="w-12 h-12 mx-auto text-gray-300 mb-3" />
-            <p className="text-[#003a70] font-bold text-lg">No doctors found matching your criteria.</p>
-            <p className="text-gray-400 text-sm mt-1">Try resetting the filters or modifying your search query.</p>
+            <p className="text-[#003a70] font-bold text-lg">No doctors returned from backend matching criteria.</p>
+            <p className="text-gray-400 text-sm mt-1">Try modifying your search or check if backend database has active doctor entries.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredDoctors.map((doc) => (
-              <div 
+              <div
                 key={doc.id}
                 className="bg-white rounded-2xl overflow-hidden border border-gray-200/60 shadow-sm hover:shadow-xl hover:border-[#35b6b4]/40 transition-all duration-300 flex flex-col group"
               >
@@ -247,7 +168,8 @@ const Team = () => {
                     alt={doc.name}
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     onError={(e) => {
-                      e.currentTarget.src = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600";
+                      e.currentTarget.src =
+                        "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600";
                     }}
                   />
                   <div className="absolute top-4 left-4">
@@ -272,15 +194,21 @@ const Team = () => {
                     <div className="h-px bg-gray-100" />
 
                     <div className="space-y-2 text-sm text-gray-500 font-medium">
-                      <p><strong className="text-[#003a70]">Degree:</strong> {doc.qualification}</p>
-                      <p><strong className="text-[#003a70]">Experience:</strong> {doc.experience}</p>
-                      <p className="line-clamp-2"><strong className="text-[#003a70]">Areas of Focus:</strong> {doc.specialty}</p>
+                      <p>
+                        <strong className="text-[#003a70]">Degree:</strong> {doc.qualification}
+                      </p>
+                      <p>
+                        <strong className="text-[#003a70]">Experience:</strong> {doc.experience}
+                      </p>
+                      <p className="line-clamp-2">
+                        <strong className="text-[#003a70]">Areas of Focus:</strong> {doc.specialty}
+                      </p>
                     </div>
                   </div>
 
                   <div className="pt-6 mt-6 border-t border-gray-100">
                     <a
-                      href="#appointment"
+                      href="/book-appointment"
                       className="w-full flex items-center justify-center gap-2 bg-[#003a70] hover:bg-[#dd5200] text-white font-bold py-3.5 px-4 rounded-xl transition-all duration-300 text-sm tracking-wide"
                     >
                       <span>Book Appointment</span>

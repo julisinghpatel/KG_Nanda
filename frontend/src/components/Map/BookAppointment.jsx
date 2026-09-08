@@ -1,49 +1,7 @@
-import { useState } from "react";
-import axios from "axios";
+import { useState, useEffect } from "react";
+import doctorService from "../../services/doctorService";
+import bookingService from "../../services/bookingService";
 import "./BookAppointment.css";
-
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
-
-const DEPARTMENTS = [
-  "Obstetrics & Gynecology",
-  "General Consultant",
-  "General Medicine",
-  "Critical Care",
-  "General & Laparoscopy Surgery",
-  "General Surgery",
-  "Urology",
-  "Anesthesia",
-];
-
-const DOCTORS_BY_DEPT = {
-  "Obstetrics & Gynecology": [
-    "Dr. Anand Prakash Tiwari",
-    "Dr. Vandana",
-    "Dr. Sadhana",
-  ],
-  "General Consultant": [
-    "Dr. Akhilesh Singh",
-  ],
-  "General Medicine": [
-    "Dr. Ankit Kumar Singh",
-  ],
-  "Critical Care": [
-    "Dr. Umesh Kumar Singh",
-  ],
-  "General & Laparoscopy Surgery": [
-    "Dr. Vishwanath Pratap Singh",
-  ],
-  "General Surgery": [
-    "Dr. Yogendra Pandey",
-  ],
-  "Urology": [
-    "Dr. Vikram Singh",
-  ],
-  "Anesthesia": [
-    "Dr. Sushil Krishnamurti",
-    "Dr. Vaibhav Shankar",
-  ],
-};
 
 const getTodayStr = () => {
   const d = new Date();
@@ -55,7 +13,7 @@ const getTodayStr = () => {
 
 const getMaxDateAnandPrakashStr = () => {
   const d = new Date();
-  d.setDate(d.getDate() + 2); // आज, कल एवं परसों (Today + 2 days)
+  d.setDate(d.getDate() + 2); // Today + 2 days
   const year = d.getFullYear();
   const month = String(d.getMonth() + 1).padStart(2, "0");
   const day = String(d.getDate()).padStart(2, "0");
@@ -69,42 +27,98 @@ export default function BookAppointment() {
     email: "",
     department: "",
     doctor: "",
+    doctorId: "",
     preferredDate: "",
     preferredTime: "",
     gender: "",
     message: "",
   });
+
+  const [doctorsList, setDoctorsList] = useState([]);
+  const [availableDepartments, setAvailableDepartments] = useState([]);
   const [availableDoctors, setAvailableDoctors] = useState([]);
+
   const [submitted, setSubmitted] = useState(false);
   const [bookingId, setBookingId] = useState("");
+  const [patientUhid, setPatientUhid] = useState("");
+  const [tokenNumber, setTokenNumber] = useState("");
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  // Load active doctors from doctorService on mount
+  useEffect(() => {
+    let isMounted = true;
+    async function loadData() {
+      try {
+        const docs = await doctorService.getDoctors();
+        if (isMounted) {
+          setDoctorsList(docs);
+          const depts = Array.from(new Set(docs.map((d) => d.department).filter(Boolean)));
+          setAvailableDepartments(depts);
+        }
+      } catch (err) {
+        console.warn("Could not load dynamic doctor dataset:", err);
+      }
+    }
+    loadData();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setForm((prev) => {
       const updated = { ...prev, [name]: value };
+
       if (name === "department") {
-        const docs = DOCTORS_BY_DEPT[value] || [];
-        setAvailableDoctors(docs);
-        updated.doctor = docs.length === 1 ? docs[0] : "";
+        const filteredDocs = doctorsList.filter(
+          (d) => !value || d.department === value
+        );
+        setAvailableDoctors(filteredDocs);
+
+        if (filteredDocs.length === 1) {
+          updated.doctor = filteredDocs[0].name;
+          updated.doctorId = filteredDocs[0].id;
+        } else {
+          updated.doctor = "";
+          updated.doctorId = "";
+        }
+
         if (updated.doctor === "Dr. Anand Prakash Tiwari") {
           const today = getTodayStr();
           const maxDate = getMaxDateAnandPrakashStr();
-          if (updated.preferredDate && (updated.preferredDate < today || updated.preferredDate > maxDate)) {
+          if (
+            updated.preferredDate &&
+            (updated.preferredDate < today || updated.preferredDate > maxDate)
+          ) {
             updated.preferredDate = "";
           }
         }
       }
+
       if (name === "doctor") {
-        if (value === "Dr. Anand Prakash Tiwari") {
+        const selectedDoc = doctorsList.find(
+          (d) => d.name === value || String(d.id) === String(value)
+        );
+        if (selectedDoc) {
+          updated.doctor = selectedDoc.name;
+          updated.doctorId = selectedDoc.id;
+        }
+        if (value === "Dr. Anand Prakash Tiwari" || updated.doctor === "Dr. Anand Prakash Tiwari") {
           const today = getTodayStr();
           const maxDate = getMaxDateAnandPrakashStr();
-          if (updated.preferredDate && (updated.preferredDate < today || updated.preferredDate > maxDate)) {
+          if (
+            updated.preferredDate &&
+            (updated.preferredDate < today || updated.preferredDate > maxDate)
+          ) {
             updated.preferredDate = "";
           }
         }
       }
+
       return updated;
     });
   };
@@ -116,6 +130,7 @@ export default function BookAppointment() {
       email: "",
       department: "",
       doctor: "",
+      doctorId: "",
       preferredDate: "",
       preferredTime: "",
       gender: "",
@@ -134,31 +149,28 @@ export default function BookAppointment() {
       const today = getTodayStr();
       const maxDate = getMaxDateAnandPrakashStr();
       if (form.preferredDate < today || form.preferredDate > maxDate) {
-        setError("Dr. Anand Prakash Tiwari का अपॉइंटमेंट आज, कल या परसों (2 दिन के भीतर) के लिए ही बुक किया जा सकता है।");
+        setError(
+          "Dr. Anand Prakash Tiwari का अपॉइंटमेंट आज, कल या परसों (2 दिन के भीतर) के लिए ही बुक किया जा सकता है।"
+        );
         setLoading(false);
         return;
       }
     }
 
     try {
-      const response = await axios.post(`${API_BASE}/api/bookings`, form);
-      if (response.data && response.data.success) {
-        setBookingId(response.data.bookingId || `KGN-${Math.floor(100000 + Math.random() * 900000)}`);
+      const result = await bookingService.createBooking(form);
+      if (result.success) {
+        setBookingId(result.bookingId);
+        setPatientUhid(result.uhid);
+        setTokenNumber(result.tokenNumber);
         setSubmitted(true);
       } else {
-        setBookingId(`KGN-${Math.floor(100000 + Math.random() * 900000)}`);
-        setSubmitted(true);
+        setError(result.message || "Failed to submit booking request.");
       }
     } catch (err) {
-      if (!import.meta.env.VITE_API_URL) {
-        setBookingId(`KGN-${Math.floor(100000 + Math.random() * 900000)}`);
-        setSubmitted(true);
-      } else {
-        setError(
-          err?.response?.data?.message ||
-            "Network error. Please check your connection and try again."
-        );
-      }
+      setError(
+        err.message || "Network error. Please check your connection and try again."
+      );
     } finally {
       setLoading(false);
     }
@@ -174,17 +186,37 @@ export default function BookAppointment() {
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
+
             <span className="kg-success-badge">Booking Confirmed</span>
             <h1 className="kg-success-title">Appointment Request Registered!</h1>
-            {bookingId && (
-              <div className="kg-booking-id-pill">
-                <span>Booking Reference ID:</span> <strong>{bookingId}</strong>
-              </div>
-            )}
+
+            {/* Badges for Booking Reference, Patient UHID, and OPD Token Number */}
+            <div className="flex flex-wrap items-center justify-center gap-3 my-4">
+              {bookingId && (
+                <div className="kg-booking-id-pill">
+                  <span>Booking Ref:</span> <strong>{bookingId}</strong>
+                </div>
+              )}
+              {patientUhid && (
+                <div className="kg-booking-id-pill bg-emerald-50 border-emerald-200 text-emerald-800">
+                  <span>Patient UHID:</span> <strong>{patientUhid}</strong>
+                </div>
+              )}
+              {tokenNumber && (
+                <div className="kg-booking-id-pill bg-amber-50 border-amber-200 text-amber-900">
+                  <span>OPD Token #:</span> <strong>{tokenNumber}</strong>
+                </div>
+              )}
+            </div>
+
             <p className="kg-success-desc">
-              Namaste <strong>{form.fullName}</strong>, your appointment request for <strong>{form.department}</strong> {form.doctor ? `with ${form.doctor}` : ""} has been received successfully.
+              Namaste <strong>{form.fullName}</strong>, your appointment request for{" "}
+              <strong>{form.department}</strong>{" "}
+              {form.doctor ? `with ${form.doctor}` : ""} has been received successfully.
             </p>
+
             <div className="kg-success-divider" />
+
             <div className="kg-success-details-grid">
               <div>
                 <span className="kg-detail-label">Preferred Date</span>
@@ -199,16 +231,19 @@ export default function BookAppointment() {
                 <p className="kg-detail-val">{form.phone}</p>
               </div>
             </div>
+
             <p className="kg-success-callout">
               Our patient coordinator will contact you shortly to confirm exact OPD token timing.
             </p>
+
             <div className="kg-success-emergency-box">
               <span>For immediate critical care or emergency assistance:</span>
               <a href="tel:09628300438" className="kg-emergency-btn">
                 📞 Emergency Desk: 096283 00438
               </a>
             </div>
-            <button 
+
+            <button
               className="kg-btn-secondary kg-new-booking-btn"
               onClick={() => {
                 setSubmitted(false);
@@ -225,11 +260,10 @@ export default function BookAppointment() {
 
   return (
     <div className="kg-app-wrapper">
-      {/* HERO BANNER SECTION (No Header / Navbar Above) */}
+      {/* HERO BANNER SECTION */}
       <div className="kg-hero-banner">
         <div className="kg-hero-container">
           <div className="kg-hero-text-content">
-           
             <h1 className="kg-hero-title">Book your visit with KG Nanda Hospital</h1>
             <p className="kg-hero-subtitle">
               Choose your department, preferred specialist doctor, date, and time. Our team will review your request and confirm the slot shortly.
@@ -245,7 +279,9 @@ export default function BookAppointment() {
             <div className="kg-support-call-box">
               <div className="kg-call-info">
                 <span className="kg-call-label">Call Emergency Helpdesk</span>
-                <a href="tel:09628300438" className="kg-call-number">096283 00438</a>
+                <a href="tel:09628300438" className="kg-call-number">
+                  096283 00438
+                </a>
               </div>
               <a href="tel:09628300438" className="kg-tap-call-btn">
                 Tap to call →
@@ -258,10 +294,8 @@ export default function BookAppointment() {
       {/* MAIN CONTENT SECTION: Features + Form */}
       <div className="kg-main-container">
         <div className="kg-content-grid">
-          
           {/* LEFT COLUMN: Feature Highlight Cards & Address */}
           <div className="kg-features-column">
-            
             <div className="kg-feature-card">
               <div className="kg-feature-accent-line"></div>
               <h3 className="kg-feature-title">Quick confirmation</h3>
@@ -296,25 +330,19 @@ export default function BookAppointment() {
                 </p>
               </div>
             </div>
-
           </div>
 
           {/* RIGHT COLUMN: Form Card */}
           <div className="kg-form-column">
             <div className="kg-form-card">
-              
-              <div className="kg-form-section-badge">
-                APPOINTMENT DETAILS
-              </div>
+              <div className="kg-form-section-badge">APPOINTMENT DETAILS</div>
               <h2 className="kg-form-heading">
                 Tell us when and whom you would like to visit
               </h2>
 
               <form onSubmit={handleSubmit} className="kg-booking-form">
-                
                 {/* Row 1: Department, Doctor, Date */}
                 <div className="kg-form-row kg-row-3col">
-                  
                   <div className="kg-field-group">
                     <label htmlFor="department">
                       Department <span className="kg-required">*</span>
@@ -329,7 +357,7 @@ export default function BookAppointment() {
                         className="kg-input"
                       >
                         <option value="">Select Department</option>
-                        {DEPARTMENTS.map((dept) => (
+                        {availableDepartments.map((dept) => (
                           <option key={dept} value={dept}>
                             {dept}
                           </option>
@@ -356,8 +384,8 @@ export default function BookAppointment() {
                           {form.department ? "Select Doctor" : "← First select a department"}
                         </option>
                         {availableDoctors.map((doc) => (
-                          <option key={doc} value={doc}>
-                            {doc}
+                          <option key={doc.id} value={doc.name}>
+                            {doc.name}
                           </option>
                         ))}
                       </select>
@@ -373,15 +401,17 @@ export default function BookAppointment() {
                       name="preferredDate"
                       type="date"
                       min={getTodayStr()}
-                      max={form.doctor === "Dr. Anand Prakash Tiwari" ? getMaxDateAnandPrakashStr() : undefined}
+                      max={
+                        form.doctor === "Dr. Anand Prakash Tiwari"
+                          ? getMaxDateAnandPrakashStr()
+                          : undefined
+                      }
                       value={form.preferredDate}
                       onChange={handleChange}
                       required
                       className="kg-input"
                     />
-
                   </div>
-
                 </div>
 
                 {/* Preferred Time Slot */}
@@ -399,9 +429,15 @@ export default function BookAppointment() {
                         className="kg-input"
                       >
                         <option value="">Select Time Slot</option>
-                        <option value="Morning (09:00 AM - 12:00 PM)">Morning (09:00 AM - 12:00 PM)</option>
-                        <option value="Afternoon (01:00 PM - 03:00 PM)">Afternoon (01:00 PM - 03:00 PM)</option>
-                        <option value="Evening (04:00 PM - 07:00 PM)">Evening (04:00 PM - 07:00 PM)</option>
+                        <option value="Morning (09:00 AM - 12:00 PM)">
+                          Morning (09:00 AM - 12:00 PM)
+                        </option>
+                        <option value="Afternoon (01:00 PM - 03:00 PM)">
+                          Afternoon (01:00 PM - 03:00 PM)
+                        </option>
+                        <option value="Evening (04:00 PM - 07:00 PM)">
+                          Evening (04:00 PM - 07:00 PM)
+                        </option>
                       </select>
                     </div>
                   </div>
@@ -409,13 +445,10 @@ export default function BookAppointment() {
 
                 <hr className="kg-form-divider" />
 
-                <div className="kg-form-section-badge">
-                  PATIENT INFORMATION
-                </div>
+                <div className="kg-form-section-badge">PATIENT INFORMATION</div>
 
                 {/* Row 2: Name & Phone */}
                 <div className="kg-form-row kg-row-2col">
-                  
                   <div className="kg-field-group">
                     <label htmlFor="fullName">
                       Your name <span className="kg-required">*</span>
@@ -447,12 +480,10 @@ export default function BookAppointment() {
                       className="kg-input"
                     />
                   </div>
-
                 </div>
 
                 {/* Row 3: Gender & Email */}
                 <div className="kg-form-row kg-row-2col">
-                  
                   <div className="kg-field-group">
                     <label htmlFor="gender">
                       Gender <span className="kg-optional">(Optional)</span>
@@ -487,7 +518,6 @@ export default function BookAppointment() {
                       className="kg-input"
                     />
                   </div>
-
                 </div>
 
                 {/* Row 4: Message */}
@@ -508,19 +538,11 @@ export default function BookAppointment() {
                   </div>
                 </div>
 
-                {error && (
-                  <div className="kg-error-alert">
-                    ⚠️ {error}
-                  </div>
-                )}
+                {error && <div className="kg-error-alert">⚠️ {error}</div>}
 
                 {/* Form Action Buttons */}
                 <div className="kg-form-actions">
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="kg-btn-primary"
-                  >
+                  <button type="submit" disabled={loading} className="kg-btn-primary">
                     {loading ? (
                       <span className="kg-spinner-text">
                         <span className="kg-spinner"></span> Processing...
@@ -529,19 +551,13 @@ export default function BookAppointment() {
                       "Confirm Booking"
                     )}
                   </button>
-                  <button
-                    type="button"
-                    onClick={handleReset}
-                    className="kg-btn-cancel"
-                  >
+                  <button type="button" onClick={handleReset} className="kg-btn-cancel">
                     Cancel
                   </button>
                 </div>
-
               </form>
             </div>
           </div>
-
         </div>
       </div>
     </div>
