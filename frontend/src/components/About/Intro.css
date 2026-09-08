@@ -1,0 +1,282 @@
+/* Color Variable Configuration Mapping */
+:root {
+  --intro-navy: #003a70;       /* Deep Trust Brand Blue */
+  --intro-teal: #35b6b4;       /* Innovative High-Tech Accent */
+  --intro-orange: #dd5200;     /* Strategic Premium CTA Alert */
+  --intro-cream: #f6f5ee;      /* Soft Organic Texture Plate */
+  --intro-white: #ffffff;
+  --intro-dark-body: #1e293b;
+  --intro-slate-muted: #64748b;
+}
+
+.lifeline-about {
+  position: relative;
+  width: 100%;
+  padding: 120px 0;
+  background-color: var(--intro-cream);
+  overflow: hidden;
+}
+
+/* Luxury ambient backdrop soft glow field */
+.intro-mesh-glow {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(53, 182, 180, 0.1) 0%, transparent 75%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.about-container {
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= LEFT VISUAL SYSTEM ================= */
+.about-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.premium-frame-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  height: 500px;
+}
+
+.main-showcase-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 40px;
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 30px 60px rgba(0, 58, 112, 0.15);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Artistic backboard dynamic frame element */
+.frame-backdrop-accent {
+  position: absolute;
+  top: 25px;
+  left: -25px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(0, 58, 112, 0.08);
+  border-radius: 40px;
+  z-index: 2;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+/* Floating Interactive Glassmorphic Stats Plate */
+.floating-stat-badge {
+  position: absolute;
+  bottom: 40px;
+  right: -30px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 16px 24px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 5;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  animation: dynamicBadgeFloat 4.5s ease-in-out infinite;
+}
+
+.badge-icon-core {
+  width: 40px;
+  height: 40px;
+  background-color: var(--intro-teal);
+  color: var(--intro-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.badge-text-core h5 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--intro-navy);
+  margin-bottom: 2px;
+}
+
+.badge-text-core p {
+  font-size: 11px;
+  color: var(--intro-slate-muted);
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Elegant micro floating loop for premium feeling */
+@keyframes dynamicBadgeFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Image Micro-Hover response */
+.premium-frame-wrapper:hover .main-showcase-img {
+  transform: scale(1.03) translateY(-4px);
+}
+
+/* ================= RIGHT TEXT & GRID SYSTEM ================= */
+.about-right {
+  flex: 1.2;
+}
+
+.intro-meta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.intro-meta-tag .line-bar {
+  width: 24px;
+  height: 2px;
+  background-color: var(--intro-orange);
+}
+
+.intro-meta-tag span:last-child {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--intro-orange);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.section-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--intro-navy);
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin-bottom: 24px;
+}
+
+.section-title .title-tint {
+  background: linear-gradient(90deg, var(--intro-navy), var(--intro-teal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.intro-main-paragraph {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--intro-dark-body);
+  margin-bottom: 40px;
+  font-weight: 450;
+}
+
+/* 2x2 Clean Medical Feature Matrix */
+.intro-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Individual feature item as high contrast minimal card */
+.intro-grid-card {
+  background-color: var(--intro-white);
+  border: 1px solid rgba(0, 58, 112, 0.04);
+  border-radius: 24px;
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  box-shadow: 0 10px 30px rgba(0, 58, 112, 0.03);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.card-icon {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+/* Custom internal identity colors based on the theme array */
+.card-icon.blue-theme { background-color: rgba(0, 58, 112, 0.08); color: var(--intro-navy); }
+.card-icon.teal-theme { background-color: rgba(53, 182, 180, 0.08); color: var(--intro-teal); }
+.card-icon.orange-theme { background-color: rgba(221, 82, 0, 0.08); color: var(--intro-orange); }
+
+.card-details h4 {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--intro-navy);
+  margin: 0 0 4px 0;
+}
+
+.card-details p {
+  font-size: 13.5px;
+  color: var(--intro-slate-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Dynamic Smooth Interactive Hover Feedback */
+.intro-grid-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 58, 112, 0.08);
+  border-color: rgba(53, 182, 180, 0.2);
+}
+
+.intro-grid-card:hover .card-icon.blue-theme { background-color: var(--intro-navy); color: var(--intro-white); }
+.intro-grid-card:hover .card-icon.teal-theme { background-color: var(--intro-teal); color: var(--intro-white); }
+.intro-grid-card:hover .card-icon.orange-theme { background-color: var(--intro-orange); color: var(--intro-white); }
+
+
+/* ============================================= */
+/* TABLET STRUCTURAL CONTROLS (MAX 1024PX) */
+/* ============================================= */
+@media (max-width: 1024px) {
+  .section-title { font-size: 38px; }
+  .about-container { gap: 50px; }
+  .premium-frame-wrapper { height: 440px; }
+}
+
+@media (max-width: 900px) {
+  .lifeline-about { padding: 80px 0; }
+  .about-container { flex-direction: column; text-align: center; gap: 60px; }
+  .about-left { justify-content: center; width: 100%; }
+  .frame-backdrop-accent { left: 0; top: 20px; width: 100%; }
+  .floating-stat-badge { right: 10px; bottom: 20px; }
+  .intro-meta-tag { justify-content: center; }
+  .intro-features-grid { text-align: left; max-width: 600px; margin: 0 auto; }
+}
+
+/* ============================================= */
+/* MOBILE SMARTPHONE RE-ALIGNMENT (MAX 600PX) */
+/* ============================================= */
+@media (max-width: 600px) {
+  .lifeline-about { padding: 60px 0; }
+  .section-title { font-size: 32px; }
+  .intro-main-paragraph { font-size: 15px; margin-bottom: 30px; }
+  .premium-frame-wrapper { max-width: 340px; height: 380px; }
+  .floating-stat-badge { padding: 10px 16px; gap: 10px; right: -10px; }
+  .intro-features-grid { grid-template-columns: 1fr; gap: 16px; }
+}

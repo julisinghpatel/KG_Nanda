@@ -1,0 +1,28 @@
+/* UrologyDoctor.css */
+
+/* High-end smooth transform entry animations */
+@keyframes fadeInUpward {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.doctor-header-animate {
+  animation: fadeInUpward 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Staggered entry pattern setup for each grid profile card element */
+.doctor-card-delay-0, .doctor-card-delay-1, .doctor-card-delay-2 {
+  opacity: 0;
+  animation: fadeInUpward 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.doctor-card-delay-0 { animation-delay: 0.15s; }
+.doctor-card-delay-1 { animation-delay: 0.3s; }
+.doctor-card-delay-2 { animation-delay: 0.45s; }
+.delay-500 { animation-delay: 0.5s; }

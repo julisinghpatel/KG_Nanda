@@ -1,0 +1,263 @@
+/* Base Style & Background */
+.diagnostic-section-wrapper {
+  background: linear-gradient(135deg, #f6fcfa 0%, #cdffff 50%, #f6fcfa 100%);
+  position: relative;
+}
+
+/* Gradient Text Effect */
+.gradient-text {
+  background: linear-gradient(135deg, #02acf0 0%, #2f3395 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Premium Glassmorphic Card Styles */
+.premium-card {
+  position: relative;
+  border-radius: 24px;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(170, 220, 255, 0.5);
+  box-shadow: 0 10px 40px -15px rgba(47, 51, 149, 0.08);
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Premium Hover Properties */
+.premium-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(2, 172, 240, 0.6);
+  box-shadow: 0 25px 50px -12px rgba(2, 172, 240, 0.2);
+}
+
+/* Dynamic Interactive Lighting Effect on Hover */
+.card-glow-element {
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(130, 207, 233, 0.4) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.premium-card:hover .card-glow-element {
+  opacity: 1;
+}
+
+/* Soft Individual Card Nuances */
+.card-premium-blue:hover {
+  border-color: rgba(2, 172, 240, 0.5);
+}
+.card-premium-purple:hover {
+  border-color: rgba(47, 51, 149, 0.5);
+}
+.card-premium-dark:hover {
+  border-color: rgba(195, 3, 34, 0.4);
+}
+
+/* Icon Container */
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #b5f5ff 0%, #aadcff 100%);
+  color: #2f3395;
+  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.6);
+  transition: transform 0.4s ease;
+}
+
+.premium-card:hover .icon-container {
+  transform: rotate(-8deg) scale(1.1);
+}
+
+/* Status Badges with Pulse Effects */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-green { background-color: #b5f5ff; color: #02acf0; }
+.status-orange { background-color: rgba(221, 82, 0, 0.1); color: #dd5200; }
+.status-red { background-color: rgba(201, 3, 34, 0.1); color: #c90322; }
+
+/* Status Live Pulse Animation */
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: relative;
+}
+.status-green .pulse-dot { background-color: #02acf0; }
+.status-orange .pulse-dot { background-color: #dd5200; }
+.status-red .pulse-dot { background-color: #c90322; }
+
+.pulse-dot::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 50%;
+  background-color: inherit;
+  animation: pulse-ring 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* Premium CTA Button Style */
+.premium-btn {
+  background: linear-gradient(135deg, #2f3395 0%, #02acf0 100%);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 14px 28px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(47, 51, 149, 0.3);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.premium-btn:hover {
+  box-shadow: 0 15px 30px -5px rgba(2, 172, 240, 0.4);
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* DiagnosticOverview.css */
+
+/* Custom Smooth Transitions */
+.premium-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(162, 220, 255, 0.3);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Hover Effect: Card Lifts & Soft Glow */
+.premium-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(47, 51, 149, 0.12), 
+              0 0 25px rgba(2, 172, 240, 0.2);
+  border-color: rgba(2, 172, 240, 0.5);
+}
+
+/* Initial Entrance Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+/* Soft Pulsing Glow for Alert/Critical Badges */
+.pulse-glow {
+  animation: softPulse 2s infinite;
+}
+
+@keyframes softPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(195, 3, 34, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(195, 3, 34, 0.0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(195, 3, 34, 0.0);
+  }
+}
+
+/* Custom Progress Bar Glow */
+.progress-glow {
+  box-shadow: 0 0 10px rgba(2, 172, 240, 0.5);
+}
+/* DiagnosticOverview.css */
+
+/* Glassmorphism Premium Base */
+.premium-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(2, 172, 240, 0.15);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Premium Hover Effects */
+.premium-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #02acf0;
+  box-shadow: 0 20px 40px rgba(47, 51, 149, 0.15);
+}
+
+/* Active Glow Backgrounds */
+.glow-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(800px circle at var(--x, 0px) var(--y, 0px), rgba(16adcff, 0.15), transparent 40%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Icon Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+.premium-card:hover .animate-icon {
+  animation: float 2s ease-in-out infinite;
+  color: #02acf0;
+}
+
+/* Reveal Animation on Load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Delay classes for staggered entry */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }

@@ -1,0 +1,51 @@
+.blog-hero-section {
+  background-attachment: scroll;
+  background-color: #2f3395; /* Deep brand blue as fallback */
+}
+
+/* Custom premium gradient overlay using the user's color palette with transparency for background image */
+.hero-custom-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.8) 0%,
+    rgba(30, 58, 138, 0.7) 40%,
+    rgba(2, 172, 240, 0.4) 100%
+  );
+}
+
+/* Fluid responsive object configuration */
+.object-cover-wrapper img {
+  object-fit: cover;
+  transform-origin: center center;
+}
+
+/* Entry slide animation for components */
+.custom-slide-in {
+  animation: slideInFromLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-15px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+/* Input Placeholder color overrides */
+.blog-hero-section input::placeholder {
+  color: rgba(226, 232, 240, 0.8);
+}
+
+/* Smooth transition defaults */
+.blog-hero-section input, 
+.blog-hero-section button {
+  will-change: transform, border-color, box-shadow;
+}

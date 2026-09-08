@@ -1,0 +1,291 @@
+/* ==========================================================================
+   ADMINISTRATIVE DESK (STRETCH / EXPANDABLE SIDE WIDGET - NO OVERLAY)
+   ========================================================================== */
+
+.kg-admin-tab-container {
+  position: fixed;
+  right: 0;
+  top: 28%;
+  z-index: 9999;
+  display: flex;
+  align-items: stretch;
+  flex-direction: row-reverse; /* Attached to right edge */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* 1. COLLAPSED VERTICAL TAB */
+.kg-admin-trigger-tab {
+  width: 48px;
+  background: linear-gradient(180deg, #003a70 0%, #002548 100%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 0;
+  border-radius: 16px 0 0 16px;
+  cursor: pointer;
+  box-shadow: -4px 10px 25px rgba(0, 58, 112, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-right: none;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+.kg-admin-tab-container:hover .kg-admin-trigger-tab,
+.kg-admin-tab-container.is-expanded .kg-admin-trigger-tab {
+  background: linear-gradient(180deg, #dd5200 0%, #b34200 100%);
+  box-shadow: -6px 12px 30px rgba(221, 82, 0, 0.4);
+}
+
+.kg-admin-icon-wrap {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.kg-tab-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.kg-vertical-title {
+  font-weight: 800;
+  font-size: 12pt;
+  letter-spacing: 3px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.kg-live-dot-pulse {
+  width: 7px;
+  height: 7px;
+  background: #35b6b4;
+  border-radius: 50%;
+  margin-top: 14px;
+  box-shadow: 0 0 8px #35b6b4;
+  animation: kgPulse 1.5s infinite alternate;
+}
+
+/* 2. STRETCHABLE EXPANDED BOX */
+.kg-admin-expand-box {
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: -10px 15px 40px rgba(0, 34, 68, 0.18);
+  border-radius: 20px 0 0 20px;
+  border: 1px solid rgba(0, 58, 112, 0.12);
+  border-right: none;
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  max-height: 85vh;
+}
+
+/* Expanded State Trigger */
+.kg-admin-tab-container:hover .kg-admin-expand-box,
+.kg-admin-tab-container.is-expanded .kg-admin-expand-box {
+  width: 350px;
+  opacity: 1;
+  padding: 24px 20px;
+}
+
+/* Header inside Box */
+.kg-admin-box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.kg-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(53, 182, 180, 0.1);
+  border: 1px solid rgba(53, 182, 180, 0.25);
+  color: #003a70;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.kg-badge-dot {
+  width: 6px;
+  height: 6px;
+  background: #35b6b4;
+  border-radius: 50%;
+}
+
+.kg-admin-close-btn {
+  background: #f1f5f9;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: #475569;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.kg-admin-close-btn:hover {
+  background: #dd5200;
+  color: #ffffff;
+}
+
+/* Titles */
+.kg-admin-titles h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #003a70;
+  line-height: 1.2;
+}
+
+.kg-hindi-sub {
+  margin: 3px 0 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #dd5200;
+}
+
+.kg-hospital-name {
+  display: block;
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.kg-admin-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0, 58, 112, 0.12), transparent);
+  margin: 16px 0;
+}
+
+/* Action Cards Stack */
+.kg-admin-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.kg-info-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.kg-card-email {
+  background: rgba(0, 58, 112, 0.04);
+  border: 1px solid rgba(0, 58, 112, 0.08);
+  color: #003a70;
+}
+
+.kg-card-email:hover {
+  background: rgba(0, 58, 112, 0.08);
+  border-color: #003a70;
+  transform: translateX(-3px);
+}
+
+.kg-card-phone {
+  background: linear-gradient(135deg, #dd5200 0%, #b34200 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(221, 82, 0, 0.25);
+}
+
+.kg-card-phone:hover {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  transform: translateX(-3px);
+  box-shadow: 0 6px 20px rgba(221, 82, 0, 0.35);
+}
+
+.kg-card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.kg-card-email .kg-card-icon {
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.kg-card-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.kg-card-content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.kg-card-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.85;
+  font-weight: 700;
+}
+
+.kg-card-value {
+  margin: 1px 0;
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.kg-card-content small {
+  font-size: 10px;
+  opacity: 0.75;
+}
+
+/* Footer */
+.kg-admin-footer {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.08);
+  font-size: 11px;
+  color: #94a3b8;
+  text-align: center;
+}
+
+@keyframes kgPulse {
+  from { transform: scale(0.9); opacity: 0.6; }
+  to { transform: scale(1.3); opacity: 1; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .kg-admin-tab-container:hover .kg-admin-expand-box,
+  .kg-admin-tab-container.is-expanded .kg-admin-expand-box {
+    width: 290px;
+    padding: 16px 14px;
+  }
+  .kg-card-value {
+    font-size: 13px;
+  }
+}

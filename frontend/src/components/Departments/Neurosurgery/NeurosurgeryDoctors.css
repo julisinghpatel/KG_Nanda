@@ -1,0 +1,292 @@
+/* NeurosurgeryDoctors.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --ndh-navy: #2f3395;
+  --ndh-sky: #02acf0;
+  --ndh-muted: #7396d3;
+  --ndh-ice-glow: #b5f5ff;
+  --ndh-light-sky: #aadcff;
+  --ndh-slate-teal: #60a9bd;
+  --ndh-clean-bg: #f6fcfa;
+  --ndh-neon-coral: #c90322;
+  --ndh-amber-glow: #dd5200;
+}
+
+/* Structural Reset Barrier */
+.ndh-doctors-wrapper *,
+.ndh-doctors-wrapper *::before,
+.ndh-doctors-wrapper *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.ndh-doctors-wrapper {
+  font-family: 'Outfit', sans-serif;
+  background: var(--ndh-clean-bg);
+  padding: 110px 6%;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Premium Medical Mesh Glow Background Radials */
+.ndh-radial-glow-top {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(181, 245, 255, 0.4) 0%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ndh-radial-glow-bottom {
+  position: absolute;
+  bottom: -10%;
+  left: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(2, 172, 240, 0.1) 0%, transparent 75%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Section Header Segment */
+.ndh-section-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 75px auto;
+  position: relative;
+  z-index: 1;
+}
+
+.ndh-section-header h2 {
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--ndh-navy);
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.ndh-section-header h2 span {
+  color: transparent;
+  background: linear-gradient(90deg, var(--ndh-sky) 0%, var(--ndh-slate-teal) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.ndh-section-header p {
+  color: var(--ndh-slate-teal);
+  font-size: 17px;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* Doctors Layout Grid Frame Matrix */
+.ndh-doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Premium Dynamic Doctor Card Structure */
+.ndh-doctor-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 15px 40px rgba(115, 150, 211, 0.05);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.ndh-doctor-card:hover {
+  transform: translateY(-12px);
+  background: #ffffff;
+  border-color: rgba(2, 172, 240, 0.3);
+  box-shadow: 0 35px 70px rgba(47, 51, 149, 0.15);
+}
+
+/* Upper Visual Image Shell Frame */
+.ndh-image-shell {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  background: #e6f6f9;
+}
+
+.ndh-surgeon-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.ndh-doctor-card:hover .ndh-surgeon-photo {
+  transform: scale(1.06);
+}
+
+/* Interactive Overlay Gradient Shade Filter on Hover */
+.ndh-dark-overlay-mask {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(47, 51, 149, 0.9) 0%,
+    rgba(2, 172, 240, 0.2) 65%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+.ndh-doctor-card:hover .ndh-dark-overlay-mask {
+  opacity: 1;
+}
+
+/* Premium Micro Floating Action Scheduling Button */
+.ndh-action-trigger-btn {
+  background: var(--ndh-ice-glow);
+  color: var(--ndh-navy);
+  font-weight: 600;
+  font-size: 13.5px;
+  letter-spacing: 0.3px;
+  padding: 12px 26px;
+  border-radius: 50px;
+  transform: translateY(25px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  border: none;
+}
+
+.ndh-doctor-card:hover .ndh-action-trigger-btn {
+  transform: translateY(0);
+}
+
+.ndh-action-trigger-btn:hover {
+  background: #ffffff;
+  color: var(--ndh-sky);
+  box-shadow: 0 10px 25px rgba(2, 172, 240, 0.35);
+}
+
+/* Lower Details Rendering Box Container */
+.ndh-profile-details {
+  padding: 35px 30px;
+  text-align: center;
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Medical Specialty Tag Pill */
+.ndh-specialty-badge {
+  background: rgba(2, 172, 240, 0.07);
+  border: 1px solid rgba(2, 172, 240, 0.16);
+  color: var(--ndh-sky);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 5px 14px;
+  border-radius: 30px;
+  width: fit-content;
+  margin: 0 auto 16px auto;
+  transition: all 0.3s ease;
+}
+
+.ndh-doctor-card:hover .ndh-specialty-badge {
+  background: var(--ndh-sky);
+  color: #ffffff;
+  border-color: var(--ndh-sky);
+}
+
+.ndh-profile-details h3 {
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--ndh-navy);
+  margin-bottom: 6px;
+  letter-spacing: -0.3px;
+}
+
+.ndh-medical-degree {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ndh-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+/* Animated Divider Base Setup */
+.ndh-card-divider {
+  width: 45px;
+  height: 2px;
+  background: var(--ndh-sky);
+  margin: 0 auto 16px auto;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ndh-doctor-card:hover .ndh-card-divider {
+  width: 140px;
+  background: linear-gradient(90deg, var(--ndh-sky), var(--ndh-amber-glow));
+}
+
+.ndh-experience-metric {
+  font-size: 14px;
+  color: var(--ndh-slate-teal);
+  font-weight: 500;
+}
+
+/* ========================================================== */
+/* ADVANCED RE-FLUID MEDIA BREAKPOINTS VIEWPORT ENGINE       */
+/* ========================================================== */
+
+@media (max-width: 1200px) {
+  .ndh-doctors-grid { gap: 25px; }
+  .ndh-image-shell { height: 340px; }
+  .ndh-profile-details h3 { font-size: 21px; }
+}
+
+@media (max-width: 1024px) {
+  .ndh-doctors-wrapper { padding: 80px 5%; }
+  .ndh-doctors-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .ndh-section-header h2 { font-size: 36px; }
+}
+
+@media (max-width: 768px) {
+  .ndh-doctors-wrapper { padding: 60px 24px; }
+  .ndh-section-header { margin-bottom: 50px; }
+  .ndh-section-header h2 { font-size: 30px; }
+  .ndh-section-header p { font-size: 15px; }
+  .ndh-doctors-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .ndh-image-shell { height: 290px; }
+  .ndh-profile-details { padding: 26px 20px; }
+  .ndh-profile-details h3 { font-size: 18px; }
+  .ndh-experience-metric { font-size: 13px; }
+}
+
+@media (max-width: 540px) {
+  .ndh-doctors-grid { grid-template-columns: 1fr; gap: 26px; }
+  .ndh-image-shell { height: 350px; }
+}

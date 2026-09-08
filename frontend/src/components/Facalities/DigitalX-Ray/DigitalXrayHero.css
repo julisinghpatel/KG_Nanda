@@ -1,0 +1,63 @@
+/* Custom subtle healthcare mesh background gradient */
+.xray-hero-section {
+  background: radial-gradient(circle at top left, #f4fbe7 0%, #ffffff 40%, #f0f9ff 100%);
+}
+
+/* Premium text gradient underline decoration */
+.xray-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: rgba(13, 148, 136, 0.15);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+/* Organic Custom Frame Mask inspired strictly by image_70091b.jpg shape logic */
+.xray-blob-frame {
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+  background-color: #e0f2fe;
+  border: 4px solid rgba(255, 255, 255, 0.8);
+  transition: border-radius 1s ease-in-out;
+}
+
+/* Fluid morph effect when user hovers over the image region */
+.xray-visual-side:hover .xray-blob-frame {
+  border-radius: 50% 50% 40% 60% / 55% 45% 55% 45%;
+}
+
+/* Premium micro-animation for the floating diagnostic card */
+@keyframes fluidFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: fluidFloat 4s ease-in-out infinite;
+}
+
+/* Mobile viewport structural updates */
+@media (max-width: 1024px) {
+  .xray-hero-section {
+    min-h: auto;
+    text-align: center;
+  }
+  .xray-text-content {
+    align-items: center;
+  }
+  .xray-underline::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+  }
+}

@@ -1,0 +1,99 @@
+/* Pathology Hero Premium Micro-Movements and Custom Animations */
+
+/* Background slow gradient shift */
+.pathology-hero-bg {
+  background: radial-gradient(circle at 10% 20%, rgba(240, 249, 255, 0.7) 0%, rgba(255, 255, 255, 1) 90%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating blur orbs for ambient premium background depth */
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+}
+
+.orb-blue {
+  background: rgba(14, 165, 233, 0.25);
+  width: 500px;
+  height: 500px;
+  top: -10%;
+  right: -5%;
+  animation: floatOrb 12s infinite alternate ease-in-out;
+}
+
+.orb-orange {
+  background: rgba(234, 88, 12, 0.15);
+  width: 400px;
+  height: 400px;
+  bottom: -5%;
+  left: -5%;
+  animation: floatOrb 16s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(40px, -60px) scale(1.1); }
+  100% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+/* Glassmorphic metrics dashboard banner */
+.hero-glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06);
+  transform: translateY(0);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+}
+
+.hero-glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(14, 165, 233, 0.12);
+}
+
+/* Premium Main Visual Frame container */
+.image-mask-container {
+  position: relative;
+  border-radius: 2.5rem;
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.15);
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.image-mask-container:hover {
+  transform: scale(1.02) rotate(0.5deg);
+}
+
+/* Floating interactive badges */
+.floating-badge {
+  animation: persistentFloat 5s infinite ease-in-out;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-badge:hover {
+  transform: scale(1.08) translateY(-4px);
+  box-shadow: 0 20px 40px rgba(234, 88, 12, 0.15);
+}
+
+.badge-delay {
+  animation-delay: -2.5s;
+}
+
+@keyframes persistentFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Grid overlay lines pattern subtle effect */
+.grid-overlay {
+  background-image: radial-gradient(rgba(15, 23, 42, 0.03) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}

@@ -1,0 +1,48 @@
+/* --- Premium Why Choose Us Layout Interactivity & Animation Setups --- */
+
+/* Custom Curve Layout Optimization Mechanics */
+.cubic-bezier {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature-card, .feature-card-center {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Standard Feature Cards Micro-interactions */
+.feature-card:hover {
+  transform: translateY(-8px) !important;
+  border-color: rgba(53, 182, 180, 0.2);
+  box-shadow: 0 30px 60px -15px rgba(0, 58, 112, 0.08);
+}
+
+/* central highlighted card custom physics scale */
+.feature-card-center:hover {
+  transform: scale(1.03) translateY(-4px) !important;
+  box-shadow: 0 40px 80px -20px rgba(0, 58, 112, 0.35);
+}
+
+/* Linear Shine Sweep Core Keyframe */
+@keyframes shine-sweep {
+  0% { left: -100%; }
+  100% { left: 160%; }
+}
+
+.group:hover .group-hover\:animate-shine {
+  animation: shine-sweep 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 7s ease-in-out infinite;
+}
+
+/* Global active touch compression physics on micro clicks */
+.feature-card:active, .feature-card-center:active {
+  transform: scale(0.98) !important;
+  transition: all 0.1s ease;
+}

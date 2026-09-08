@@ -1,0 +1,222 @@
+/* ==========================================================================
+   LOCATION HERO STYLING (KG NANDA MEDICAL RESORT STYLING)
+   ========================================================================== */
+
+.kg-loc-hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 6%;
+  font-family: 'Poppins', system-ui, sans-serif;
+  /* Dark Blue base mixing up into crisp medical background layout image */
+  background: 
+    linear-gradient(135deg, rgba(0, 58, 112, 0.92) 20%, rgba(0, 58, 112, 0.8) 50%, rgba(53, 182, 180, 0.4) 100%),
+    url("/AboutUs/Bulding1.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax flow feel */
+  overflow: hidden;
+}
+
+/* Subtle graphic lighting overlay layer */
+.kg-loc-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(221, 82, 0, 0.12) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.kg-loc-hero-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+}
+
+.kg-loc-hero-content {
+  max-width: 780px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Premium Rounded Badge definition */
+.kg-loc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(53, 182, 180, 0.15);
+  border: 1px solid rgba(53, 182, 180, 0.3);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #35b6b4;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.kg-pin-icon {
+  color: #dd5200;
+  animation: microBounce 2s ease-in-out infinite;
+}
+
+/* Dynamic Bold Typography */
+.kg-loc-title {
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 18px;
+  letter-spacing: -1px;
+}
+
+.kg-loc-title span {
+  color: #35b6b4;
+}
+
+.kg-loc-subtitle {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #f6f5ee;
+  max-width: 680px;
+  opacity: 0.9;
+  margin-bottom: 36px;
+}
+
+/* Premium Address Card Metadata Container */
+.kg-loc-info-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 24px 32px;
+  margin-bottom: 40px;
+  text-align: left;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.kg-loc-info-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(53, 182, 180, 0.4);
+}
+
+.kg-card-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.kg-card-row p strong {
+  color: #35b6b4;
+}
+
+/* Action Controls Buttons */
+.kg-loc-hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.kg-loc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+}
+
+/* Primary Button with Orange Highlight Transform mapping */
+.kg-btn-primary {
+  background: #dd5200;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(221, 82, 0, 0.3);
+}
+
+.kg-btn-primary:hover {
+  background: #35b6b4;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(53, 182, 180, 0.4);
+}
+
+/* Outline Interactive button mapping transparent matrix framework */
+.kg-btn-outline {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.kg-btn-outline:hover {
+  background: #ffffff;
+  color: #003a70;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(255, 255, 255, 0.15);
+}
+
+/* Micro Animations Keyframes definitions */
+@keyframes microBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* ==========================================================================
+   MEDIA QUERIES RESPONSIVENESS ADAPTATIONS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .kg-loc-hero {
+    padding: 80px 24px;
+    min-height: auto;
+  }
+
+  .kg-loc-title {
+    font-size: 38px;
+  }
+
+  .kg-loc-subtitle {
+    font-size: 15px;
+  }
+
+  .kg-loc-info-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 520px) {
+  .kg-loc-title {
+    font-size: 30px;
+  }
+
+  .kg-loc-hero-buttons {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .kg-loc-btn {
+    width: 100%;
+  }
+}

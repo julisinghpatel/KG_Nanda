@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+.hospital-stat-box {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.22s ease-in-out;
+}
+
+.hospital-stat-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -4px rgba(8, 103, 210, 0.12);
+  border-color: #cbd5e1;
+}
+
+.stat-box-inner {
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.stat-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #475569;
+  letter-spacing: -0.2px;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.stat-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  padding: 3px 8px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.trend-indicator {
+  color: #16a34a;
+  font-weight: 800;
+  font-size: 11px;
+}
+
+.trend-text {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #15803d;
+}
+
+/* Icon Containers */
+.stat-icon-badge {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.tone-blue .stat-icon-badge {
+  background: linear-gradient(135deg, #0284c7 0%, #0867d2 100%);
+  box-shadow: 0 8px 16px rgba(8, 103, 210, 0.35);
+}
+
+.tone-green .stat-icon-badge {
+  background: linear-gradient(135deg, #059669 0%, #0d9488 100%);
+  box-shadow: 0 8px 16px rgba(13, 148, 136, 0.35);
+}
+
+.tone-purple .stat-icon-badge {
+  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
+  box-shadow: 0 8px 16px rgba(99, 102, 241, 0.35);
+}
+
+.tone-orange .stat-icon-badge {
+  background: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
+  box-shadow: 0 8px 16px rgba(234, 88, 12, 0.35);
+}
+
+/* Bottom colored accent strip */
+.stat-bottom-bar {
+  height: 3px;
+  width: 100%;
+}
+
+.tone-blue .stat-bottom-bar { background: #0867d2; }
+.tone-green .stat-bottom-bar { background: #0d9488; }
+.tone-purple .stat-bottom-bar { background: #7c3aed; }
+.tone-orange .stat-bottom-bar { background: #ea580c; }

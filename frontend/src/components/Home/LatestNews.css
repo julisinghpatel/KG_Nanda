@@ -1,0 +1,321 @@
+/* ==========================================================================
+   Premium Medical Portal News Structural Deck (Tailwind Convergent)
+   ========================================================================== */
+
+.latest-news-section {
+  position: relative;
+  padding: 100px 0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.news-max-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+/* HEADER FRAMEWORK */
+.news-header-block {
+  text-align: center;
+  margin-bottom: 70px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.latest-news-section.is-visible .news-header-block {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.premium-badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(53, 182, 180, 0.1);
+  border: 1px solid rgba(53, 182, 180, 0.25);
+  color: #003a70;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.news-main-heading {
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.news-main-heading span {
+  color: #35b6b4;
+}
+
+.heading-decorative-line {
+  width: 55px;
+  height: 4px;
+  margin: 18px auto 0 auto;
+  border-radius: 10px;
+}
+
+/* CARDS STAGGERED GRID SYSTEM */
+.news-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+/* LAYOUT ENTRANCE ANIMATIONS (Moving Animations) */
+.premium-news-card {
+  opacity: 0;
+  transform: translateY(60px) scale(0.98);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  /* Delayed transition trigger per index cascade */
+  transition-delay: calc(var(--card-index) * 0.15s);
+  cursor: pointer;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 35px rgba(0, 58, 112, 0.04);
+}
+
+.latest-news-section.is-visible .premium-news-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* IMAGE WORKSPACE */
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background-color: #003a70;
+}
+
+.card-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.image-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 58, 112, 0.4) 0%, transparent 60%);
+  z-index: 1;
+}
+
+.news-category-tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 6px 14px;
+  border-radius: 8px;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* CONTENT CONTAINER CARD BODY */
+.card-body-content {
+  padding: 30px;
+  border: 1px solid rgba(0, 58, 112, 0.05);
+  border-top: none;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  position: relative;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+/* Left structural colorful border pin on body layout */
+.card-body-content::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 30px;
+  bottom: 30px;
+  width: 3px;
+  background-color: #dd5200;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.news-metadata-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.news-card-title {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.4;
+  margin: 0 0 12px 0;
+  transition: color 0.3s ease;
+}
+
+.news-card-description {
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 0 0 25px 0;
+}
+
+/* CARD ACTION LINK FOOTER */
+.card-action-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-t: 1px solid rgba(0, 58, 112, 0.06);
+}
+
+.action-link-text {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.arrow-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.4s ease, color 0.4s ease, transform 0.4s ease;
+}
+
+.arrow-icon {
+  transition: transform 0.4s ease;
+}
+
+/* PREMIUM INTERACTIVE HOVER BEHAVIORS */
+.premium-news-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px -12px rgba(0, 58, 112, 0.12);
+}
+
+.premium-news-card:hover .card-hero-img {
+  transform: scale(1.08);
+}
+
+.premium-news-card:hover .card-body-content::before {
+  opacity: 1;
+}
+
+.premium-news-card:hover .news-card-title {
+  color: #dd5200;
+}
+
+.premium-news-card:hover .arrow-circle {
+  background-color: #003a70;
+  color: #ffffff;
+}
+
+.premium-news-card:hover .arrow-icon {
+  transform: translateX(3px);
+}
+
+/* CENTRALISED GLOBAL FOOTER BUTTON */
+.center-action-deck {
+  margin-top: 60px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
+}
+
+.latest-news-section.is-visible .center-action-deck {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.premium-read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 36px;
+  border-radius: 16px;
+  border: none;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(0, 58, 112, 0.25);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-moving-arrow {
+  transition: transform 0.3s ease;
+}
+
+.premium-read-more-btn:hover {
+  background-color: #35b6b4;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px -5px rgba(53, 182, 180, 0.4);
+}
+
+.premium-read-more-btn:hover .btn-moving-arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   ADAPTIVE RESPONSIVE FRAMEWORK BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .news-main-heading { font-size: 36px; }
+  .news-cards-grid { gap: 24px; }
+  .card-body-content { padding: 24px; }
+  .news-card-title { font-size: 18px; }
+}
+
+@media (max-width: 950px) {
+  .latest-news-section { padding: 80px 0; }
+  .news-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 680px) {
+  .latest-news-section { padding: 60px 0; }
+  .news-main-heading { font-size: 28px; }
+  .news-cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  .card-image-wrapper { height: 210px; }
+  .premium-read-more-btn {
+    padding: 14px 28px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .news-main-heading { font-size: 24px; }
+  .premium-badge-tag { font-size: 11px; padding: 4px 12px; }
+}

@@ -1,0 +1,245 @@
+.pediatric-about {
+  padding: 80px 8%;
+}
+
+.pediatric-about-container{
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:60px;
+flex-wrap:wrap;
+
+}
+
+/* LEFT CARD */
+
+.pediatric-about-card{
+
+
+padding:40px;
+max-width:520px;
+
+border-radius:20px;
+
+box-shadow:0 20px 50px rgba(0,0,0,0.08);
+
+transform-style:preserve-3d;
+
+transition:0.4s;
+
+}
+
+.pediatric-about-card:hover{
+
+transform:translateY(-10px) rotateY(8deg) rotateX(4deg);
+
+box-shadow:0 35px 70px rgba(0,0,0,0.15);
+
+}
+
+.pediatric-about-card h2{
+
+color:#00AEEF;
+font-size:34px;
+margin-bottom:18px;
+
+}
+
+.pediatric-about-card p{
+
+color:#555;
+line-height:1.7;
+margin-bottom:15px;
+
+}
+
+.pediatric-about-btn{
+
+margin-top:10px;
+padding:12px 28px;
+border:none;
+border-radius:30px;
+
+background:linear-gradient(90deg,#2E3192,#00AEEF);
+
+color:white;
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+.pediatric-about-btn:hover{
+
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+}
+
+/* RIGHT IMAGE */
+
+.pediatric-about-image{
+
+flex:1;
+display:flex;
+justify-content:center;
+
+}
+
+.pediatric-about-image img{
+
+width:360px;
+height:360px;
+
+object-fit:cover;
+
+border-radius:50%;
+
+box-shadow:0 25px 60px rgba(0,0,0,0.15);
+
+transition:0.4s;
+
+}
+
+.pediatric-about-image img:hover{
+
+transform:scale(1.08) rotateY(10deg);
+
+box-shadow:0 40px 80px rgba(0,0,0,0.2);
+
+}
+/* SECTION HEADING */
+
+.pediatric-about-heading{
+
+text-align:center;
+max-width:700px;
+margin:0 auto 70px auto;
+
+}
+
+.pediatric-about-heading h2{
+
+font-size:38px;
+color:#00AEEF;
+margin-bottom:12px;
+
+}
+
+.pediatric-about-heading p{
+
+color:#555;
+font-size:17px;
+line-height:1.6;
+
+}
+/* RESPONSIVE */
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Large Tablets */
+@media (max-width: 1024px){
+
+  .pediatric-about{
+    padding:20px 6%;
+  }
+
+  .pediatric-about-card{
+    padding:30px;
+  }
+
+  .pediatric-about-card h2{
+    font-size:30px;
+  }
+
+  .pediatric-about-image img{
+    width:320px;
+    height:320px;
+  }
+
+  .pediatric-about-heading h2{
+    font-size:34px;
+  }
+
+}
+
+
+/* Tablets */
+@media (max-width: 768px){
+
+  .pediatric-about-container{
+    flex-direction:column;
+    text-align:center;
+    gap:40px;
+  }
+
+  .pediatric-about-card{
+    max-width:100%;
+  }
+
+  .pediatric-about-image img{
+    width:280px;
+    height:280px;
+  }
+
+  .pediatric-about-heading h2{
+    font-size:30px;
+  }
+
+  .pediatric-about-heading p{
+    font-size:16px;
+  }
+
+}
+
+
+/* Mobile Devices */
+@media (max-width: 480px){
+
+  .pediatric-about{
+    padding:20px 5%;
+  }
+
+  .pediatric-about-card{
+    padding:25px 20px;
+  }
+
+  .pediatric-about-card h2{
+    font-size:24px;
+  }
+
+  .pediatric-about-card p{
+    font-size:14px;
+  }
+
+  .pediatric-about-image img{
+    width:220px;
+    height:220px;
+  }
+
+  .pediatric-about-heading h2{
+    font-size:24px;
+  }
+
+  .pediatric-about-heading p{
+    font-size:14px;
+  }
+
+}
+
+
+/* Very Small Devices */
+@media (max-width: 360px){
+
+  .pediatric-about-image img{
+    width:190px;
+    height:190px;
+  }
+
+  .pediatric-about-heading h2{
+    font-size:22px;
+  }
+
+}

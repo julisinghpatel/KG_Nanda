@@ -1,0 +1,229 @@
+/* NeurosurgeryServices.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --nss-navy: #2f3395;
+  --nss-sky: #02acf0;
+  --nss-muted-blue: #7396d3;
+  --nss-ice-glow: #b5f5ff;
+  --nss-pastel-sky: #aadcff;
+  --nss-slate-teal: #60a9bd;
+  --nss-bg-clean: #f6fcfa;
+  --nss-coral: #c90322;
+  --nss-orange-pulse: #dd5200;
+}
+
+/* Base Component Structural Safeties */
+.nss-services-container *,
+.nss-services-container *::before,
+.nss-services-container *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.nss-services-container {
+  font-family: 'Outfit', sans-serif;
+  background: var(--nss-bg-clean);
+  padding: 100px 6%;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Premium Medical Ambient Ray Blurs */
+.nss-ambient-light-top {
+  position: absolute;
+  top: -5%;
+  right: -5%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(181, 245, 255, 0.45) 0%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.nss-ambient-light-bottom {
+  position: absolute;
+  bottom: -5%;
+  left: -8%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(2, 172, 240, 0.12) 0%, transparent 75%);
+  filter: blur(95px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Header Meta Center Controls */
+.nss-section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 75px auto;
+  position: relative;
+  z-index: 1;
+}
+
+.nss-section-header h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--nss-navy);
+  line-height: 1.25;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+.nss-section-header h2 span {
+  color: transparent;
+  background: linear-gradient(90deg, var(--nss-sky) 0%, var(--nss-slate-teal) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.nss-section-header p {
+  color: var(--nss-slate-teal);
+  font-size: 16.5px;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* Grid Matrix Layout Architecture */
+.nss-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Premium Luxury Services Card Frame */
+.nss-service-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 45px 35px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 12px 35px rgba(115, 150, 211, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nss-service-card:hover {
+  transform: translateY(-10px);
+  background: #ffffff;
+  border-color: rgba(2, 172, 240, 0.3);
+  box-shadow: 0 30px 65px rgba(47, 51, 149, 0.12);
+}
+
+/* Technical Icon Core Container Frame */
+.nss-icon-wrapper {
+  font-size: 24px;
+  color: var(--nss-sky);
+  background: linear-gradient(135deg, rgba(181, 245, 255, 0.45) 0%, rgba(170, 220, 255, 0.15) 100%);
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 26px;
+  border: 1px solid rgba(2, 172, 240, 0.12);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nss-service-card:hover .nss-icon-wrapper {
+  background: linear-gradient(135deg, var(--nss-sky) 0%, var(--nss-navy) 100%);
+  color: #ffffff;
+  transform: scale(1.08) rotate(-4deg);
+  box-shadow: 0 10px 20px rgba(2, 172, 240, 0.2);
+}
+
+/* Card Information Headings Typography */
+.nss-service-card h3 {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--nss-navy);
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+}
+
+.nss-service-card p {
+  font-size: 14px;
+  color: var(--nss-slate-teal);
+  line-height: 1.6;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+/* Micro Interaction Bottom Expand Pointer Link */
+.nss-action-indicator {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--nss-sky);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.nss-service-card:hover .nss-action-indicator {
+  color: var(--nss-orange-pulse);
+  opacity: 1;
+}
+
+/* Top Edge Premium Accent Border Line */
+.nss-service-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--nss-sky), var(--nss-orange-pulse));
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nss-service-card:hover::after {
+  width: 100%;
+}
+
+/* ========================================================== */
+/* ADVANCED RE-FLUID GRID SYSTEM MULTI-VIEWPORT BREAKPOINTS  */
+/* ========================================================== */
+
+@media (max-width: 1200px) {
+  .nss-services-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
+  .nss-section-header h2 { font-size: 36px; }
+}
+
+@media (max-width: 1024px) {
+  .nss-services-container { padding: 80px 5%; }
+  .nss-service-card { padding: 40px 28px; }
+  .nss-service-card h3 { font-size: 19px; }
+}
+
+@media (max-width: 768px) {
+  .nss-services-container { padding: 60px 24px; }
+  .nss-section-header { margin-bottom: 50px; }
+  .nss-section-header h2 { font-size: 30px; }
+  .nss-section-header p { font-size: 15px; }
+  .nss-services-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .nss-service-card { padding: 30px 22px; border-radius: 20px; }
+  .nss-icon-wrapper { width: 52px; height: 52px; font-size: 20px; margin-bottom: 20px; }
+  .nss-service-card h3 { font-size: 17px; }
+  .nss-service-card p { font-size: 13px; margin-bottom: 16px; }
+}
+
+@media (max-width: 540px) {
+  .nss-services-grid { grid-template-columns: 1fr; gap: 20px; }
+  .nss-service-card { padding: 35px 25px; }
+}

@@ -1,0 +1,294 @@
+/* Isolated Structural Framework CSS Blueprint - Complete Scope Protection */
+.cond-onco-premium-scope {
+  --c-onco-cyan: #02acf0;
+  --c-onco-indigo: #2f3395;
+  --c-onco-blue-slate: #7396d3;
+  --c-onco-ice-light: #aadcff;
+  --c-onco-mint-bg: #f6fcfa;
+  --c-onco-orange: #dd5200;
+  --c-onco-card-white: #ffffff;
+  --c-onco-text-dark: #12163b;
+
+  position: relative;
+  width: 100%;
+  padding: 120px 24px;
+  background-color: var(--c-onco-mint-bg);
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Luxury Soft Mesh Light Layers */
+.cond-onco-ambient-glow-top {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(2, 172, 240, 0.06) 0%, transparent 70%);
+  filter: blur(70px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cond-onco-ambient-glow-bottom {
+  position: absolute;
+  bottom: -10%;
+  left: -5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(47, 51, 149, 0.04) 0%, transparent 70%);
+  filter: blur(80px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cond-onco-viewport {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   HEADER SECTION STYLING ARCHITECTURE
+   ========================================================================== */
+.cond-onco-header-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.cond-onco-badge-capsule {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--c-onco-card-white);
+  border: 1px solid rgba(47, 51, 149, 0.08);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.cond-onco-pulse-node {
+  width: 8px;
+  height: 8px;
+  background-color: var(--c-onco-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--c-onco-cyan);
+}
+
+.cond-onco-badge-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--c-onco-indigo);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.cond-onco-main-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--c-onco-text-dark);
+  letter-spacing: -0.02em;
+  margin: 0 0 16px 0;
+}
+
+.cond-onco-main-title span {
+  background: linear-gradient(135deg, var(--c-onco-indigo) 0%, var(--c-onco-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cond-onco-subtitle {
+  font-size: 1.05rem;
+  color: #4f5372;
+  max-width: 620px;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+}
+
+.cond-onco-decorative-line {
+  width: 65px;
+  height: 4px;
+  background-color: var(--c-onco-cyan);
+  border-radius: 20px;
+}
+
+/* ==========================================================================
+   3-COLUMN GLASS-BORDER GRID MATRIX
+   ========================================================================== */
+.cond-onco-cards-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  width: 100%;
+}
+
+.cond-onco-grid-card {
+  position: relative;
+  background: var(--c-onco-card-white);
+  border-radius: 28px;
+  padding: 35px 30px;
+  border: 1px solid rgba(115, 150, 211, 0.16);
+  box-shadow: 0 12px 35px rgba(47, 51, 149, 0.015);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Top dynamic border active on hover states */
+.cond-onco-card-rail-highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--c-onco-cyan), var(--c-onco-indigo));
+  border-radius: 28px 28px 0 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+/* Upper Controls Element Section */
+.cond-onco-card-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.cond-onco-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  transition: all 0.4s ease;
+}
+
+/* Multi-colored system tags for luxury layout aesthetics */
+.cond-icon-indigo { background-color: rgba(47, 51, 149, 0.07); color: var(--c-onco-indigo); }
+.cond-icon-cyan { background-color: rgba(2, 172, 240, 0.07); color: var(--c-onco-cyan); }
+.cond-icon-orange { background-color: rgba(221, 82, 0, 0.07); color: var(--c-onco-orange); }
+.cond-icon-blue { background-color: rgba(115, 150, 211, 0.12); color: var(--c-onco-blue-slate); }
+
+.cond-onco-index-number {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #e2e6f0;
+  letter-spacing: -0.5px;
+  transition: color 0.35s ease;
+}
+
+/* Body Content Typography Layout */
+.cond-onco-card-body {
+  flex-grow: 1;
+  margin-bottom: 30px;
+}
+
+.cond-onco-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #12153a;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.cond-onco-card-desc {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #555979;
+}
+
+/* Footer Micro Interaction Links */
+.cond-onco-card-footer {
+  border-top: 1px solid rgba(115, 150, 211, 0.1);
+  padding-top: 20px;
+}
+
+.cond-onco-interactive-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--c-onco-indigo);
+  transition: all 0.3s ease;
+}
+
+.cond-onco-arrow-svg {
+  width: 15px;
+  height: 15px;
+  transition: transform 0.3s ease;
+}
+
+/* ==========================================================================
+   DYNAMIC MICRO-INTERACTION HOVER ANIMATIONS OVERRIDES
+   ========================================================================== */
+.cond-onco-grid-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(2, 172, 240, 0.25);
+  box-shadow: 0 25px 50px -15px rgba(47, 51, 149, 0.1);
+}
+
+.cond-onco-grid-card:hover .cond-onco-card-rail-highlight {
+  opacity: 1;
+}
+
+.cond-onco-grid-card:hover .cond-onco-icon-wrapper {
+  background-color: var(--c-onco-indigo);
+  color: var(--c-onco-card-white);
+  transform: scale(1.05);
+}
+
+.cond-onco-grid-card:hover .cond-onco-card-title {
+  color: var(--c-onco-indigo);
+}
+
+.cond-onco-grid-card:hover .cond-onco-index-number {
+  color: var(--c-onco-ice-light);
+}
+
+.cond-onco-grid-card:hover .cond-onco-interactive-link {
+  color: var(--c-onco-cyan);
+}
+
+.cond-onco-grid-card:hover .cond-onco-arrow-svg {
+  transform: translateX(5px);
+}
+
+/* ==========================================================================
+   SMOOTH LIQUID MEDIA VIEWPORT RESPONSIVENESS ADAPTATIONS
+   ========================================================================== */
+
+@media (max-width: 1150px) {
+  .cond-onco-cards-matrix { gap: 24px; }
+  .cond-onco-main-title { font-size: 2.3rem; }
+  .cond-onco-grid-card { padding: 30px 24px; }
+}
+
+@media (max-width: 992px) {
+  .cond-onco-cards-matrix {
+    grid-template-columns: repeat(2, 1fr); /* Split-view grid pattern for tablets */
+    gap: 24px;
+  }
+  .cond-onco-premium-scope { padding: 90px 20px; }
+}
+
+@media (max-width: 650px) {
+  .cond-onco-main-title { font-size: 1.9rem; }
+  .cond-onco-cards-matrix {
+    grid-template-columns: 1fr; /* 1-Column strict list orientation structure */
+    gap: 24px;
+  }
+  .cond-onco-grid-card { max-width: 440px; margin: 0 auto; width: 100%; }
+}

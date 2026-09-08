@@ -1,0 +1,33 @@
+/* UrologyBestServices.css */
+
+/* Heading entrance animation */
+@keyframes fadeUpEffect {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Service content dynamic switch fade animation */
+@keyframes fadeInPremium {
+  from {
+    opacity: 0;
+    transform: scale(0.99) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUpEffect 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-premium {
+  animation: fadeInPremium 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

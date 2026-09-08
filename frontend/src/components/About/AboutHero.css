@@ -1,0 +1,245 @@
+/* Color Palette Setup */
+:root {
+  --primary-deep: #003a70;      /* Royal Trust Blue */
+  --primary-light: #35b6b4;     /* Premium Turquoise */
+  --accent-orange: #dd5200;     /* Energetic Premium Accent */
+  --bg-cream: #f6f5ee;          /* Soft Premium Background */
+  --text-white: #ffffff;
+}
+
+.about-hero {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(0, 58, 112, 0.45) 0%, rgba(0, 20, 40, 0.8) 100%),
+              url("/AboutUs/Bulding1.png") center/cover no-repeat;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0 24px;
+
+  /* Premium Initial State for smooth fade-in look */
+  opacity: 0;
+  transform: scale(1.08);
+  filter: blur(8px);
+  transition: opacity 1.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 1.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              filter 1.6s ease;
+}
+
+/* Luxury Light-Dark Layer overlay */
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(53, 182, 180, 0.15), transparent 60%);
+  z-index: 1;
+}
+
+/* Trigger Class when component mounts */
+.about-hero.hero-show {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+
+/* Content Wrapper */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  text-align: center;
+  margin-top: 40px;
+  
+  /* Initial content state before entrance animation */
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.about-hero.hero-show .hero-content {
+  animation: premiumContentIn 1.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes premiumContentIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Premium Styling Details */
+.hero-tagline {
+  display: inline-block;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--primary-light);
+  font-weight: 600;
+  margin-bottom: 16px;
+  background: rgba(55, 182, 180, 0.12);
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(53, 182, 180, 0.25);
+}
+
+.hero-content h1 {
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--text-white);
+  line-height: 1.2;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+
+.hero-content h1 .hospital-name {
+  color: var(--text-white);
+  display: block;
+  font-size: 64px;
+  background: linear-gradient(120deg, #ffffff 30%, var(--bg-cream) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content h1 .hospital-location {
+  color: var(--primary-light);
+  font-size: 40px;
+  font-weight: 400;
+  display: block;
+  margin-top: 5px;
+  letter-spacing: 2px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  color: var(--bg-cream);
+  opacity: 0.9;
+  max-width: 680px;
+  margin: 0 auto 36px auto;
+  line-height: 1.7;
+}
+
+/* Premium Glass Button with Orange & Teal Hover Effects */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.primary-action-btn {
+  background: linear-gradient(90deg, var(--primary-deep), #002244);
+  color: var(--text-white);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 14px 36px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(0, 58, 112, 0.4),
+              0 0 0 1px rgba(53, 182, 180, 0.2);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  display: flex;
+  align-items: center;
+}
+
+/* Interactive Hover States */
+.primary-action-btn:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(90deg, var(--accent-orange), #ff6a13);
+  box-shadow: 0 15px 30px -5px rgba(221, 82, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.primary-action-btn:hover svg {
+  transform: translateX(4px);
+}
+
+.primary-action-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Floating Glassmorphism Cards for high-end feel */
+.hero-stats-card {
+  position: absolute;
+  bottom: 40px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 16px 40px;
+  border-radius: 100px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  
+  opacity: 0;
+  transform: translateY(30px);
+  animation: premiumContentIn 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.8s;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-num {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-light);
+}
+
+.stat-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--bg-cream);
+  opacity: 0.8;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================= */
+/* RESPONSIVE DESIGN (TABLET & MOBILE BREAKPOINTS)*/
+/* ============================================= */
+
+@media (max-width: 992px) {
+  .hero-content h1 .hospital-name { font-size: 52px; }
+  .hero-content h1 { font-size: 44px; }
+  .hero-content p { font-size: 18px; }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    height: auto;
+    min-height: 90vh;
+    padding: 120px 24px 140px 24px;
+  }
+  .hero-content h1 .hospital-name { font-size: 42px; }
+  .hero-content h1 .hospital-location { font-size: 30px; }
+  .hero-content h1 { font-size: 36px; }
+  .hero-content p { font-size: 16px; }
+  .hero-stats-card {
+    bottom: 24px;
+    padding: 12px 24px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 .hospital-name { font-size: 34px; }
+  .hero-content h1 .hospital-location { font-size: 24px; }
+  .hero-content h1 { font-size: 28px; }
+  .primary-action-btn { width: 100%; justify-content: center; }
+  .hero-stats-card { width: 90%; justify-content: space-around; }
+}

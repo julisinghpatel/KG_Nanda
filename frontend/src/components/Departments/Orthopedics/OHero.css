@@ -1,0 +1,447 @@
+/* Unique Non-overlapping Root Styles mapped strictly to your hospital premium color palette */
+.ortho-premium-hero-scope {
+  --o-cyan-primary: #02acf0;
+  --o-indigo-deep: #2f3395;
+  --o-blue-slate: #7396d3;
+  --o-ice-light: #aadcff;
+  --o-crystal-cyan: #b5f5ff;
+  --o-mint-white: #f6fcfa;
+  --o-accent-red: #c90322;
+  --o-accent-red-bright: #c20321;
+  --o-accent-orange: #dd5200;
+  --o-sky-mid: #82cfe9;
+  --o-ocean-dark: #60a9bd;
+  --o-glow-cyan: #9ce1f1;
+  --o-super-light: #cdffff;
+  
+  /* Non-black Luxury Medical Base Background */
+  --o-deep-clinical-bg: #0c1033; 
+
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--o-deep-clinical-bg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Background Image Base Layer */
+.ortho-premium-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(1.25) contrast(1.08) brightness(1.02);
+  z-index: 1;
+}
+
+/* Luxury Multi-Color Mesh Canvas */
+.ortho-mesh-gradient-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(at 10% 20%, rgba(2, 172, 240, 0.08) 0px, transparent 45%),
+    radial-gradient(at 80% 20%, rgba(47, 51, 149, 0.15) 0px, transparent 50%),
+    radial-gradient(at 40% 80%, rgba(130, 207, 233, 0.05) 0px, transparent 60%);
+  filter: blur(60px);
+  z-index: 2;
+}
+
+/* Vignette Shadow Overlay for Text Readability */
+.ortho-vignette-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(12, 16, 51, 0.88) 0%, rgba(12, 16, 51, 0.6) 35%, rgba(12, 16, 51, 0.2) 65%, transparent 90%);
+  z-index: 3;
+}
+
+/* Layout Framework */
+.ortho-hero-max-viewport {
+  position: relative;
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 110px 24px 150px 24px;
+  z-index: 4;
+}
+
+.ortho-hero-dual-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.ortho-hero-typography-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Micro Capsules / Pills */
+.ortho-mini-capsule-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(47, 51, 149, 0.35);
+  border: 1px solid rgba(146, 225, 241, 0.3);
+  padding: 7px 18px;
+  border-radius: 50px;
+  backdrop-filter: blur(12px);
+  margin-bottom: 24px;
+}
+
+.ortho-pulse-indicator {
+  width: 8px;
+  height: 8px;
+  background-color: var(--o-cyan-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--o-cyan-primary);
+  animation: ortho-capsule-glow 2s infinite ease-in-out;
+}
+
+.ortho-capsule-label {
+  color: var(--o-crystal-cyan);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+/* Typography Overhaul */
+.ortho-hero-giant-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--o-mint-white);
+  letter-spacing: -0.02em;
+  margin-bottom: 22px;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.ortho-luxury-gradient-text {
+  background: linear-gradient(135deg, var(--o-cyan-primary) 0%, var(--o-sky-mid) 50%, var(--o-ice-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ortho-hero-sub-paragraph {
+  font-size: 1.15rem;
+  color: var(--o-blue-slate);
+  line-height: 1.65;
+  max-width: 580px;
+  margin-bottom: 44px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* Interactive Brand CTA Cluster */
+.ortho-hero-action-cluster {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 60px;
+}
+
+.ortho-action-btn-primary {
+  position: relative;
+  overflow: hidden;
+  padding: 16px 38px;
+  background: linear-gradient(135deg, var(--o-indigo-deep) 0%, var(--o-cyan-primary) 100%);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(2, 172, 240, 0.35);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.ortho-action-btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(2, 172, 240, 0.55);
+}
+
+.ortho-action-btn-secondary {
+  padding: 16px 38px;
+  background: rgba(115, 150, 211, 0.1);
+  color: var(--o-mint-white);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 14px;
+  border: 1px solid rgba(146, 225, 241, 0.25);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.ortho-action-btn-secondary:hover {
+  background: rgba(2, 172, 240, 0.15);
+  border-color: var(--o-cyan-primary);
+  color: var(--o-cyan-primary);
+}
+
+/* Frosted Medical Glass Dashboards */
+.ortho-hero-metrics-panel {
+  display: flex;
+  gap: 48px;
+  background: rgba(47, 51, 149, 0.25);
+  border: 1px solid rgba(130, 207, 233, 0.2);
+  padding: 24px 36px;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 45px rgba(12, 16, 51, 0.5);
+}
+
+.ortho-stat-unit {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding-right: 48px;
+}
+
+.ortho-stat-unit h3 {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--o-cyan-primary);
+  margin: 0 0 4px 0;
+  text-shadow: 0 0 15px rgba(2, 172, 240, 0.2);
+}
+
+.ortho-stat-unit p {
+  font-size: 0.85rem;
+  color: var(--o-ice-light);
+  margin: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Image Visual Deck Framework */
+.ortho-hero-visual-block {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.ortho-visual-frame-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4/5;
+}
+
+.ortho-hero-premium-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 35px 70px rgba(12, 16, 51, 0.6);
+}
+
+/* Brand Theme Glassmorphic Badges (No Black Background) */
+.ortho-glass-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(12, 16, 51, 0.85);
+  border: 1px solid rgba(130, 207, 233, 0.3);
+  backdrop-filter: blur(20px);
+  padding: 16px;
+  border-radius: 22px;
+  width: 270px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.ortho-glass-badge:hover {
+  border-color: var(--o-cyan-primary);
+  background: rgba(12, 16, 51, 0.95);
+  transform: scale(1.04) !important;
+}
+
+.ortho-float-badge-top {
+  top: 12%;
+  right: -45px;
+}
+
+.ortho-float-badge-bottom {
+  bottom: 15%;
+  left: -45px;
+}
+
+.ortho-badge-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ortho-icon-cyan-glow {
+  background: linear-gradient(135deg, var(--o-indigo-deep) 0%, var(--o-cyan-primary) 100%);
+  box-shadow: 0 0 12px rgba(2, 172, 240, 0.45);
+}
+
+.ortho-icon-red-glow {
+  background: linear-gradient(135deg, var(--o-accent-red) 0%, var(--o-accent-red-bright) 100%);
+  box-shadow: 0 0 12px rgba(201, 3, 34, 0.45);
+}
+
+.ortho-badge-inner-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--o-super-light);
+  border-radius: 50%;
+  animation: ortho-capsule-glow 1.5s infinite ease-in-out;
+}
+
+.ortho-glass-badge h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--o-mint-white);
+  margin: 0 0 3px 0;
+}
+
+.ortho-glass-badge p {
+  font-size: 0.75rem;
+  color: var(--o-ice-light);
+  margin: 0;
+}
+
+/* High-End Floating Emergency Responder Strip */
+.ortho-emergency-sidebar-tag {
+  position: absolute;
+  right: -95px;
+  top: 45%;
+  transform: rotate(90deg);
+  background: linear-gradient(90deg, var(--o-accent-orange) 0%, var(--o-accent-red) 100%);
+  padding: 8px 22px;
+  border-radius: 0 0 12px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 25px rgba(201, 3, 34, 0.35);
+  z-index: 4;
+}
+
+.ortho-emergency-sidebar-tag p {
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.ortho-sidebar-pulse {
+  width: 6px;
+  height: 6px;
+  background: #ffffff;
+  border-radius: 50%;
+  animation: ortho-capsule-glow 1s infinite alternate;
+}
+
+/* Bottom Curve Divider Mask */
+.ortho-architectural-curve-base {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 6;
+}
+
+.ortho-architectural-curve-base svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 75px;
+}
+
+.ortho-svg-fill-white {
+  fill: #ffffff;
+}
+
+/* Keyframe Core Engines */
+@keyframes ortho-capsule-glow {
+  0% { opacity: 0.5; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1.1); }
+}
+
+/* ==========================================================================
+   ULTRA-RESPONSIVE DEVICE TARGETING
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .ortho-hero-giant-title { font-size: 3.4rem; }
+  .ortho-float-badge-top { right: -20px; }
+  .ortho-float-badge-bottom { left: -20px; }
+}
+
+@media (max-width: 1024px) {
+  .ortho-hero-dual-grid {
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+  .ortho-hero-typography-block { align-items: center; text-align: center; }
+  .ortho-hero-action-cluster { justify-content: center; }
+  .ortho-hero-visual-block { width: 100%; }
+  .ortho-visual-frame-wrapper { max-width: 480px; }
+  .ortho-float-badge-top { right: -15px; }
+  .ortho-float-badge-bottom { left: -15px; }
+  .ortho-emergency-sidebar-tag { display: none; }
+}
+
+@media (max-width: 640px) {
+  .ortho-hero-giant-title { font-size: 2.6rem; }
+  .ortho-hero-metrics-panel {
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    align-items: center;
+  }
+  .ortho-stat-unit {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-right: 0;
+    padding-bottom: 20px;
+    width: 100%;
+  }
+  .ortho-no-border-mobile {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+  }
+  .ortho-visual-frame-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    aspect-ratio: auto;
+  }
+  .ortho-hero-premium-image {
+    aspect-ratio: 4/5;
+  }
+  .ortho-glass-badge {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    margin-top: 16px;
+  }
+}

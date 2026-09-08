@@ -1,0 +1,274 @@
+/* Scoped Unique CSS Architecture - Strictly map colors with zero global pollution */
+.cond-premium-section-scope {
+  --c-primary-cyan: #02acf0;
+  --c-deep-indigo: #2f3395;
+  --c-slate-blue: #7396d3;
+  --c-ice-light: #aadcff;
+  --c-crystal-cyan: #b5f5ff;
+  --c-mint-white: #f6fcfa;
+  --c-accent-red: #c90322;
+  --c-accent-orange: #dd5200;
+  --c-soft-bg: #f4faf8; /* Ground layer calculated from your #f6fcfa */
+
+  position: relative;
+  width: 100%;
+  padding: 120px 24px;
+  background-color: var(--c-soft-bg);
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Premium Ambient Backdrops */
+.cond-ambient-glow-left {
+  position: absolute;
+  top: -10%;
+  left: -5%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(2, 172, 240, 0.07) 0%, transparent 70%);
+  filter: blur(50px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cond-ambient-glow-right {
+  position: absolute;
+  bottom: -10%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(47, 51, 149, 0.05) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cond-max-viewport-container {
+  position: relative;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   HEADER STRUCTURAL STYLES
+   ========================================================================== */
+.cond-header-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.cond-micro-capsule {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  border: 1px solid rgba(47, 51, 149, 0.08);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.cond-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--c-primary-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--c-primary-cyan);
+}
+
+.cond-capsule-text {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--c-deep-indigo);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.cond-main-heading {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #12153a;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+.cond-gradient-highlight {
+  background: linear-gradient(135deg, var(--c-deep-indigo) 0%, var(--c-primary-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cond-sub-heading-desc {
+  font-size: 1.1rem;
+  color: var(--c-slate-blue);
+  max-width: 620px;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   GRID MATRIX AND CARD ARCHITECTURE (Luxury Hover Effects)
+   ========================================================================== */
+.cond-cards-grid-matrix {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.cond-card-wrapper {
+  position: relative;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px 28px;
+  border: 1px solid rgba(115, 150, 211, 0.15);
+  box-shadow: 0 10px 30px rgba(47, 51, 149, 0.02);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Structural absolute highlight border layer on hover */
+.cond-card-border-glow-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--c-primary-cyan), var(--c-deep-indigo));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Inner Body structural padding normalization */
+.cond-card-inner-body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Spherical Interactive Icon Core */
+.cond-icon-sphere-housing {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  background-color: rgba(2, 172, 240, 0.06);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cond-actual-icon {
+  font-size: 26px;
+  color: var(--c-deep-indigo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Typography elements insides card */
+.cond-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #12153a;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.cond-card-description {
+  font-size: 0.95rem;
+  color: #5c6082;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+/* Arrow Interaction */
+.cond-card-action-arrow {
+  width: 24px;
+  height: 24px;
+  color: var(--c-primary-cyan);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cond-card-action-arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ==========================================================================
+   HOVER TRIGGERS (Premium Animate On Hover State Execution)
+   ========================================================================== */
+.cond-card-wrapper:hover {
+  transform: translateY(-8px);
+  border-color: rgba(2, 172, 240, 0.25);
+  box-shadow: 0 25px 50px -12px rgba(47, 51, 149, 0.08);
+}
+
+.cond-card-wrapper:hover .cond-card-border-glow-layer {
+  opacity: 1;
+}
+
+.cond-card-wrapper:hover .cond-icon-sphere-housing {
+  background-color: var(--c-deep-indigo);
+}
+
+.cond-card-wrapper:hover .cond-actual-icon {
+  color: #ffffff;
+  transform: scale(1.12);
+}
+
+.cond-card-wrapper:hover .cond-card-title {
+  color: var(--c-primary-cyan);
+}
+
+.cond-card-wrapper:hover .cond-card-action-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ==========================================================================
+   SMOOTH MEDIA RESPONSIVENESS BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .cond-cards-grid-matrix {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .cond-main-heading { font-size: 2.4rem; }
+}
+
+@media (max-width: 992px) {
+  .cond-cards-grid-matrix {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .cond-premium-section-scope { padding: 90px 20px; }
+}
+
+@media (max-width: 640px) {
+  .cond-main-heading { font-size: 2rem; }
+  .cond-cards-grid-matrix {
+    grid-template-columns: 1fr; /* Single column matrix for clean accessibility on phone sizes */
+    gap: 20px;
+  }
+  .cond-sub-heading-desc { font-size: 1rem; }
+  .cond-card-wrapper { padding: 32px 24px; }
+}

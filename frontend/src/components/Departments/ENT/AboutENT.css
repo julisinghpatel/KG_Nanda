@@ -1,0 +1,110 @@
+/* AboutENT.css */
+
+/* Custom Animations */
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: inset(0% 0 0 0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scroll Trigger Classes (In React we apply these) */
+.reveal-animation {
+  animation: revealUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.feature-item-animate {
+  opacity: 0;
+  animation: slideIn 0.8s ease-out forwards;
+}
+
+/* Pinterest Style Layered Images */
+.image-stack-container {
+  position: relative;
+  height: 550px;
+  width: 100%;
+}
+
+.main-img {
+  width: 75%;
+  height: 400px;
+  border-radius: 30px;
+  object-fit: cover;
+  z-index: 2;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(47, 51, 149, 0.15);
+  border: 8px solid #ffffff;
+}
+
+.secondary-img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60%;
+  height: 280px;
+  border-radius: 30px;
+  object-fit: cover;
+  z-index: 3;
+  box-shadow: 0 20px 40px rgba(2, 172, 240, 0.2);
+  border: 6px solid #ffffff;
+  transition: transform 0.5s ease;
+}
+
+.secondary-img:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+/* Glassmorphism Badge */
+.stats-badge {
+  position: absolute;
+  top: 40px;
+  right: 15%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(170, 220, 255, 0.5);
+  z-index: 4;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Custom Checkmark Hover */
+.list-item {
+  transition: all 0.3s ease;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.list-item:hover {
+  background: #f6fcfa;
+  transform: translateX(10px);
+}
+
+.icon-box {
+  background: linear-gradient(135deg, #aadcff 0%, #b5f5ff 100%);
+  color: #2f3395;
+  transition: all 0.4s ease;
+}
+
+.list-item:hover .icon-box {
+  background: #2f3395;
+  color: #ffffff;
+  transform: rotate(15deg);
+}

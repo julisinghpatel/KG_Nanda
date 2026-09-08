@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+.dental-support-section {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  /* Height expansion to provide ultimate high-end spacious corporate vibes */
+  min-height: 680px;
+}
+
+/* Deep Brand Blue Color Setup matching image_dc26c3.png */
+.support-blue-highlight {
+  color: #1e3a8a;
+}
+
+/* Entry Animation Sequence on Mount */
+.dental-support-container {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: supportContainerReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes supportContainerReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Micro Interactions on Grid Icons */
+.support-grid-card:hover .support-check-icon {
+  transform: scale(1.2);
+  color: #2563eb;
+}
+
+/* Responsiveness Adjustments for smaller screen devices */
+@media (max-width: 768px) {
+  .dental-support-section {
+    min-height: auto;
+  }
+}

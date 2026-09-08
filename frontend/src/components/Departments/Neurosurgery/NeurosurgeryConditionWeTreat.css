@@ -1,0 +1,315 @@
+/* NeurosurgeryConditionWeTreat.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --nct-navy: #2f3395;
+  --nct-sky: #02acf0;
+  --nct-muted: #7396d3;
+  --nct-ice: #b5f5ff;
+  --nct-pastel: #aadcff;
+  --nct-teal: #60a9bd;
+  --nct-light-bg: #f6fcfa;
+  --nct-coral: #c90322;
+  --nct-orange: #dd5200;
+}
+
+/* Core Structural Containment Shield */
+.nct-treat-section *,
+.nct-treat-section *::before,
+.nct-treat-section *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.nct-treat-section {
+  font-family: 'Outfit', sans-serif;
+  background: var(--nct-light-bg);
+  padding: 110px 6%;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Premium Medical Glow Overlay Ambient Orbs */
+.nct-ambient-glow-left {
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(2, 172, 240, 0.1) 0%, transparent 75%);
+  filter: blur(110px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.nct-ambient-glow-right {
+  position: absolute;
+  bottom: 5%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(181, 245, 255, 0.45) 0%, transparent 70%);
+  filter: blur(95px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Section Centered Branding Header */
+.nct-section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 80px auto;
+  position: relative;
+  z-index: 2;
+}
+
+.nct-section-header h2 {
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--nct-navy);
+  line-height: 1.25;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+.nct-section-header h2 span {
+  color: transparent;
+  background: linear-gradient(90deg, var(--nct-sky) 0%, var(--nct-teal) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.nct-section-header p {
+  color: var(--nct-teal);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* Two Column Split Matrix Layout */
+.nct-split-matrix {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: start;
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── LEFT COLUMN: INTERACTIVE CONDITIONS LIST ─── */
+.nct-interactive-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Elegant Luxury Accordion Strip Row */
+.nct-condition-strip {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 24px 30px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.nct-condition-strip:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateX(8px);
+  border-color: rgba(2, 172, 240, 0.2);
+}
+
+/* Active Condition Row State Modifier */
+.nct-condition-strip.nct-active-row {
+  background: #ffffff;
+  border-color: rgba(47, 51, 149, 0.25);
+  box-shadow: 0 15px 35px rgba(47, 51, 149, 0.06);
+}
+
+/* Master Row Header Summary Trigger */
+.nct-strip-trigger-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nct-title-cluster {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Dynamic Numeric Node Index Ring */
+.nct-index-bubble {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--nct-muted);
+  background: rgba(115, 150, 211, 0.12);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.nct-condition-strip.nct-active-row .nct-index-bubble {
+  background: var(--nct-navy);
+  color: #ffffff;
+}
+
+.nct-strip-trigger-row h3 {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--nct-navy);
+  transition: color 0.3s ease;
+}
+
+.nct-condition-strip:hover .nct-strip-trigger-row h3 {
+  color: var(--nct-sky);
+}
+
+.nct-action-arrow {
+  color: var(--nct-muted);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+.nct-condition-strip.nct-active-row .nct-action-arrow {
+  transform: rotate(90deg);
+  color: var(--nct-orange);
+}
+
+/* Expandable Micro-Body Text Panel */
+.nct-expandable-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nct-condition-strip.nct-active-row .nct-expandable-body {
+  max-height: 120px;
+}
+
+.nct-body-inner-desc {
+  padding-top: 14px;
+  padding-left: 52px;
+  color: var(--nct-teal);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* Left Vertical Accent Line Feedback */
+.nct-condition-strip::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0px;
+  background: linear-gradient(to bottom, var(--nct-sky), var(--nct-navy));
+  transition: width 0.3s ease;
+}
+
+.nct-condition-strip.nct-active-row::after {
+  width: 4px;
+}
+
+/* ─── RIGHT COLUMN: DYNAMIC PRESETS VISUAL FRAME ─── */
+.nct-visual-preview-rack {
+  position: sticky;
+  top: 40px;
+  width: 100%;
+}
+
+.nct-glass-media-card {
+  background: #ffffff;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(47, 51, 149, 0.1);
+  border: 2px solid #ffffff;
+  position: relative;
+  height: 480px;
+}
+
+.nct-preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.nct-glass-media-card:hover .nct-preview-image {
+  transform: scale(1.04);
+}
+
+/* Lower Data Banner Inside Glass Frame Box */
+.nct-media-caption-pod {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 20px 24px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+.nct-media-caption-pod h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--nct-navy);
+  margin-bottom: 4px;
+}
+
+.nct-media-caption-pod p {
+  font-size: 12.5px;
+  color: var(--nct-teal);
+  font-weight: 500;
+}
+
+/* ========================================================== */
+/* FLUID MEDIA BREAKPOINTS FOR RESPONSIVE STRUCTURAL OVERHAUL */
+/* ========================================================== */
+
+@media (max-width: 1200px) {
+  .nct-split-matrix { gap: 40px; }
+  .nct-glass-media-card { height: 420px; }
+  .nct-section-header h2 { font-size: 38px; }
+}
+
+@media (max-width: 991px) {
+  .nct-treat-section { padding: 80px 5%; }
+  .nct-split-matrix { grid-template-columns: 1fr; gap: 50px; }
+  .nct-visual-preview-rack { position: relative; top: auto; max-width: 550px; margin: 0 auto; width: 100%; }
+  .nct-glass-media-card { height: 380px; }
+  .nct-section-header h2 { font-size: 34px; }
+}
+
+@media (max-width: 768px) {
+  .nct-treat-section { padding: 60px 24px; }
+  .nct-section-header { margin-bottom: 50px; }
+  .nct-section-header h2 { font-size: 28px; }
+  .nct-section-header p { font-size: 15px; }
+  .nct-strip-trigger-row h3 { font-size: 18px; }
+  .nct-body-inner-desc { padding-left: 40px; font-size: 13.5px; }
+  .nct-condition-strip { padding: 20px; border-radius: 16px; }
+  .nct-index-bubble { width: 28px; height: 28px; font-size: 11px; }
+}
+
+@media (max-width: 480px) {
+  .nct-strip-trigger-row h3 { font-size: 16px; }
+  .nct-glass-media-card { height: 300px; border-radius: 24px; }
+  .nct-media-caption-pod { padding: 14px; bottom: 16px; left: 16px; right: 16px; }
+  .nct-media-caption-pod h4 { font-size: 14px; }
+  .nct-media-caption-pod p { font-size: 11px; }
+}

@@ -1,0 +1,92 @@
+/* GyneServices.css */
+
+/* Custom CSS Transitions and Variables */
+:root {
+  --gs-dark-blue: #2f3395;
+  --gs-sky-blue: #02acf0;
+  --gs-pastel-blue: #aadcff;
+  --gs-accent-orange: #dd5200;
+}
+
+/* Scroll / Load Entrance Animation */
+@keyframes gs-fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gs-reveal-animate {
+  animation: gs-fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Staggered Delay Utilities */
+.gs-delay-1 { animation-delay: 0.1s; opacity: 0; }
+.gs-delay-2 { animation-delay: 0.2s; opacity: 0; }
+.gs-delay-3 { animation-delay: 0.3s; opacity: 0; }
+.gs-delay-4 { animation-delay: 0.4s; opacity: 0; }
+.gs-delay-5 { animation-delay: 0.5s; opacity: 0; }
+.gs-delay-6 { animation-delay: 0.6s; opacity: 0; }
+
+/* Premium Glassmorphism Cards */
+.gs-premium-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 10px 30px rgba(115, 150, 211, 0.08);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Premium Hover Micro-interactions */
+.gs-premium-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(2, 172, 240, 0.4);
+  box-shadow: 0 30px 60px rgba(47, 51, 149, 0.12);
+}
+
+/* Icon Container Glow Animation */
+.gs-icon-wrapper {
+  background: linear-gradient(135deg, #b5f5ff 0%, #aadcff 100%);
+  transition: all 0.4s ease;
+}
+
+.gs-premium-card:hover .gs-icon-wrapper {
+  background: linear-gradient(135deg, #02acf0 0%, #2f3395 100__);
+  color: #ffffff !important;
+  transform: rotate(10deg) scale(1.05);
+  box-shadow: 0 10px 20px rgba(2, 172, 240, 0.25);
+}
+
+/* Custom Interactive Tag Arrow */
+.gs-arrow-link {
+  color: #02acf0;
+  transition: all 0.3s ease;
+}
+
+.gs-premium-card:hover .gs-arrow-link {
+  color: #2f3395;
+  transform: translateX(6px);
+}
+
+/* Top Accent border on hover */
+.gs-premium-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #02acf0, #dd5200);
+  transition: width 0.4s ease;
+  border-radius: 4px 4px 0 0;
+}
+
+.gs-premium-card:hover::before {
+  width: 100%;
+}

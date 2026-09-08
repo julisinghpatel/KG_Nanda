@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+.admin-sidebar {
+  position: fixed;
+  z-index: 100;
+  inset: 0 auto 0 0;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  /* Uniform Solid Dark Oceanic Navy Blue */
+  background-color: #003865;
+  background: #003865;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 14px 0 35px -10px rgba(0, 20, 50, 0.4);
+  backdrop-filter: blur(20px);
+  user-select: none;
+}
+
+/* ================= Brand Header ================= */
+.sidebar-brand {
+  height: 92px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  position: relative;
+}
+
+.brand-mark-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.25),
+    0 0 0 2px rgba(255, 255, 255, 0.6);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.brand-mark:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 12px 26px rgba(0, 0, 0, 0.35),
+    0 0 0 3px #ffffff;
+}
+
+.sidebar-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+}
+
+.brand-pulse-dot {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 11px;
+  height: 11px;
+  background: #10b981;
+  border: 2px solid #0867d2;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulseBrandDot 2.2s infinite ease-in-out;
+}
+
+@keyframes pulseBrandDot {
+  0%, 100% {
+    box-shadow: 0 0 8px #10b981;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 14px #34d399;
+    transform: scale(1.1);
+  }
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  color: #ffffff;
+  font-size: 17.5px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.brand-name span {
+  color: #bae6fd;
+  margin-left: 3px;
+}
+
+.brand-subtitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;
+  color: #e0f2fe;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  opacity: 0.95;
+}
+
+.brand-subtitle .sub-icon {
+  color: #bae6fd;
+}
+
+/* ================= Navigation Scroll Area ================= */
+.sidebar-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 22px 14px 16px;
+}
+
+/* Slim custom scrollbar */
+.sidebar-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+}
+.sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.nav-group {
+  margin-bottom: 24px;
+}
+
+.nav-group-title {
+  padding: 0 12px 9px;
+  color: #e0f2fe;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.nav-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Nav Link Item */
+.sidebar-link {
+  position: relative;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 14px;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 13px;
+  font-size: 13.5px;
+  font-weight: 600;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+}
+
+.sidebar-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(3px);
+}
+
+/* Active State with Bright Crisp White Card & Bold Deep Navy Text */
+.sidebar-link.active {
+  color: #003865;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  box-shadow: 0 8px 22px rgba(0, 20, 50, 0.35);
+  font-weight: 800;
+}
+
+.sidebar-link.active:hover {
+  transform: none;
+  background: #ffffff;
+  color: #003865;
+}
+
+.active-glow-pill {
+  display: none;
+}
+
+.link-icon {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  border-radius: 9px;
+  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-link:hover .link-icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.sidebar-link.active .link-icon {
+  color: #003865;
+  background: #eff6ff;
+  box-shadow: 0 2px 8px rgba(0, 56, 101, 0.15);
+}
+
+.link-label {
+  flex: 1;
+  letter-spacing: -0.2px;
+}
+
+.link-arrow {
+  opacity: 0;
+  transform: translateX(-4px);
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover .link-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.sidebar-link.active .link-arrow {
+  opacity: 1;
+  color: #003865;
+  transform: translateX(0);
+}
+
+/* ================= Badges ================= */
+.nav-badge {
+  min-width: 24px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 8px;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.sidebar-link.active .nav-badge {
+  background: #003865;
+  border-color: #003865;
+  color: #ffffff;
+}
+
+.nav-badge.badge-emergency {
+  background: #ef4444;
+  border-color: #fca5a5;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.6);
+}
+
+.sidebar-link.active .nav-badge.badge-emergency {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.nav-badge.badge-highlight {
+  background: #f59e0b;
+  border-color: #fde68a;
+  color: #ffffff;
+}
+
+/* ================= Footer Section ================= */
+.sidebar-footer {
+  padding: 14px 16px 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+}
+
+.admin-mini-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  margin-bottom: 12px;
+  backdrop-filter: blur(12px);
+  transition: all 0.2s ease;
+}
+
+.admin-mini-profile:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.avatar-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.profile-avatar {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  color: #0867d2;
+  background: #ffffff;
+  border-radius: 11px;
+  font-size: 12px;
+  font-weight: 800;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.avatar-online-status {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  background: #10b981;
+  border: 2px solid #0867d2;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.profile-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-copy strong {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+
+.profile-copy span {
+  color: #e0f2fe;
+  font-size: 10.5px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.logout-btn {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: #ffffff;
+  background: rgba(239, 68, 68, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 12.5px;
+  font-weight: 700;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logout-btn:hover {
+  color: #ffffff;
+  background: #ef4444;
+  border-color: #ef4444;
+  box-shadow: 0 8px 22px rgba(239, 68, 68, 0.5);
+  transform: translateY(-1.5px);
+}
+
+.logout-btn:active {
+  transform: translateY(0);
+}
+
+/* ================= Responsive Collapsed Mode ================= */
+@media (max-width: 900px) {
+  .admin-sidebar {
+    width: 80px;
+  }
+  .brand-text,
+  .brand-pulse-dot,
+  .link-label,
+  .nav-group-title,
+  .nav-badge,
+  .link-arrow,
+  .profile-copy,
+  .logout-btn span {
+    display: none;
+  }
+  .sidebar-brand {
+    justify-content: center;
+    padding: 0;
+  }
+  .sidebar-link {
+    justify-content: center;
+    padding: 0;
+  }
+  .admin-mini-profile {
+    justify-content: center;
+    padding: 8px;
+  }
+  .logout-btn {
+    padding: 0;
+  }
+}

@@ -1,0 +1,92 @@
+/* Section Background Styling */
+.about-xray-section {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #f0f9ff 100%);
+}
+
+/* Premium Moving Background Pulses (Abstract animations) */
+.moving-pulse {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.pulse-1 {
+  width: 300px;
+  height: 300px;
+  background: rgba(14, 165, 233, 0.15);
+  top: 10%;
+  left: -5%;
+  animation: pulseMove 8s ease-in-out infinite alternate;
+}
+
+.pulse-2 {
+  width: 250px;
+  height: 250px;
+  background: rgba(20, 184, 166, 0.12);
+  bottom: 5%;
+  right: -5%;
+  animation: pulseMove 6s ease-in-out infinite alternate-reverse;
+}
+
+/* Keyframe for floating background soft spots */
+@keyframes pulseMove {
+  0% { transform: translate(0px, 0px) scale(1); }
+  100% { transform: translate(30px, 40px) scale(1.15); }
+}
+
+/* Feature Item Hover Modifications */
+.feature-card {
+  border: 1px solid transparent;
+}
+
+.feature-card:hover {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(14, 165, 233, 0.15);
+  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.05);
+  transform: translateX(6px);
+}
+
+.feature-card:hover .icon-box {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Image Mask Custom Frame Rule mirroring image_7a6e26.jpg layout precisely */
+.image-frame-container {
+  border-top-left-radius: 120px;
+  border-bottom-left-radius: 120px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 160px;
+  border: 8px solid #ffffff;
+}
+
+/* Image zoom effect on hover */
+.image-frame-container:hover .about-xray-img {
+  transform: scale(1.06);
+}
+
+/* Floating contact item micro-animation */
+@keyframes elementFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+.moving-float {
+  animation: elementFloat 3.5s ease-in-out infinite;
+}
+
+/* Premium text color effect */
+.premium-gradient-text {
+  background: linear-gradient(90deg, #0284c7 0%, #0d9488 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .image-frame-container {
+    border-radius: 40px; /* Simplified for sleek view on small viewports */
+  }
+}

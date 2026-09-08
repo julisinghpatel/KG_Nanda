@@ -1,0 +1,3 @@
+import React from "react";
+import "../styles/modulePage.css";
+export default function Reviews(){return <div className="module-page"><span>HOSPITAL CMS</span><h1>Reviews Management</h1><p>Manage reviews from the admin panel. CRUD components and API service are separated for scalability.</p><div className="module-card">Connect <b>components/Review/</b> with its service layer and MERN API.</div></div>}

@@ -1,0 +1,140 @@
+/* Custom separation parameters configured with your exact branding variables */
+
+.department-section {
+  width: 100%;
+  padding: 30px 24px 90px;
+  box-sizing: border-box;
+}
+
+.department-heading span {
+  color: #35b6b4; /* Secondary brand teal */
+}
+
+.department-buttons-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Micro-Interaction Nav Arrow Styling */
+.dept-arrow {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 58, 112, 0.15);
+  background: #ffffff;
+  color: #003a70;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 58, 112, 0.04);
+}
+
+.dept-arrow:hover:not(:disabled) {
+  background-color: #003a70;
+  color: #ffffff;
+  border-color: #003a70;
+  transform: scale(1.05);
+}
+
+.dept-arrow:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+
+/* Scroll Window Optimization */
+.department-buttons-scroll {
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.department-buttons-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Image 0f6568 Capsule Layout Configuration */
+.department-buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  padding: 10px 4px;
+}
+
+.dept-btn {
+  flex-shrink: 0;
+  padding: 10px 22px;
+  border-radius: 9999px; /* Absolute Capsule Circle shapes from image_0f6568.png */
+  border: 1px solid rgba(0, 58, 112, 0.12);
+  background: #ffffff;
+  color: #556987;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.dept-btn:hover:not(:disabled) {
+  border-color: #35b6b4;
+  color: #35b6b4;
+  background-color: rgba(53, 182, 180, 0.04);
+}
+
+/* Glowing active interaction layer */
+.dept-btn.active {
+  background-color: #003a70;
+  color: #ffffff;
+  border-color: #003a70;
+  box-shadow: 0 10px 20px -6px rgba(0, 58, 112, 0.3);
+}
+
+/* Structural Outer Frame */
+.department-card-wrapper {
+  width: 100%;
+}
+
+.department-card {
+  will-change: transform, opacity;
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.department-card:hover {
+  box-shadow: 0 30px 60px -15px rgba(0, 58, 112, 0.12);
+}
+
+/* Smooth layout management for complex viewports */
+@media (max-width: 1024px) {
+  .department-card {
+    grid-template-cols: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .department-section {
+    padding: 20px 16px 60px;
+  }
+  
+  .dept-arrow {
+    display: none; /* Hide arrows on mobile to maximize screen width for long names */
+  }
+
+  .department-buttons {
+    padding: 10px 16px; /* Give side padding for swipe feel */
+  }
+
+  .dept-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}

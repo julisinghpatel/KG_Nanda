@@ -1,0 +1,284 @@
+/* ==========================================================================
+   Premium Institutional Footer Framework - KG Nanda Hospital
+   ========================================================================== */
+
+.premium-corporate-footer {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.footer-accent-strip {
+  height: 4px;
+  width: 100%;
+}
+
+.footer-max-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 4% 30px 4%;
+}
+
+/* LAYOUT GRID SYSTEM */
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1.1fr 2.5fr;
+  gap: 40px;
+  padding-bottom: 50px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* TYPOGRAPHY COMPONENTS */
+.footer-main-logo {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+.footer-main-logo span {
+  color: #35b6b4;
+}
+
+.footer-tagline-text {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 6px 0 16px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-corporate-profile {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* TRUST HIGHLIGHTS DECK */
+.footer-trust-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-trust-highlights li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+/* NAVIGATION LINK ELEMENTS */
+.column-title {
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 25px 0;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* Corporate relative dynamic underline locator */
+.column-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #dd5200;
+}
+
+.navigation-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.navigation-links-list a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+/* Moving animation interactors */
+.navigation-links-list a:hover {
+  color: #35b6b4;
+  transform: translateX(4px);
+}
+
+/* CONTACT ENGINE INTERFACES */
+.footer-live-contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.footer-live-contact-info li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-live-contact-info li.align-start {
+  align-items: flex-start;
+}
+
+.info-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.info-value {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.hover-link {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.hover-link:hover {
+  color: #dd5200;
+}
+
+/* INTERACTIVE LIVE MAP DECK MESH */
+.footer-interactive-map-frame {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+@media (max-width: 480px) {
+  .footer-interactive-map-frame {
+    height: 120px;
+  }
+  .footer-map-action-btn {
+    bottom: 8px;
+    right: 8px;
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+}
+
+.footer-iframe-engine {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.footer-interactive-map-frame:hover .footer-iframe-engine {
+  opacity: 1;
+}
+
+.footer-map-action-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-map-action-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* BOTTOM END MATRIX BASEMENT */
+.footer-bottom-deck {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 30px;
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   ADAPTIVE DESIGN LAYOUT RECONCILIATION BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .footer-main-grid {
+    grid-template-columns: 1.8fr 1fr 1fr;
+  }
+  .contact-map-column {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .contact-map-column .column-title {
+    grid-column: span 2;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-max-wrapper { padding: 60px 4% 90px 4%; }
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .contact-map-column {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .contact-map-column .column-title {
+    grid-column: span 1;
+  }
+  .footer-bottom-deck {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-max-wrapper { padding: 50px 4% 95px 4%; }
+  .footer-main-logo { font-size: 22px; }
+  .footer-corporate-profile { font-size: 13px; }
+  .column-title { font-size: 13px; }
+}

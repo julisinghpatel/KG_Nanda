@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap');
+
+.dental-hero {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  /* Height has been increased to give a rich, premium look */
+  min-height: 580px; 
+  height: 70vh;
+}
+
+/* Background image blending mirroring image_dbb66b.jpg */
+.dental-hero-bg {
+  background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1800&q=80');
+  background-size: cover;
+  background-position: right center;
+  mix-blend-mode: luminosity;
+}
+
+/* Medical graphic elements style mimicking the blurred rings/dots in image_dbb66b.jpg */
+.tech-pattern-overlay {
+  background-image: radial-gradient(circle at 75% 40%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+                    radial-gradient(circle at 55% 70%, rgba(0, 123, 255, 0.05) 0%, transparent 30%);
+}
+
+/* Premium smooth sky blue color accent */
+.dental-sky-highlight {
+  color: #7dd3fc;
+  text-shadow: 0 0 30px rgba(125, 211, 252, 0.15);
+}
+
+/* CSS Entry Animations */
+.dental-content-box {
+  animation: heroContentReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heroContentReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button Subtle Glow Adjustments */
+.dental-primary-btn {
+  box-shadow: 0 8px 24px rgba(231, 90, 36, 0.3), 
+              inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.dental-primary-btn:hover {
+  box-shadow: 0 12px 30px rgba(231, 90, 36, 0.5), 
+              inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Scaling for Larger Height */
+@media (max-width: 768px) {
+  .dental-hero {
+    min-height: 520px;
+    height: auto;
+  }
+}

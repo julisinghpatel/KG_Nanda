@@ -1,0 +1,3 @@
+import React from "react";
+import "../styles/modulePage.css";
+export default function Emergency(){return <div className="module-page"><span>HOSPITAL CMS</span><h1>Emergency Management</h1><p>Manage emergency from the admin panel. CRUD components and API service are separated for scalability.</p><div className="module-card">Connect <b>components/Emergency/</b> with its service layer and MERN API.</div></div>}

@@ -1,0 +1,61 @@
+/* ── FILM GRAIN CONTEXT LAYER ── */
+.llh-icu__grain {
+  background-image: url("/Department/ICUhh.jpg");
+}
+
+/* ── INTERACTIVE ANIMATION KEYFRAMES ── */
+
+/* Active Glowing Badge Dot Pulse */
+.llh-icu__pulse-dot {
+  animation: icu-glow-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes icu-glow-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 10px #02acf0, 0 0 20px #02acf0;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.6;
+    box-shadow: 0 0 6px #c90322, 0 0 14px #c90322;
+  }
+}
+
+/* Premium Typography Animated Line Draw */
+.llh-icu__underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #02acf0, #9ce1f1);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: icu-draw-line 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+}
+
+@keyframes icu-draw-line {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Custom Padding Hack for Buttons */
+.py-4\.5 {
+  padding-top: 1.125rem;
+  padding-bottom: 1.125rem;
+}
+
+/* Prevent layout shift during font weight adjustments */
+.balance {
+  text-wrap: balance;
+}
+
+/* Performance optimization for background scaling transitions */
+.llh-icu__hero-wrapper div {
+  will-change: transform, opacity;
+}

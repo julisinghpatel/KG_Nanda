@@ -1,0 +1,55 @@
+/* Custom Premium Entrance Animation for Whole Section Layout */
+@keyframes premiumEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(4px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes ambientGlow {
+
+    0%,
+    100% {
+        transform: translate(0px, 0px) scale(1);
+    }
+
+    50% {
+        transform: translate(30px, -40px) scale(1.1);
+    }
+}
+
+.premium-animate-in {
+    animation: premiumEntrance 1s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+}
+
+/* Luxury Card Shadow & Subtle Border Integration */
+.ultra-luxury-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Kinetic Elevation Movement & Shadow Realism on Hover */
+.ultra-luxury-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px -15px rgba(20, 32, 48, 0.25);
+    border-color: transparent;
+}
+
+/* Fluid Ambient Background Mesh Blur Shapes */
+.fluid-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+    z-index: 1;
+    animation: ambientGlow 10s infinite ease-in-out;
+}                                        

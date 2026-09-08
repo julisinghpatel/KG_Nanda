@@ -1,0 +1,1 @@
+import React from "react"; import "../styles/modulePage.css"; export default function Settings(){return <div className="module-page"><span>SYSTEM</span><h1>Admin Settings</h1><p>Manage administrator preferences and system configuration.</p><div className="module-card">Settings module ready for backend integration.</div></div>}

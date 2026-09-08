@@ -1,0 +1,333 @@
+/* Scoped Unique Structural Blueprint - Completely avoids any collision with global elements */
+.doc-exp-premium-section-scope {
+  --d-cyan-primary: #02acf0;
+  --d-indigo-deep: #2f3395;
+  --d-blue-slate: #7396d3;
+  --d-ice-light: #aadcff;
+  --d-crystal-cyan: #b5f5ff;
+  --d-mint-white: #f6fcfa;
+  --d-accent-orange: #dd5200;
+  --d-card-body-white: #ffffff;
+  
+  position: relative;
+  width: 100%;
+  padding: 120px 24px;
+  background-color: var(--d-mint-white);
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Luxury Ambient Backlit Atmosphere glow */
+.doc-exp-mesh-blur-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(2, 172, 240, 0.05) 0%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.doc-exp-max-viewport {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   HEADER STRUCTURAL PANEL STYLES
+   ========================================================================== */
+.doc-exp-header-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+.doc-exp-badge-capsule {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  border: 1px solid rgba(47, 51, 149, 0.08);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.doc-exp-pulse-core {
+  width: 8px;
+  height: 8px;
+  background-color: var(--d-cyan-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--d-cyan-primary);
+}
+
+.doc-exp-badge-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--d-indigo-deep);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.doc-exp-main-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #12163c;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px 0;
+}
+
+.doc-exp-main-title span {
+  background: linear-gradient(135deg, var(--d-indigo-deep) 0%, var(--d-cyan-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.doc-exp-divider-line {
+  width: 60px;
+  height: 4px;
+  background-color: var(--d-cyan-primary);
+  border-radius: 10px;
+}
+
+/* ==========================================================================
+   CARDS GRID MATRIX STRUCTURE
+   ========================================================================== */
+.doc-exp-cards-row-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.doc-exp-card {
+  position: relative;
+  background: var(--d-card-body-white);
+  border-radius: 32px;
+  overflow: hidden;
+  border: 1px solid rgba(115, 150, 211, 0.15);
+  box-shadow: 0 15px 35px rgba(47, 51, 149, 0.02);
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Linear aesthetic top micro glow border */
+.doc-exp-card-glow-barrier {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--d-cyan-primary), var(--d-indigo-deep));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 3;
+}
+
+/* Portrait Image Housing System */
+.doc-exp-portrait-housing {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1.05;
+  background-color: #f0f5f8;
+  overflow: hidden;
+}
+
+.doc-exp-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.doc-exp-vignette-shading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 60%, rgba(18, 22, 60, 0.4) 100%);
+  opacity: 0.8;
+}
+
+/* Absolute Floating Spec Badge */
+.doc-exp-department-tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 6px 14px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.doc-exp-tag-icon {
+  font-size: 0.85rem;
+  color: var(--d-cyan-primary);
+}
+
+.doc-exp-department-tag span {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--d-indigo-deep);
+  letter-spacing: 0.3px;
+}
+
+/* ==========================================================================
+   GLASSMORPHIC REVEAL DRAWER (Hover Animations System)
+   ========================================================================== */
+.doc-exp-social-glass-drawer {
+  position: absolute;
+  bottom: -60px; /* Hidden below bounds by default */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(47, 51, 149, 0.25);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 10px 20px;
+  border-radius: 100px;
+  box-shadow: 0 15px 35px rgba(18, 22, 60, 0.15);
+  opacity: 0;
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 4;
+}
+
+.doc-exp-social-node {
+  width: 34px;
+  height: 34px;
+  background: var(--d-card-body-white);
+  color: var(--d-indigo-deep);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.doc-exp-social-node:hover {
+  background: var(--d-cyan-primary);
+  color: var(--d-card-body-white);
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   TEXT PROFILE METADATA ARCHITECTURE
+   ========================================================================== */
+.doc-exp-profile-details {
+  padding: 30px 24px;
+  text-align: center;
+  background: var(--d-card-body-white);
+  transition: background-color 0.4s ease;
+}
+
+.doc-exp-doctor-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #12163c;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.doc-exp-qualification-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.doc-exp-bullet-tick {
+  width: 6px;
+  height: 6px;
+  background-color: var(--d-cyan-primary);
+  border-radius: 50%;
+}
+
+.doc-exp-degree-txt {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--d-blue-slate);
+}
+
+.doc-exp-specialization-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #616584;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   HOVER ACTIONS TRIGGER STATES
+   ========================================================================== */
+.doc-exp-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(2, 172, 240, 0.3);
+  box-shadow: 0 30px 60px -15px rgba(47, 51, 149, 0.12);
+}
+
+.doc-exp-card:hover .doc-exp-card-glow-barrier {
+  opacity: 1;
+}
+
+.doc-exp-card:hover .doc-exp-portrait-img {
+  transform: scale(1.06);
+}
+
+.doc-exp-card:hover .doc-exp-doctor-name {
+  color: var(--d-indigo-deep);
+}
+
+.doc-exp-card:hover .doc-exp-social-glass-drawer {
+  bottom: 24px; /* Elevates drawer directly into focus area */
+  opacity: 1;
+}
+
+/* ==========================================================================
+   SMOOTH COMPACT MOBILE DISPLAYS RESPONSIVENESS
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .doc-exp-cards-row-matrix { gap: 24px; }
+  .doc-exp-main-title { font-size: 2.3rem; }
+  .doc-exp-doctor-name { font-size: 1.2rem; }
+}
+
+@media (max-width: 900px) {
+  .doc-exp-cards-row-matrix {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns mapping setup */
+    gap: 24px;
+  }
+  .doc-exp-premium-section-scope { padding: 90px 20px; }
+}
+
+@media (max-width: 600px) {
+  .doc-exp-main-title { font-size: 1.9rem; }
+  .doc-exp-cards-row-matrix {
+    grid-template-columns: 1fr; /* Single column flow system */
+    gap: 28px;
+  }
+  .doc-exp-card { max-width: 400px; margin: 0 auto; }
+  .doc-exp-social-glass-drawer {
+    bottom: 20px;
+    opacity: 1; /* Keep visible natively for touch controls on mobile viewports */
+  }
+}

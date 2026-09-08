@@ -1,0 +1,241 @@
+/* ==========================================================================
+   WHY CHOOSE US SECTION — FULLY RESPONSIVE
+   Breakpoints: Mobile (<480px), SM (<640px), MD (<768px), LG (<1024px), XL+
+   ========================================================================== */
+
+/* ---- Base Section ---- */
+.why-premium-section {
+  padding: 100px 0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* ---- Left: Feature Cards ---- */
+.premium-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-feature-card {
+  will-change: transform;
+}
+
+.premium-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -5px rgba(0, 58, 112, 0.2);
+}
+
+/* ---- Right: Image block ---- */
+.why-image-wrapper {
+  width: 100%;
+  max-width: 420px;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.why-image-wrapper img {
+  transition: transform 0.8s ease;
+}
+
+.interactive-graphics-deck:hover .why-image-wrapper img {
+  transform: scale(1.04);
+}
+
+/* ---- Floating Trust Card (Desktop: absolute positioned) ---- */
+.floating-trust-card {
+  position: absolute;
+  left: -24px;
+  bottom: 64px;
+  animation: floatFluidMotion 6s ease-in-out infinite;
+  box-shadow: 0 20px 40px -10px rgba(0, 58, 112, 0.12);
+  max-width: 280px;
+}
+
+@keyframes floatFluidMotion {
+  0%   { transform: translateY(0px)   scale(1); }
+  50%  { transform: translateY(-10px) scale(1.02); }
+  100% { transform: translateY(0px)   scale(1); }
+}
+
+/* ---- JCI Badge (Desktop: absolute positioned) ---- */
+.jci-badge {
+  position: absolute;
+  right: -16px;
+  top: 48px;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* --- Large Tablet (max 1024px) --- */
+@media (max-width: 1024px) {
+  .why-premium-section {
+    padding: 70px 0;
+  }
+
+  .why-image-wrapper {
+    max-width: 100%;
+  }
+
+  /* Pull badge inward so it doesn't overflow */
+  .floating-trust-card {
+    left: 8px;
+    bottom: 12px;
+    max-width: 240px;
+  }
+
+  .jci-badge {
+    right: 4px;
+    top: 40px;
+  }
+}
+
+/* --- Tablet / Large Phone (max 768px) --- */
+@media (max-width: 768px) {
+  .why-premium-section {
+    padding: 56px 0;
+  }
+
+  .why-image-wrapper img {
+    height: 380px;
+  }
+
+  /* Trust card: pull further in so no screen overflow */
+  .floating-trust-card {
+    left: 4px;
+    bottom: 8px;
+    max-width: 200px;
+    padding: 14px;
+  }
+
+  .floating-trust-card h3 {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .jci-badge {
+    right: 4px;
+    top: 36px;
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+}
+
+/* --- Mobile (max 640px) --- */
+@media (max-width: 640px) {
+  .why-premium-section {
+    padding: 44px 0;
+  }
+
+  .why-main-heading {
+    font-size: 1.6rem !important;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .why-global-desc {
+    font-size: 0.875rem;
+  }
+
+  .premium-feature-card {
+    padding: 14px !important;
+  }
+
+  .premium-icon-box {
+    width: 42px;
+    height: 42px;
+    font-size: 17px;
+    border-radius: 10px;
+  }
+
+  .why-image-wrapper {
+    border-radius: 20px;
+    max-width: 100%;
+  }
+
+  .why-image-wrapper img {
+    height: 280px;
+  }
+
+  /* On mobile, trust card becomes a static card below the image */
+  .floating-trust-card {
+    position: relative !important;
+    left: auto !important;
+    bottom: auto !important;
+    right: auto !important;
+    top: auto !important;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 14px;
+    animation: none;
+    border-radius: 16px;
+  }
+
+  /* JCI badge: sits top-right inside image container, no overflow */
+  .jci-badge {
+    position: absolute;
+    right: 8px;
+    top: 12px;
+    font-size: 9px;
+    padding: 5px 9px;
+    border-radius: 8px;
+    letter-spacing: 0.1em;
+    transform: rotate(0deg) !important;
+  }
+  .jci-badge:hover {
+    transform: rotate(0deg) !important;
+  }
+
+  /* Wrapper becomes relative for jci badge positioning */
+  .interactive-graphics-deck {
+    margin-top: 8px !important;
+  }
+}
+
+/* --- Small Mobile (max 480px) --- */
+@media (max-width: 480px) {
+  .why-premium-section {
+    padding: 36px 0;
+  }
+
+  .why-main-heading {
+    font-size: 1.4rem !important;
+  }
+
+  .premium-icon-box {
+    width: 38px;
+    height: 38px;
+    font-size: 15px;
+    border-radius: 9px;
+  }
+
+  .premium-feature-card {
+    padding: 12px !important;
+    gap: 12px;
+  }
+
+  .why-image-wrapper img {
+    height: 240px;
+  }
+
+  .floating-trust-card {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .floating-trust-card h3 {
+    font-size: 10px;
+  }
+
+  .floating-trust-card li {
+    font-size: 10px;
+  }
+}

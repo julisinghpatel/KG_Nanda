@@ -1,0 +1,29 @@
+/* --- Premium Medicine Care Process Custom Transitions & Hover Elements --- */
+
+/* Smooth Bezier Transition Mechanics Override */
+.process-card {
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Elevate and Transform Layout Cards on User Mouse Hover */
+.process-card:hover {
+  transform: translateY(-10px) !important;
+  border-color: rgba(0, 58, 112, 0.12);
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.95) 100%);
+  box-shadow: 
+    0 30px 60px -15px rgba(0, 58, 112, 0.08),
+    0 0 0 1px rgba(53, 182, 180, 0.1) inset;
+}
+
+/* Shifting Text Heading to a beautiful layout gradient split on hover */
+.process-card:hover h3 {
+  background: linear-gradient(90deg, #003a70 0%, #dd5200 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Micro Physic Compression Interaction Hook on Click */
+.process-card:active {
+  transform: translateY(-3px) scale(0.97) !important;
+  transition: all 0.12s ease;
+}

@@ -1,0 +1,113 @@
+/* GyneSpecialDoctor.css */
+
+/* Custom CSS Variables from your specific theme */
+:root {
+  --gd-primary: #2f3395;
+  --gd-sky-blue: #02acf0;
+  --gd-soft-blue: #7396d3;
+  --gd-accent-orange: #dd5200;
+  --gd-danger-red: #c90322;
+}
+
+/* Smooth Scale-Up & Fade-In Entry Animation */
+@keyframes gd-fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.gd-reveal-card {
+  animation: gd-fadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Staggered Delay System for Cards */
+.gd-delay-1 { animation-delay: 0.15s; opacity: 0; }
+.gd-delay-2 { animation-delay: 0.30s; opacity: 0; }
+.gd-delay-3 { animation-delay: 0.45s; opacity: 0; }
+
+/* Premium Glassmorphism Card Frame */
+.gd-doctor-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 12px 35px rgba(115, 150, 211, 0.08);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Doctor Card Interaction on Hover */
+.gd-doctor-card:hover {
+  transform: translateY(-12px);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(2, 172, 240, 0.35);
+  box-shadow: 0 30px 60px rgba(47, 51, 149, 0.15);
+}
+
+/* Profile Image Box Zoom & Overlay Effect */
+.gd-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, #b5f5ff 0%, #aadcff 100%);
+}
+
+.gd-doctor-card:hover .gd-doctor-img {
+  transform: scale(1.06);
+}
+
+/* Premium Image Shine Flash Effect on Hover */
+.gd-img-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 100%);
+  transform: skewX(-25deg);
+  transition: 0.75s;
+  pointer-events: none;
+}
+
+.gd-doctor-card:hover .gd-img-wrapper::after {
+  left: 125%;
+}
+
+/* Dynamic Social Icon Interactive Hover */
+.gd-social-icon {
+  background-color: #f6fcfa;
+  color: #2f3395;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gd-social-icon:hover {
+  background: linear-gradient(135deg, #02acf0 0%, #2f3395 100%);
+  color: #ffffff;
+  transform: translateY(-3px) rotate(8deg);
+  box-shadow: 0 8px 15px rgba(2, 172, 240, 0.3);
+}
+
+/* Book Appointment Premium Action Button */
+.gd-btn-appointment {
+  background: #f6fcfa;
+  border: 1px solid rgba(115, 150, 211, 0.3);
+  color: #2f3395;
+  transition: all 0.4s ease;
+}
+
+.gd-doctor-card:hover .gd-btn-appointment {
+  background: linear-gradient(135deg, #02acf0 0%, #2f3395 100%);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 10px 20px rgba(47, 51, 149, 0.2);
+}
+
+.gd-btn-appointment:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1);
+}

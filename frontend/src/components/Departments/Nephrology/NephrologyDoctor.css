@@ -1,0 +1,72 @@
+/* NephrologyDoctor.css */
+
+/* Initial entrance animation for section header and grid */
+@keyframes premiumFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-premium-reveal {
+  animation: premiumFadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Fluid ambient decorative circle floating */
+@keyframes fluidBlob {
+  0%, 100% {
+    transform: translateY(0px) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-30px) scale(1.08) rotate(5deg);
+  }
+  66% {
+    transform: translateY(15px) scale(0.95) rotate(-5deg);
+  }
+}
+
+.animate-fluid-blob {
+  animation: fluidBlob 10s ease-in-out infinite;
+}
+
+.animate-fluid-blob-delayed {
+  animation: fluidBlob 12s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Premium Card Container Styling */
+.doctor-premium-card {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 12px 40px -15px rgba(47, 51, 149, 0.04);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.doctor-premium-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(2, 172, 240, 0.4);
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px -20px rgba(47, 51, 149, 0.15);
+}
+
+/* Image frame zooming wrapper */
+.image-zoom-wrapper img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.doctor-premium-card:hover .image-zoom-wrapper img {
+  transform: scale(1.06);
+}
+
+/* Interactive custom gradient text styling */
+.text-premium-gradient {
+  background: linear-gradient(135deg, #2f3395 0%, #02acf0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

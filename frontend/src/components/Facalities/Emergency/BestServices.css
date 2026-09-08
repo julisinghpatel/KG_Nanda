@@ -1,0 +1,312 @@
+/* ==========================================================================
+   PREMIUM UTILITY SYSTEM
+   ========================================================================== */
+:root {
+  --navy-dark: #003a70;
+  --teal-prime: #35b6b4;
+  --orange-accent: #dd5200;
+  --canvas-warm: #f6f5ee;
+  --white-pure: #ffffff;
+  --slate-text: #4e5d6c;
+}
+
+.luxury-services-outer {
+  background-color: var(--canvas-warm);
+  padding: 120px 6%;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+}
+
+.luxury-services-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+}
+
+/* ==========================================================================
+   TOP HEADER ARCHITECTURE
+   ========================================================================== */
+.luxury-header-block {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.luxury-main-badge {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--orange-accent);
+  background-color: var(--white-pure);
+  padding: 8px 20px;
+  border-radius: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  margin-bottom: 20px;
+}
+
+.luxury-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: var(--navy-dark);
+  line-height: 1.2;
+  margin: 0 0 15px 0;
+  letter-spacing: -0.02em;
+}
+
+.teal-highlight {
+  color: var(--teal-prime);
+  position: relative;
+}
+
+.luxury-title-desc {
+  font-size: 1.1rem;
+  color: var(--slate-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================================
+   CONTENT WRAPPER LAYOUT (Split View)
+   ========================================================================== */
+.luxury-content-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 70px;
+  align-items: start;
+}
+
+/* LEFT SIDE PLATINUM IMAGE FRAME */
+.luxury-image-frame {
+  position: relative;
+  width: 100%;
+  position: sticky;
+  top: 40px;
+}
+
+.image-wrapper-inner {
+  width: 100%;
+  height: 600px;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 58, 112, 0.12);
+  position: relative;
+}
+
+.luxury-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-image-tint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 58, 112, 0.35) 100%);
+}
+
+/* Floating Metrics Module */
+.luxury-floating-metric {
+  position: absolute;
+  bottom: -25px;
+  right: -2px;
+  background-color: var(--white-pure);
+  padding: 24px 35px;
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  overflow: hidden;
+}
+
+.metric-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(53, 182, 180, 0.08) 0%, transparent 70%);
+}
+
+.luxury-floating-metric h4 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--navy-dark);
+  margin: 0;
+}
+
+.luxury-floating-metric p {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--slate-text);
+  margin: 4px 0 0 0;
+  letter-spacing: 0.05em;
+}
+
+/* Image Macro Zoom Hover */
+.luxury-image-frame:hover .luxury-hero-img {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   RIGHT SIDE HORIZONTAL MODERN TILES GRID
+   ========================================================================== */
+.luxury-services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.luxury-service-card {
+  background-color: var(--white-pure);
+  border-radius: 20px;
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(0, 58, 112, 0.01);
+}
+
+.card-hover-bg {
+  position: absolute;
+  inset: 0;
+  background-color: var(--navy-dark);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+.service-icon-box {
+  width: 54px;
+  height: 54px;
+  background-color: var(--canvas-warm);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--teal-prime);
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-text-box {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.service-text-box h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--navy-dark);
+  margin: 0;
+  transition: color 0.4s ease;
+}
+
+.service-text-box p {
+  font-size: 0.9rem;
+  color: var(--slate-text);
+  margin: 0;
+  transition: color 0.4s ease;
+}
+
+/* ==========================================================================
+   MACRO INTERACTION HOVER MECHANICS
+   ========================================================================== */
+.luxury-service-card:hover {
+  transform: translateX(10px);
+  box-shadow: 0 15px 35px rgba(0, 58, 112, 0.1);
+}
+
+.luxury-service-card:hover .card-hover-bg {
+  transform: scaleX(1);
+}
+
+.luxury-service-card:hover .service-icon-box {
+  background-color: var(--orange-accent);
+  color: var(--white-pure);
+  box-shadow: 0 8px 20px rgba(221, 82, 0, 0.3);
+  transform: rotate(-5deg);
+}
+
+.luxury-service-card:hover .service-text-box h4 {
+  color: var(--white-pure);
+}
+
+.luxury-service-card:hover .service-text-box p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1150px) {
+  .luxury-content-layout {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .luxury-image-frame {
+    position: relative;
+    top: 0;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .image-wrapper-inner {
+    height: 450px;
+  }
+  .luxury-title {
+    font-size: 2.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .luxury-services-outer {
+    padding: 80px 4%;
+  }
+  .luxury-title {
+    font-size: 2.1rem;
+  }
+  .luxury-service-card {
+    padding: 18px 22px;
+    gap: 18px;
+  }
+  .service-icon-box {
+    width: 46px;
+    height: 46px;
+    font-size: 1.2rem;
+  }
+  .service-text-box h4 {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-wrapper-inner {
+    height: 320px;
+  }
+  .luxury-floating-metric {
+    padding: 15px 25px;
+    bottom: -15px;
+  }
+  .luxury-floating-metric h4 {
+    font-size: 1.7rem;
+  }
+}

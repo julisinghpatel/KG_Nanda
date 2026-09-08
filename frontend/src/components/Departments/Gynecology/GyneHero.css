@@ -1,0 +1,85 @@
+/* GyneHero.css */
+
+/* Entrance Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Custom Premium Utility Classes */
+.gh-animate-fade-in {
+  animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.gh-delay-1 { animation-delay: 0.2s; }
+.gh-delay-2 { animation-delay: 0.4s; }
+.gh-delay-3 { animation-delay: 0.6s; }
+
+.gh-floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+.gh-pulse-bg {
+  animation: pulseSoft 8s ease-in-out infinite;
+}
+
+/* Premium Glassmorphism */
+.gh-glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.gh-glass-badge {
+  background: rgba(170, 220, 255, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(2, 172, 240, 0.2);
+}
+
+/* Smooth Interactive Hovers */
+.gh-btn-premium {
+  background: linear-gradient(135deg, #02acf0 0%, #2f3395 100%);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gh-btn-premium:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(47, 51, 149, 0.3);
+  filter: brightness(1.1);
+}
+
+.gh-interactive-stat {
+  transition: all 0.4s ease;
+}
+
+.gh-interactive-stat:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 20px 40px rgba(115, 150, 211, 0.15);
+}

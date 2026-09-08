@@ -1,0 +1,274 @@
+/* ─── PREMIUM EXPERT LAYOUT STYLING ─── */
+.premium-blog-section {
+  width: 100%;
+  background: linear-gradient(180deg, #ffffff 0%, #f6fcfa 100%);
+  padding: 80px 24px;
+  box-sizing: border-box;
+}
+
+.premium-section-heading {
+  font-size: 2.5rem;
+  font-weight: 850;
+  color: #2f3395;
+  letter-spacing: -0.02em;
+}
+
+/* ─── GRID LAYOUT ─── */
+.blog-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ─── CLINICAL SIDEBAR NAVIGATION ─── */
+.blog-sidebar {
+  position: sticky;
+  top: 110px;
+  height: fit-content;
+}
+
+.sidebar-sticky-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7396d3;
+  margin-bottom: 12px;
+  padding-left: 4px;
+}
+
+.sidebar-items-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-item {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(115, 150, 211, 0.15);
+  padding: 14px 18px;
+  text-align: left;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sidebar-item-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sidebar-item .title-text-wrap {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #60a9bd;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.sidebar-item .arrow-icon {
+  color: #7396d3;
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+/* Hover State */
+.sidebar-item:hover {
+  background: #ffffff;
+  border-color: rgba(2, 172, 240, 0.3);
+  box-shadow: 0 8px 20px -6px rgba(47, 51, 149, 0.06);
+}
+.sidebar-item:hover .title-text-wrap { color: #2f3395; }
+
+/* Active Medical State */
+.sidebar-item.active {
+  background: #2f3395;
+  border-color: #2f3395;
+  box-shadow: 0 10px 25px -8px rgba(47, 51, 149, 0.25);
+}
+
+.sidebar-item.active .title-text-wrap {
+  color: #ffffff;
+}
+
+.sidebar-item.active .arrow-icon {
+  opacity: 1;
+  transform: translateX(0);
+  color: #02acf0;
+}
+
+/* ─── MAIN MEDICAL CONTENT CONTAINER ─── */
+.blog-content {
+  background: #ffffff;
+  border: 1px solid rgba(115, 150, 211, 0.15);
+  border-radius: 24px;
+  padding: 32px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 40px -20px rgba(115, 150, 211, 0.12);
+}
+
+.premium-img-container {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.05);
+}
+
+.premium-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+
+.img-gloss-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(47, 51, 149, 0.08) 100%);
+}
+
+.article-body-wrapper {
+  padding: 0 8px;
+}
+
+.article-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.meta-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.meta-divider {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #7396d3;
+  opacity: 0.5;
+}
+
+.author-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.article-main-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #2f3395;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.article-separator-line {
+  width: 40px;
+  height: 3px;
+  background: #02acf0;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.article-main-desc {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #60a9bd;
+}
+
+/* ═════════════════════════════════ */
+/* RESPONSIVE FLUID MEDIA REFRESH    */
+/* ═════════════════════════════════ */
+
+@media (max-width: 1200px) {
+  .blog-layout {
+    grid-template-columns: 240px 1fr;
+    gap: 32px;
+  }
+  .premium-img-container { height: 320px; }
+  .article-main-title { font-size: 1.6rem; }
+}
+
+@media (max-width: 1024px) {
+  .premium-blog-section { padding: 60px 20px; }
+  .blog-layout { grid-template-columns: 210px 1fr; gap: 24px; }
+  .premium-img-container { height: 260px; }
+  .article-main-title { font-size: 1.4rem; }
+  .article-main-desc { font-size: 0.98rem; }
+}
+
+/* Mobile & Tablet Portrait Flow Refactor */
+@media (max-width: 768px) {
+  .premium-blog-section { padding: 48px 0; }
+  .premium-section-heading { font-size: 1.85rem; text-align: center; }
+  
+  .blog-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 16px;
+  }
+
+  .sidebar-header-label { text-align: center; margin-bottom: 8px; }
+
+  /* Smooth full-bleed horizontal track scroll */
+  .blog-sidebar {
+    width: 100vw;
+    margin-left: -16px;
+    padding: 0 16px 8px 16px;
+    box-sizing: border-box;
+  }
+  
+  .sidebar-items-stack {
+    flex-direction: row;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    padding-bottom: 4px;
+  }
+  .sidebar-items-stack::-webkit-scrollbar { display: none; }
+
+  .sidebar-item {
+    width: auto;
+    white-space: nowrap;
+    padding: 10px 16px;
+    border-radius: 10px;
+  }
+  .sidebar-item .title-text-wrap { font-size: 0.85rem; -webkit-line-clamp: 1; }
+  .sidebar-item .arrow-icon { display: none; }
+
+  .blog-content { padding: 20px; border-radius: 20px; }
+  .premium-img-container { height: 220px; margin-bottom: 16px; }
+  .article-main-title { font-size: 1.3rem; }
+}
+
+@media (max-width: 480px) {
+  .premium-section-heading { font-size: 1.5rem; }
+  .blog-content { padding: 16px; }
+  .premium-img-container { height: 180px; }
+  .article-main-title { font-size: 1.15rem; }
+  .article-main-desc { font-size: 0.9rem; line-height: 1.65; }
+}

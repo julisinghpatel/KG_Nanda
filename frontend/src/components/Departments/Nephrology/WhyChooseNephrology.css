@@ -1,0 +1,51 @@
+/* WhyChooseNephrology.css */
+
+/* Staggered Initial Fade In & Up */
+@keyframes premiumReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-reveal {
+  animation: premiumReveal 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Background Node Soft Float */
+@keyframes ambientGlow {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-15px) scale(1.05); }
+}
+
+.animate-ambient {
+  animation: ambientGlow 7s ease-in-out infinite;
+}
+
+/* Pinterest Inspired Border Glow & Shadow Shift */
+.premium-interactive-card {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 10px 30px -10px rgba(47, 51, 149, 0.04);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.premium-interactive-card:hover {
+  background: #ffffff;
+  transform: translateY(-8px);
+  border-color: rgba(2, 172, 240, 0.35);
+  box-shadow: 0 25px 50px -12px rgba(47, 51, 149, 0.12);
+}
+
+/* Custom Text Gradient */
+.text-brand-gradient {
+  background: linear-gradient(135deg, #2f3395 0%, #02acf0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

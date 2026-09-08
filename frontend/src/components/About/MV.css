@@ -1,0 +1,221 @@
+/* Custom Global Variables for Vision & Mission Module */
+:root {
+  --vm-navy: #003a70;       /* Primary Base Color */
+  --vm-teal: #35b6b4;       /* Innovation Variant */
+  --vm-orange: #dd5200;     /* Highlight CTA Color */
+  --vm-cream: #f6f5ee;      /* Background Matte Tone */
+  --vm-white: #ffffff;
+  --vm-text-dark: #1e293b;
+  --vm-text-slate: #475569;
+}
+
+.vm-premium {
+  position: relative;
+  padding: 120px 0;
+  background-color: var(--vm-cream);
+  text-align: center;
+  overflow: hidden;
+}
+
+.vm-container {
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+/* ================= HEADER SECTION ================= */
+.vm-heading {
+  max-width: 700px;
+  margin: 0 auto 60px auto;
+}
+
+.vm-section-tag {
+  display: inline-block;
+  color: var(--vm-orange);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.vm-heading h2 {
+  font-size: 46px;
+  font-weight: 800;
+  color: var(--vm-navy);
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.vm-heading h2 span {
+  color: var(--vm-teal);
+}
+
+.vm-heading p {
+  margin-top: 18px;
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: var(--vm-text-slate);
+}
+
+/* ================= GRID CARDS LAYOUT ================= */
+.vm-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+/* High-End Architectural Glass Card */
+.vm-box {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  width: 500px;
+  padding: 60px 45px;
+  border-radius: 32px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 15px 35px rgba(0, 58, 112, 0.03);
+  text-align: left; /* Left alignment looks premium for text contents */
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Smooth Linear top bar highlight */
+.card-top-accent {
+  position: absolute;
+  top: 0;
+  left: 45px;
+  right: 45px;
+  height: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.teal-accent { background-color: var(--vm-teal); }
+.orange-accent { background-color: var(--vm-orange); }
+
+/* Premium Floating Icon Containers */
+.icon-circle-frame {
+  width: 74px;
+  height: 74px;
+  border-radius: 22px; /* Smooth squirclish shapes instead of basic circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--vm-white);
+  margin-bottom: 30px;
+  box-shadow: 0 10px 25px rgba(0, 58, 112, 0.1);
+  animation: smoothFloat 4s ease-in-out infinite;
+}
+
+.frame-teal {
+  background: linear-gradient(135deg, var(--vm-navy) 0%, var(--vm-teal) 100%);
+}
+
+.frame-orange {
+  background: linear-gradient(135deg, var(--vm-orange) 0%, #ff7a32 100%);
+  animation-delay: 0.5s; /* Staggered float cycle */
+}
+
+/* Infinite Floating Wave */
+@keyframes smoothFloat {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.vm-box h3 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--vm-navy);
+  margin-bottom: 16px;
+}
+
+.vm-box p {
+  font-size: 15px;
+  color: var(--vm-text-dark);
+  line-height: 1.8;
+  font-weight: 450;
+}
+
+/* Subtle modern numbering system inside cards */
+.card-arrow-indicator {
+  position: absolute;
+  bottom: 35px;
+  right: 45px;
+  font-size: 24px;
+  font-weight: 800;
+  color: rgba(0, 58, 112, 0.05);
+  transition: color 0.4s ease;
+}
+
+/* ================= HOVER MICRO-ACTIONS ================= */
+.vm-box:hover {
+  transform: translateY(-10px);
+  background: var(--who-white, #ffffff);
+  border-color: rgba(0, 58, 112, 0.12);
+  box-shadow: 0 30px 60px rgba(0, 58, 112, 0.08);
+}
+
+.vm-box:hover .card-arrow-indicator {
+  color: rgba(53, 182, 180, 0.2);
+}
+
+/* ================= PREMIUM BULB GLOW FIELDS ================= */
+.vm-ambient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.15;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.vm-blob-teal {
+  width: 450px;
+  height: 450px;
+  background-color: var(--vm-teal);
+  top: -10%;
+  left: -10%;
+}
+
+.vm-blob-orange {
+  width: 400px;
+  height: 400px;
+  background-color: var(--vm-orange);
+  bottom: -5%;
+  right: -5%;
+}
+
+/* ============================================= */
+/* TABLET RESPONSIVE SYSTEM (MAX 1024PX) */
+/* ============================================= */
+@media (max-width: 1024px) {
+  .vm-heading h2 { font-size: 38px; }
+  .vm-box { width: 440px; padding: 45px 35px; }
+  .vm-wrapper { gap: 30px; }
+}
+
+@media (max-width: 900px) {
+  .vm-premium { padding: 80px 0; }
+  .vm-wrapper { flex-direction: column; align-items: center; gap: 35px; }
+  .vm-box { width: 100%; max-width: 500px; }
+}
+
+/* ============================================= */
+/* MOBILE RESPONSIVE SYSTEM (MAX 600PX) */
+/* ============================================= */
+@media (max-width: 600px) {
+  .vm-premium { padding: 60px 0; }
+  .vm-heading h2 { font-size: 30px; }
+  .vm-heading p { font-size: 15px; }
+  .vm-box { padding: 35px 25px; border-radius: 24px; }
+  .vm-box h3 { font-size: 22px; }
+  .vm-box p { font-size: 14px; }
+  .icon-circle-frame { width: 64px; height: 64px; font-size: 24px; margin-bottom: 20px; }
+  .card-top-accent { left: 25px; right: 25px; }
+}

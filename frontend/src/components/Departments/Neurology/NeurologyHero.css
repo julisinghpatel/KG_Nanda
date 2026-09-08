@@ -1,0 +1,153 @@
+/* Core Animation Entrances */
+@keyframes neuroFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes neuroFadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.neuro-text-entrance {
+  animation: neuroFadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.neuro-visual-entrance {
+  animation: neuroFadeInRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Background Ambient Fluid Dynamics */
+@keyframes neuroBlob {
+  0%, 100% { transform: translateY(0px) scale(1) rotate(0deg); }
+  50% { transform: translateY(-30px) scale(1.08) rotate(5deg); }
+}
+
+@keyframes neuroBlobRev {
+  0%, 100% { transform: translateY(0px) scale(1) rotate(0deg); }
+  50% { transform: translateY(25px) scale(0.92) rotate(-5deg); }
+}
+
+.neuro-blob-float {
+  animation: neuroBlob 10s ease-in-out infinite;
+}
+
+.neuro-blob-float-reverse {
+  animation: neuroBlobRev 12s ease-in-out infinite;
+}
+
+/* Pulse effects */
+@keyframes neuroPulse {
+  0%, 100% { transform: scale(1); opacity: 0.2; }
+  50% { transform: scale(1.1); opacity: 0.4; }
+}
+
+.neuro-pulse { animation: neuroPulse 4s ease-in-out infinite; }
+.neuro-pulse-slow { animation: neuroPulse 6s ease-in-out infinite; }
+
+@keyframes corePulse {
+  0%, 100% { box-shadow: inset 0 0 40px rgba(181, 245, 255, 0.5), 0 0 30px rgba(2, 172, 240, 0.05); }
+  50% { box-shadow: inset 0 0 60px rgba(162, 220, 255, 0.7), 0 0 50px rgba(47, 51, 149, 0.15); }
+}
+.neuro-pulse-core {
+  animation: corePulse 5s ease-in-out infinite;
+}
+
+/* Infinite Floating Micro Pills */
+@keyframes microFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes microFloatRev {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(10px); }
+}
+
+.animate-float-slow {
+  animation: microFloat 5s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: microFloatRev 6s ease-in-out infinite;
+}
+
+/* Premium Pinterest Glassmorphism Centerpiece Card */
+.neuro-center-glass-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Embedded Clinical Brain Image Asset via Unsplash Medical Library */
+.neuro-card-image-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url('/Department/neurology/neurologyh.jpg');
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: multiply;
+  opacity: 0.35;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  z-index: 1;
+}
+
+.neuro-center-glass-card:hover {
+  background: rgba(255, 255, 255, 0.45);
+  transform: scale(1.04) translateY(-5px);
+  border-color: rgba(2, 172, 240, 0.5);
+}
+
+.neuro-center-glass-card:hover .neuro-card-image-overlay {
+  opacity: 0.45;
+  transform: scale(1.05);
+}
+
+/* Icon Container Glow Micro-interaction */
+.neuro-icon-container {
+  transition: all 0.4s ease;
+}
+.neuro-center-glass-card:hover .neuro-icon-container {
+  transform: rotate(-8deg) scale(1.1);
+  background: #cdffff;
+  box-shadow: 0 10px 20px rgba(2, 172, 240, 0.2);
+}
+
+/* Fake Graphic Waveform Animations */
+@keyframes wave {
+  0%, 100% { height: 30%; }
+  50% { height: 95%; }
+}
+.animate-wave-1 { animation: wave 1.2s ease-in-out infinite; }
+.animate-wave-2 { animation: wave 0.8s ease-in-out infinite 0.2s; }
+.animate-wave-3 { animation: wave 1.5s ease-in-out infinite 0.4s; }
+.animate-wave-4 { animation: wave 1s ease-in-out infinite 0.1s; }
+
+/* Custom Badge Gradation */
+.neuro-premium-badge {
+  background: linear-gradient(135deg, #b5f5ff 0%, #aadcff 100%);
+  border: 1px solid rgba(2, 172, 240, 0.2);
+}
+
+.animate-spin-slow {
+  animation: spin 12s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,61 @@
+/* ENTDoctors.css */
+
+/* Floating animations for background blurred blobs */
+@keyframes docFloat {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-25px) scale(1.05); }
+}
+
+@keyframes docFloatRev {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(20px) scale(0.95); }
+}
+
+@keyframes docFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.doctor-float-slow {
+  animation: docFloat 9s ease-in-out infinite;
+}
+
+.doctor-float-reverse {
+  animation: docFloatRev 11s ease-in-out infinite;
+}
+
+.doctor-fade-in {
+  animation: docFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Premium Pinterest Inspired Grid Card */
+.doctor-premium-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 40px -15px rgba(47, 51, 149, 0.04);
+  transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: docFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Stunning Hover Micro-interactions */
+.doctor-premium-card:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-12px);
+  border-color: rgba(2, 172, 240, 0.3);
+  box-shadow: 0 30px 60px -20px rgba(47, 51, 149, 0.15);
+}
+
+/* Badge Styling */
+.doctor-badge {
+  background: linear-gradient(135deg, #b5f5ff 0%, #aadcff 100%);
+  color: #2f3395;
+  border: 1px solid rgba(2, 172, 240, 0.15);
+}

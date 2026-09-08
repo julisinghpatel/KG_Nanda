@@ -1,0 +1,62 @@
+/* NeurologyDoctor.css */
+
+/* Background floating glow nodes */
+@keyframes neuroGlowFloat {
+  0%, 100% { transform: translateY(0px) scale(1); opacity: 0.4; }
+  50% { transform: translateY(-30px) scale(1.05); opacity: 0.6; }
+}
+
+.neuro-glow-element {
+  animation: neuroGlowFloat 8s ease-in-out infinite;
+}
+
+/* Premium Pinterest Card Base Struct */
+.neuro-doc-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 15px 45px -20px rgba(47, 51, 149, 0.05);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* High-End Hover Engineering */
+.neuro-doc-card:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-14px);
+  border-color: rgba(2, 172, 240, 0.35);
+  box-shadow: 0 35px 70px -20px rgba(47, 51, 149, 0.15);
+}
+
+/* Image Outer Frame Line Glowing Effect */
+.neuro-doc-img-wrapper {
+  position: relative;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, rgba(255,255,255,0.8), transparent);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: all 0.5s ease;
+}
+
+.neuro-doc-card:hover .neuro-doc-img-wrapper {
+  background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #02acf0, #2f3395);
+  box-shadow: 0 10px 25px -5px rgba(2, 172, 240, 0.2);
+}
+
+/* Action Appointment Slot Button design */
+.neuro-doc-btn-primary {
+  background: linear-gradient(135deg, #2f3395 0%, #02acf0 100%);
+  transition: all 0.4s ease;
+}
+
+.neuro-doc-btn-primary:hover {
+  background: linear-gradient(135deg, #c90322 0%, #c20321 100%);
+  box-shadow: 0 10px 20px rgba(201, 3, 34, 0.25);
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .neuro-doc-card {
+    padding: 1.5rem !important;
+  }
+}

@@ -1,0 +1,50 @@
+/* AboutUrology.css */
+
+/* Custom fluid entry animations */
+@keyframes fadeInUpward {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes smoothFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+/* Base utility wrappers for premium look */
+.animate-fade-in {
+  animation: fadeInUpward 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slow-float {
+  animation: smoothFloat 5s ease-in-out infinite;
+}
+
+/* Incremental Delays for rendering */
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-400 {
+  animation-delay: 0.4s;
+}
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* Premium Medical Glassmorphic Card Overlay Effect */
+.glass-panel {
+  background: rgba(47, 51, 149, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(181, 245, 255, 0.2);
+}

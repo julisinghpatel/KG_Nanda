@@ -1,0 +1,17 @@
+/* Color Palette setup for reference */
+:root {
+  --hospital-blue: #004684;
+  --hospital-teal: #23b2a4;
+}
+
+/* Smooth transition for drop-down interactions */
+nav div,
+nav a {
+  position: relative;
+  transition: color 0.2s ease-in-out;
+}
+
+/* Optional fine-tuning for standard system font scaling */
+header {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}

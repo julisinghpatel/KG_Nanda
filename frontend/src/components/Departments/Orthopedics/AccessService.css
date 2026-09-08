@@ -1,0 +1,322 @@
+/* Scoped Unique CSS Architecture to avoid properties collision */
+.acc-premium-section-scope {
+  --a-cyan-primary: #02acf0;
+  --a-indigo-deep: #2f3395;
+  --a-blue-slate: #7396d3;
+  --a-ice-light: #aadcff;
+  --a-crystal-cyan: #b5f5ff;
+  --a-mint-white: #f6fcfa;
+  --a-accent-red: #c90322;
+  --a-accent-orange: #dd5200;
+  --a-pure-white: #ffffff;
+
+  position: relative;
+  width: 100%;
+  padding: 110px 24px;
+  background-color: var(--a-mint-white); /* Premium crisp clean hospital background */
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Ambient Subtle Decorative Circle Blur */
+.acc-ambient-radial-glow {
+  position: absolute;
+  top: 20%;
+  right: -5%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(2, 172, 240, 0.06) 0px, transparent 70%);
+  filter: blur(40px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.acc-max-viewport-container {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   HEADER COMPONENT STYLING
+   ========================================================================== */
+.acc-title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.acc-mini-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--a-pure-white);
+  border: 1px solid rgba(47, 51, 149, 0.08);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.acc-pill-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--a-cyan-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--a-cyan-primary);
+}
+
+.acc-pill-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--a-indigo-deep);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.acc-main-heading {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #12163b;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.acc-gradient-highlight {
+  background: linear-gradient(135deg, var(--a-indigo-deep) 0%, var(--a-cyan-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   LAYOUT STRUCTURAL GRID
+   ========================================================================== */
+.acc-structural-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ==========================================================================
+   LEFT SIDE VISUAL ASYMMETRIC FRAME (Luxury Design)
+   ========================================================================== */
+.acc-visual-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.acc-asymmetric-frame {
+  width: 100%;
+  height: 520px;
+  border-radius: 40px 100px 40px 40px; /* Modern architectural curvature replace stiff clip-path */
+  overflow: hidden;
+  box-shadow: 0 30px 60px -15px rgba(47, 51, 149, 0.12);
+  border: 6px solid var(--a-pure-white);
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+.acc-visual-wrapper:hover .acc-asymmetric-frame {
+  transform: scale(1.015);
+}
+
+.acc-premium-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.acc-visual-wrapper:hover .acc-premium-hero-img {
+  transform: scale(1.05);
+}
+
+.acc-image-overlay-tint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 60%, rgba(18, 22, 59, 0.2) 100%);
+}
+
+/* Float Trust Micro Badge */
+.acc-absolute-trust-badge {
+  position: absolute;
+  bottom: 30px;
+  left: -20px;
+  background: var(--a-indigo-deep);
+  color: var(--a-pure-white);
+  padding: 14px 28px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(47, 51, 149, 0.25);
+  border-left: 4px solid var(--a-cyan-primary);
+  max-width: 240px;
+}
+
+.acc-absolute-trust-badge h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+}
+
+/* ==========================================================================
+   RIGHT SIDE TIMELINE & TEXT PACKAGING
+   ========================================================================== */
+.acc-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.acc-content-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #12163b;
+  margin: 0 0 16px 0;
+}
+
+.acc-content-paragraph {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #515478;
+  margin: 0 0 35px 0;
+}
+
+/* Journey Track Core Design */
+.acc-journey-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.acc-journey-milestone {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  background-color: var(--a-pure-white);
+  padding: 18px 22px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.acc-journey-milestone:hover {
+  transform: translateX(6px);
+  box-shadow: 0 12px 30px rgba(47, 51, 149, 0.04);
+  border-color: rgba(2, 172, 240, 0.2);
+}
+
+.acc-milestone-icon-box {
+  width: 44px;
+  height: 44px;
+  background-color: rgba(2, 172, 240, 0.1);
+  color: var(--a-cyan-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.15rem;
+  transition: all 0.3s ease;
+}
+
+.acc-icon-blue-shade {
+  background-color: rgba(115, 150, 211, 0.12);
+  color: var(--a-blue-slate);
+}
+
+.acc-icon-orange-shade {
+  background-color: rgba(221, 82, 0, 0.08);
+  color: var(--a-accent-orange);
+}
+
+.acc-journey-milestone:hover .acc-milestone-icon-box {
+  transform: scale(1.08);
+}
+
+.acc-milestone-details h4 {
+  margin: 0 0 4px 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #12163b;
+}
+
+.acc-milestone-details p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #616486;
+}
+
+/* Action Button Core Elements */
+.acc-cta-holding-area {
+  width: 100%;
+}
+
+.acc-premium-action-btn {
+  position: relative;
+  overflow: hidden;
+  padding: 15px 36px;
+  background: var(--a-cyan-primary);
+  color: var(--a-pure-white);
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(2, 172, 240, 0.3);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.acc-premium-action-btn:hover {
+  background: var(--a-indigo-deep);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(47, 51, 149, 0.35);
+}
+
+/* ==========================================================================
+   SMOOTH MEDIA ADAPTABILITY MEDIA BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .acc-structural-grid { gap: 40px; }
+  .acc-main-heading { font-size: 2.3rem; }
+  .acc-asymmetric-frame { height: 440px; }
+}
+
+@media (max-width: 992px) {
+  .acc-structural-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .acc-content-wrapper { align-items: center; text-align: center; }
+  .acc-journey-timeline { text-align: left; }
+  .acc-visual-wrapper { max-width: 550px; margin: 0 auto; }
+  .acc-absolute-trust-badge { left: 0; bottom: 20px; }
+}
+
+@media (max-width: 540px) {
+  .acc-premium-section-scope { padding: 70px 16px; }
+  .acc-main-heading { font-size: 1.9rem; }
+  .acc-asymmetric-frame { height: 320px; border-radius: 24px 60px 24px 24px; }
+  .acc-content-title { font-size: 1.5rem; }
+  .acc-absolute-trust-badge {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    max-width: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
+}

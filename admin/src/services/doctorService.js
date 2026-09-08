@@ -1,0 +1,3 @@
+const API=import.meta.env.VITE_API_URL||"http://localhost:5000/api";
+async function request(url,options={}){const r=await fetch(API+url,{...options,headers:{"Content-Type":"application/json",...(options.headers||{})}});if(!r.ok)throw new Error("API request failed");return r.json()}
+export const doctorService={list:()=>request("/doctor"),getById:id=>request(`/doctor/${id}`),create:data=>request("/doctor",{method:"POST",body:JSON.stringify(data)}),update:(id,data)=>request(`/doctor/${id}`,{method:"PUT",body:JSON.stringify(data)}),remove:id=>request(`/doctor/${id}`,{method:"DELETE"})};

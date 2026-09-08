@@ -1,0 +1,8 @@
+import React from "react";
+import {Navigate,Route,Routes} from "react-router-dom";
+import AdminLayout from "./components/layout/AdminLayout";
+import ProtectedRoute from "./utils/ProtectedRoute";
+import Login from "./pages/Login"; import Dashboard from "./pages/Dashboard"; import Appointments from "./pages/Appointments";
+import Doctors from "./pages/Doctors"; import Patients from "./pages/Patients"; import Emergency from "./pages/Emergency"; import Reviews from "./pages/Reviews";
+import News from "./pages/News"; import Blogs from "./pages/Blogs"; import Gallery from "./pages/Gallery"; import Enquiries from "./pages/Enquiries"; import Team from "./pages/Team"; import Settings from "./pages/Settings";
+export default function App(){return <Routes><Route path="/admin/login" element={<Login/>}/><Route element={<ProtectedRoute/>}><Route path="/admin" element={<AdminLayout/>}><Route index element={<Navigate to="dashboard" replace/>}/><Route path="dashboard" element={<Dashboard/>}/><Route path="appointments" element={<Appointments/>}/><Route path="doctors" element={<Doctors/>}/><Route path="patients" element={<Patients/>}/><Route path="emergency" element={<Emergency/>}/><Route path="reviews" element={<Reviews/>}/><Route path="news" element={<News/>}/><Route path="blogs" element={<Blogs/>}/><Route path="gallery" element={<Gallery/>}/><Route path="enquiries" element={<Enquiries/>}/><Route path="team" element={<Team/>}/><Route path="settings" element={<Settings/>}/></Route></Route><Route path="*" element={<Navigate to="/admin/login" replace/>}/></Routes>}

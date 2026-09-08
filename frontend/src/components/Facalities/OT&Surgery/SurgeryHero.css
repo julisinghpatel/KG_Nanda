@@ -1,0 +1,266 @@
+/* ==========================================================================
+   KG NANDA HOSPITAL - SURGERY HERO PREMIUM DESIGN SYSTEM
+   ========================================================================== */
+
+.surgery-hero {
+  position: relative;
+  min-height: 105vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  /* Vite ya public folder architecture optimization */
+  background-image: url("/Department/ot.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-attachment: fixed; /* Smooth premium parallax effect */
+}
+
+/* Hyper-engineered deep medical overlay matrix */
+.surgery-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    115deg,
+    rgba(10, 17, 40, 0.92) 0%,
+    rgba(15, 23, 42, 0.75) 45%,
+    rgba(30, 58, 138, 0.2) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 1;
+}
+
+/* Structural internal content bounds */
+.surgery-hero-content {
+  position: relative;
+  z-index: 5;
+  max-width: 680px;
+  color: #ffffff;
+}
+
+/* Top micro badge tracking status */
+.hospital-tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 8px 16px;
+  border-radius: 100px;
+  margin-bottom: 28px;
+}
+
+.badge-pulse-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #00AEEF;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #00AEEF;
+  animation: badgeGlowPulse 2s infinite ease-in-out;
+}
+
+@keyframes badgeGlowPulse {
+  0%, 100% { opacity: 0.5; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Typography Matrix */
+.surgery-hero-title {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  color: #ffffff;
+}
+
+.text-gradient-clinical {
+  background: linear-gradient(135deg, #00AEEF 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.surgery-hero-subtitle {
+  font-size: 19px;
+  line-height: 1.65;
+  margin-bottom: 40px;
+  color: #cbd5e1;
+  font-weight: 400;
+}
+
+/* Interactive Action Triggers */
+.surgery-hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.surgery-hero-btn {
+  position: relative;
+  padding: 16px 32px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.surgery-hero-btn.primary {
+  color: #ffffff;
+  background: linear-gradient(135deg, #2E3192 0%, #1e40af 100%);
+  box-shadow: 0 10px 25px rgba(46, 49, 146, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.surgery-hero-btn.primary::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, #00AEEF 0%, #2E3192 100%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.surgery-hero-btn.primary:hover::before {
+  opacity: 1;
+}
+
+.surgery-hero-btn.primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 174, 239, 0.4);
+}
+
+.surgery-hero-btn.outline {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+.surgery-hero-btn.outline:hover {
+  background: #ffffff;
+  color: #0f172a;
+  border-color: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.15);
+}
+
+/* Premium Medical Floating Statistics Widget */
+.hero-stats-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 56px;
+  padding-top: 40px;
+  border-t: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Modern Diagonal Curved Bottom Mask Section Separator */
+.surgery-hero-curve {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 10;
+}
+
+.surgery-hero-curve svg {
+  position: relative;
+  display: block;
+  width: calc(130% + 1.3px);
+  height: 90px;
+  transform: rotateY(180deg);
+}
+
+.surgery-hero-curve .shape-fill {
+  fill: #ffffff;
+}
+
+/* ==========================================================================
+   RESPONSIVE OVERRIDES
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .surgery-hero-title { font-size: 52px; }
+  .surgery-hero-subtitle { font-size: 17px; }
+}
+
+@media (max-width: 1024px) {
+  .surgery-hero {
+    min-height: 100vh;
+    padding: 100px 8%;
+    background-attachment: scroll; /* Disabled on tablets for optimal performance */
+  }
+  .surgery-hero-overlay {
+    background: linear-gradient(180deg, rgba(10,17,40,0.95) 0%, rgba(15,23,42,0.85) 60%, rgba(15,23,42,0.7) 100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .surgery-hero {
+    padding: 120px 6% 80px 6%;
+    text-align: center;
+    justify-content: center;
+  }
+  .surgery-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .surgery-hero-title { font-size: 40px; }
+  .surgery-hero-subtitle { font-size: 16px; margin-bottom: 32px; }
+  .surgery-hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 14px;
+  }
+  .surgery-hero-btn { width: 100%; }
+  .hero-stats-row {
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+  }
+  .stat-number { font-size: 26px; }
+  .surgery-hero-curve svg { height: 50px; }
+}
+
+@media (max-width: 480px) {
+  .surgery-hero-title { font-size: 32px; }
+  .hero-stats-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

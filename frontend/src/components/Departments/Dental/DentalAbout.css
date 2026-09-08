@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+.dental-about-section {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Premium Primary Accent color matching image_dc1382.png */
+.dental-blue-highlight {
+  color: #1e3a8a; /* Deep premium blue */
+}
+
+/* Entry Animations */
+.dental-about-content {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: aboutLeftReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.dental-about-card-col {
+  opacity: 0;
+  transform: translateX(30px);
+  animation: aboutRightReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes aboutLeftReveal {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes aboutRightReveal {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Micro interaction for list items */
+.about-point-card:hover svg {
+  transform: scale(1.15);
+  color: #2563eb;
+  transition: all 0.3s ease;
+}
+
+/* Shadow rendering fix for premium sleekness */
+.about-doctor-card {
+  box-shadow: 0 30px 70px rgba(30, 58, 138, 0.04), 
+              0 10px 30px rgba(0, 0, 0, 0.01);
+}

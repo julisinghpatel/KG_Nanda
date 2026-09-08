@@ -1,0 +1,45 @@
+/* Hero Stylesheet to align with theme parameters */
+
+.home-hero {
+  position: relative;
+  background-color: #020a16; 
+}
+
+/* Perfect full screen video coverage background on all devices including iOS Safari */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover !important;
+  object-position: center center;
+  pointer-events: none;
+}
+
+/* Smooth layout management for complex cards */
+.hero-feature-btn {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.2s ease, 
+              box-shadow 0.3s ease;
+}
+
+.hero-feature-btn:hover {
+  transform: translateY(-4px);
+}
+
+/* Glassmorphism utility for global component stability */
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Prevent layout shift during initialization of GSAP variables */
+.hero-left-content,
+.hero-btn,
+.hero-feature-btn,
+.hero-tag {
+  opacity: 0;
+}

@@ -1,0 +1,90 @@
+/* About Pathology Premium Structural Styles & Micro-Movements */
+
+/* Smooth Section Ambient BG Layer */
+.about-pathology-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Abstract Dot Grid Matrix Pattern */
+.dot-matrix-overlay {
+  background-image: radial-gradient(#1e3a8a 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.04;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Asymmetric Interactive Photo Grid System */
+.photo-frame-main {
+  position: relative;
+  border-radius: 2.5rem;
+  box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.12);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+}
+
+.photo-frame-main:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 40px 80px -15px rgba(15, 23, 42, 0.18);
+}
+
+/* Secondary overlapping image frame setup */
+.photo-frame-secondary {
+  position: absolute;
+  border-radius: 2rem;
+  border: 8px solid #ffffff;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+}
+
+.photo-frame-secondary:hover {
+  transform: scale(1.05) translate(4px, -4px);
+  box-shadow: 0 30px 50px rgba(234, 88, 12, 0.15);
+}
+
+/* Floating Metrics Badge Card */
+.stats-floating-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+  animation: organicFloat 6s infinite ease-in-out;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.stats-floating-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px rgba(14, 165, 233, 0.15);
+}
+
+@keyframes organicFloat {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(0.5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Pathology Capabilities Feature Grid cards transition */
+.capability-row-card {
+  border: 1px solid rgba(226, 232, 240, 0.7);
+  background-color: #ffffff;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.capability-row-card:hover {
+  border-color: rgba(2, 132, 199, 0.3);
+  transform: translateX(6px);
+  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.04);
+}
+
+.capability-row-card:hover .icon-wrapper-box {
+  background-color: #1e3a8a;
+  color: #ffffff;
+  transform: rotate(360deg);
+}
+
+.icon-wrapper-box {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease, color 0.4s ease;
+}

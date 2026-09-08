@@ -1,0 +1,76 @@
+/* Facilities Pathology Premium Layout & Hover Artifacts */
+
+/* Ambient section layer with high structural contrast */
+.facilities-pathology-section {
+  background: radial-gradient(120% 120% at 50% 10%, #ffffff 40%, #f0fdf4 75%, #ecfeff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle abstract circular vector for backing depth */
+.background-vector-glow {
+  position: absolute;
+  top: 30%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Base structural setup for our complex premium grid cards */
+.facility-interactive-card {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  z-index: 2;
+}
+
+/* Complex transformation matrix on hover */
+.facility-interactive-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(2, 132, 199, 0.25);
+  box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.12), 0 0 40px rgba(14, 165, 233, 0.05);
+}
+
+/* Static action chip inside card that expands smoothly */
+.action-arrow-box {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.facility-interactive-card:hover .action-arrow-box {
+  background-color: #ea580c;
+  color: #ffffff;
+  transform: scale(1.1) rotate(45deg);
+}
+
+/* Custom premium badge pulsing indicator */
+.live-pulse-indicator {
+  position: relative;
+}
+
+.live-pulse-indicator::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  border: 2px solid #059669;
+  animation: liveRing 2s infinite cubic-bezier(0.25, 0, 0, 1);
+  opacity: 0;
+}
+
+@keyframes liveRing {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* Micro-movement tracking for specific card inner icons */
+.facility-card-icon-container {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease;
+}
+
+.facility-interactive-card:hover .facility-card-icon-container {
+  transform: scale(1.08) rotate(-8deg);
+}

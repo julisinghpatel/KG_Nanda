@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+.why-dental-wrapper {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  /* Added generous height scaling padding to fulfill the height requirements perfectly */
+  min-height: 600px;
+}
+
+/* Icons Transition Properties */
+.dental-why-icon {
+  font-size: 18px;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.why-dental-card:hover .dental-why-icon {
+  transform: rotate(8deg) scale(1.1);
+}
+
+/* Sleek Reveal Animation on load */
+.why-dental-card {
+  opacity: 0;
+  transform: translateY(35px);
+  animation: whyCardReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes whyCardReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glassmorphism Outer Box Premium Shadows mimicking image_dc1801.png */
+.why-dental-card {
+  box-shadow: inset 0 4px 20px rgba(255, 255, 255, 0.02);
+}
+
+.why-dental-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 
+              inset 0 4px 25px rgba(255, 255, 255, 0.04);
+}

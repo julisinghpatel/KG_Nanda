@@ -1,0 +1,75 @@
+/* DoctorsSection.css */
+
+.doctors-container {
+  background: linear-gradient(135deg, #f6fcfa 0%, #cdffff 50%, #e6f9ff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background decorative blobs for premium tech-medical look */
+.bg-blob-1 {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(181, 245, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+  filter: blur(40px);
+  z-index: 0;
+}
+
+.bg-blob-2 {
+  position: absolute;
+  bottom: -10%;
+  left: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(170, 220, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+  filter: blur(50px);
+  z-index: 0;
+}
+
+/* Premium Card Glass Effect */
+.doctor-card-glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(47, 51, 149, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.doctor-card-glass:hover {
+  border-color: #02acf0;
+  box-shadow: 0 20px 40px 0 rgba(2, 172, 240, 0.12);
+}
+
+/* Image container styling */
+.doctor-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  background-color: #b5f5ff;
+}
+
+.doctor-img-wrapper img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.doctor-card-glass:hover .doctor-img-wrapper img {
+  transform: scale(1.06);
+}
+
+/* Custom Animated Button */
+.btn-premium-primary {
+  background: linear-gradient(135deg, #2f3395 0%, #02acf0 100%);
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(47, 51, 149, 0.2);
+}
+
+.btn-premium-primary:hover {
+  background: linear-gradient(135deg, #02acf0 0%, #2f3395 100%);
+  box-shadow: 0 6px 20px rgba(2, 172, 240, 0.3);
+  transform: translateY(-1px);
+}

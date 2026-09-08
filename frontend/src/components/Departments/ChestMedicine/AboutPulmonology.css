@@ -1,0 +1,86 @@
+/* AboutPulmonology.css */
+
+/* Core Animations */
+@keyframes revealFadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes revealFadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.reveal-fade-left {
+  animation: revealFadeLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.reveal-fade-right {
+  animation: revealFadeRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Pulse Slow */
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 6s ease-in-out infinite;
+}
+
+/* Bounce Slow */
+@keyframes bounceSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 4s ease-in-out infinite;
+}
+
+/* Tag Hover Micro-interaction */
+.dynamic-hover-tag {
+  transition: all 0.3s ease;
+}
+
+.dynamic-hover-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(2, 172, 240, 0.15);
+  background: rgba(170, 220, 255, 0.6);
+}
+
+/* Feature Card Glassmorphism */
+.premium-feature-card {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.premium-feature-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(2, 172, 240, 0.3);
+}

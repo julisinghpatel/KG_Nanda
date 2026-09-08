@@ -1,0 +1,350 @@
+:root {
+    --opd-primary: #004b87;
+    --opd-teal: #14b8a6;
+    --opd-accent: #0ea5e9;
+    --opd-orange: #f97316;
+    --opd-bg-dark: #071e3d;
+    --opd-white: #ffffff;
+    --opd-light-gray: #f8fafc;
+}
+
+.opd-hero-container {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--opd-bg-dark);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    padding: 90px 0;
+}
+
+/* Background setup - update image path if needed */
+.opd-hero-bg-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/Facalities/img1.jpg") no-repeat center center / cover;
+    z-index: 1;
+    will-change: transform;
+}
+
+/* Trustworthy Premium Gradient Overlay for OPD */
+.opd-gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 15% 25%, rgba(20, 184, 166, 0.18), transparent 65%),
+        radial-gradient(circle at 85% 75%, rgba(14, 165, 233, 0.15), transparent 70%),
+        linear-gradient(135deg, rgba(7, 30, 61, 0.75) 0%, rgba(3, 14, 30, 0.85) 100%);
+}
+
+.opd-content-orchestrator {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* OPD Badge */
+.opd-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 20px;
+    border-radius: 100px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    margin-bottom: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.opd-badge-pulse {
+    width: 8px;
+    height: 8px;
+    background-color: var(--opd-teal);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.6);
+    animation: opdBadgePulse 2s infinite;
+}
+
+.opd-badge-text {
+    color: #a7f3d0;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+/* Title & Dynamic Text Layout */
+.opd-title-main {
+    color: var(--opd-white);
+    font-size: 3.6rem;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    max-width: 950px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.opd-word-container {
+    display: block;
+    margin-top: 6px;
+    min-height: 1.3em;
+}
+
+.opd-word-rotator {
+    background: linear-gradient(135deg, #2dd4bf 0%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-weight: 900;
+    filter: drop-shadow(0 4px 20px rgba(45, 212, 191, 0.3));
+    animation: opdWordFlip 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.opd-subtitle-text {
+    color: rgba(248, 250, 252, 0.85);
+    font-size: 1.25rem;
+    font-weight: 400;
+    max-width: 780px;
+    line-height: 1.7;
+    margin-top: 20px;
+}
+
+/* Action Buttons */
+.opd-action-btns {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.opd-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, var(--opd-teal) 0%, #0f766e 100%);
+    color: var(--opd-white);
+    padding: 16px 36px;
+    border: none;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 10px 25px -4px rgba(20, 184, 166, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.opd-btn-primary:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 30px -4px rgba(20, 184, 166, 0.55);
+}
+
+.opd-btn-icon-bounce {
+    animation: opdButtonBounce 2s infinite;
+}
+
+.opd-btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--opd-white);
+    padding: 16px 36px;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.opd-btn-secondary:hover {
+    background: var(--opd-white);
+    color: var(--opd-bg-dark);
+    border-color: var(--opd-white);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Horizontal Grid Deployment */
+.opd-features-grid {
+    display: grid;
+    grid-template-cols: repeat(3, 1fr);
+    width: 100%;
+    gap: 24px;
+    margin-top: 64px;
+    max-width: 1050px;
+}
+
+.opd-feature-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 24px;
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.opd-feature-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.18);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+}
+
+.opd-icn-box {
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.opd-icn-teal {
+    background: rgba(20, 184, 166, 0.2);
+    color: #2dd4bf;
+}
+
+.opd-icn-blue {
+    background: rgba(14, 165, 233, 0.2);
+    color: #38bdf8;
+}
+
+.opd-icn-orange {
+    background: rgba(249, 115, 22, 0.2);
+    color: #fb923c;
+}
+
+.opd-card-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.opd-feature-card h3 {
+    color: var(--opd-white);
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.opd-feature-card p {
+    color: var(--opd-light-gray);
+    font-size: 13px;
+    margin: 3px 0 0 0;
+    opacity: 0.8;
+}
+
+/* Animations Keyframes */
+@keyframes opdBadgePulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 8px rgba(20, 184, 166, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(20, 184, 166, 0);
+    }
+}
+
+@keyframes opdWordFlip {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes opdButtonBounce {
+
+    0%,
+    100%,
+    20%,
+    50%,
+    80% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-4px);
+    }
+
+    60% {
+        transform: translateY(-2px);
+    }
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+    .opd-title-main {
+        font-size: 2.8rem;
+    }
+
+    .opd-features-grid {
+        grid-template-cols: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .opd-hero-container {
+        padding: 110px 0 60px 0;
+    }
+
+    .opd-title-main {
+        font-size: 2.2rem;
+    }
+
+    .opd-subtitle-text {
+        font-size: 1.1rem;
+    }
+
+    .opd-features-grid {
+        grid-template-cols: 1fr;
+        gap: 14px;
+    }
+
+    .opd-action-btns {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .opd-btn-primary,
+    .opd-btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .opd-title-main {
+        font-size: 1.8rem;
+    }
+}

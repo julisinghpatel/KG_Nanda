@@ -1,0 +1,85 @@
+/* Premium Custom CSS for NICU/PICU About Section with Smooth Movement Animations */
+
+/* Background Ambient Glow Pulsing */
+@keyframes genericPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1) translate(0px, 0px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1) translate(10px, -10px);
+  }
+}
+
+.generic-pulse {
+  animation: genericPulse 8s ease-in-out infinite;
+}
+
+.generic-pulse-delayed {
+  animation: genericPulse 12s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Subtle Initial Entry Fade-up */
+.content-fade-up {
+  animation: contentFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes contentFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fluid Continuous Floating for Images Frame container */
+@keyframes compositeFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+.image-container-hover {
+  animation: compositeFloat 6s ease-in-out infinite;
+}
+
+/* Image Zoom and Soft Pan on hover of individual blocks */
+.inner-img-transition {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .inner-img-transition {
+  transform: scale(1.06);
+}
+
+/* Dynamic floating tags/badges animations */
+@keyframes floatingBadge {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.badge-float {
+  animation: floatingBadge 4s ease-in-out infinite;
+}
+
+.widget-float {
+  animation: floatingBadge 5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+/* Smooth Interactive Border Highlight for Features cards */
+.feature-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}

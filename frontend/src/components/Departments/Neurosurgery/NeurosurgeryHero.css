@@ -1,0 +1,305 @@
+/* NeurosurgeryHero.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --nsh-navy: #2f3395;
+  --nsh-sky: #02acf0;
+  --nsh-muted-blue: #7396d3;
+  --nsh-ice-glow: #b5f5ff;
+  --nsh-light-blue: #aadcff;
+  --nsh-deep-teal: #60a9bd;
+  --nsh-base-clean: #f6fcfa;
+  --nsh-coral-red: #c90322;
+  --nsh-copper-orange: #dd5200;
+}
+
+/* Structural Reset Boundary */
+.nsh-hero-stage *,
+.nsh-hero-stage *::before,
+.nsh-hero-stage *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.nsh-hero-stage {
+  font-family: 'Outfit', sans-serif;
+  background: radial-gradient(circle at 10% 20%, rgba(2, 172, 240, 0.03) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(181, 245, 255, 0.2) 0%, transparent 50%),
+              var(--nsh-base-clean);
+  min-height: 70vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 60px 6%;
+}
+
+/* Premium Neural Ambient Lighting Blurs */
+.nsh-neural-blur-left {
+  position: absolute;
+  top: -15%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(2, 172, 240, 0.15) 0%, transparent 70%);
+  filter: blur(110px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.nsh-neural-blur-right {
+  position: absolute;
+  bottom: -10%;
+  right: -5%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(181, 245, 255, 0.5) 0%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Master Hero Grid Matrix Split */
+.nsh-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Left Content Column Layout */
+.nsh-text-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Department Badge Ring */
+.nsh-dept-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(47, 51, 149, 0.05);
+  border: 1.5px solid rgba(47, 51, 149, 0.15);
+  color: var(--nsh-navy);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 9px 22px;
+  border-radius: 100px;
+  margin-bottom: 28px;
+}
+
+.nsh-badge-glow-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--nsh-sky);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--nsh-sky);
+}
+
+/* Core Main Typography Headers */
+.nsh-main-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--nsh-navy);
+  letter-spacing: -1px;
+  margin-bottom: 24px;
+}
+
+.nsh-title-gradient {
+  color: transparent;
+  background: linear-gradient(90deg, var(--nsh-sky) 0%, var(--nsh-navy) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.nsh-hero-desc {
+  font-size: 17.5px;
+  color: var(--nsh-deep-teal);
+  line-height: 1.7;
+  max-width: 600px;
+  margin-bottom: 36px;
+  font-weight: 400;
+}
+
+/* Action CTA Panel Elements */
+.nsh-cta-cluster {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nsh-btn-primary {
+  background: linear-gradient(135deg, var(--nsh-sky) 0%, var(--nsh-navy) 100%);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  padding: 16px 36px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(47, 51, 149, 0.15);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nsh-btn-primary:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(2, 172, 240, 0.35);
+}
+
+.nsh-btn-secondary {
+  background: transparent;
+  color: var(--nsh-navy);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 15px 32px;
+  border-radius: 16px;
+  border: 1.5px solid rgba(47, 51, 149, 0.2);
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.nsh-btn-secondary:hover {
+  background: rgba(47, 51, 149, 0.06);
+  border-color: var(--nsh-navy);
+  color: var(--nsh-navy);
+  transform: translateY(-2px);
+}
+
+/* ─── RIGHT PREMIUM INTERACTIVE VISUAL CONTAINER ─── */
+.nsh-visual-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modern Abstract Geometric Frame Geometry */
+.nsh-image-mask-frame {
+  width: 440px;
+  height: 480px;
+  border-radius: 40px 140px 40px 40px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(47, 51, 149, 0.18);
+  border: 6px solid #ffffff;
+  outline: 1px solid rgba(2, 172, 240, 0.15);
+}
+
+.nsh-surgery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nsh-image-mask-frame:hover .nsh-surgery-image {
+  transform: scale(1.05);
+}
+
+/* Subtle Dark Glass Overlay Filter inside Image Box */
+.nsh-image-overlay-lens {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(47, 51, 149, 0.4) 100%);
+  pointer-events: none;
+}
+
+/* Premium Floating Glassmorphic Clinical Pod Card */
+.nsh-glass-stats-pod {
+  position: absolute;
+  bottom: 40px;
+  left: -30px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  padding: 20px 25px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(47, 51, 149, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nsh-glass-stats-pod:hover {
+  transform: translateY(-12px) scale(1.03);
+  border-color: rgba(2, 172, 240, 0.4);
+  box-shadow: 0 25px 50px rgba(47, 51, 149, 0.15);
+}
+
+.nsh-pod-pulse-circle {
+  width: 44px;
+  height: 44px;
+  background: rgba(201, 3, 34, 0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nsh-coral-red);
+  font-size: 20px;
+}
+
+.nsh-pod-meta h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--nsh-navy);
+}
+
+.nsh-pod-meta p {
+  font-size: 12px;
+  color: var(--nsh-deep-teal);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ======================================================== */
+/* ADVANCED RE-FLUID VIEWPORT MEDIA INTERFACE BREAKPOINTS  */
+/* ======================================================== */
+
+@media (max-width: 1400px) {
+  .nsh-main-title { font-size: 42px; }
+  .nsh-image-mask-frame { width: 380px; height: 420px; }
+}
+
+@media (max-width: 1150px) {
+  .nsh-hero-stage { padding: 60px 5%; min-height: auto; }
+  .nsh-hero-grid { gap: 30px; }
+  .nsh-main-title { font-size: 38px; }
+  .nsh-image-mask-frame { width: 320px; height: 360px; }
+  .nsh-glass-stats-pod { left: -20px; padding: 15px 20px; }
+}
+
+@media (max-width: 991px) {
+  .nsh-hero-stage { padding: 80px 5% 60px 5%; min-height: auto; }
+  .nsh-hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+  .nsh-text-panel { align-items: center; }
+  .nsh-hero-desc { margin-left: auto; margin-right: auto; }
+  .nsh-visual-container { order: -1; }
+  .nsh-image-mask-frame { width: 100%; max-width: 420px; height: 380px; border-radius: 40px 100px 40px 40px; }
+  .nsh-glass-stats-pod { left: 5%; bottom: -20px; }
+}
+
+@media (max-width: 576px) {
+  .nsh-hero-stage { padding: 60px 20px 40px 20px; }
+  .nsh-dept-badge { font-size: 10px; padding: 7px 16px; margin-bottom: 20px; }
+  .nsh-main-title { font-size: 30px; letter-spacing: -0.8px; }
+  .nsh-hero-desc { font-size: 14px; }
+  .nsh-cta-cluster { flex-direction: column; width: 100%; gap: 12px; }
+  .nsh-btn-primary, .nsh-btn-secondary { width: 100%; padding: 14px; }
+  .nsh-image-mask-frame { height: 300px; }
+  .nsh-glass-stats-pod { left: 50%; transform: translateX(-50%); width: 90%; justify-content: center; bottom: -15px; }
+  .nsh-glass-stats-pod:hover { transform: translateX(-50%) translateY(-4px); }
+}

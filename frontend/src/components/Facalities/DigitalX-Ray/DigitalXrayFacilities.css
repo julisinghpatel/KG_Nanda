@@ -1,0 +1,66 @@
+/* Custom Soft Mesh Gradient Blurs strictly matching the style of image_ce0eed.jpg */
+.xray-facilities-section {
+  position: relative;
+}
+
+.ambient-blur {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.35;
+}
+
+.blur-teal {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.15) 0%, transparent 70%);
+  top: -10%;
+  left: -5%;
+}
+
+.blur-sky {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
+  bottom: -10%;
+  right: -5%;
+  animation: floatBackground 12s ease-in-out infinite alternate;
+}
+
+/* Micro smooth background slow moving drifting animation */
+@keyframes floatBackground {
+  0% { transform: translate(0px, 0px); }
+  100% { transform: translate(-30px, 20px); }
+}
+
+/* Premium Card Structural Shadows & Lift Settings */
+.xray-premium-card {
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.015);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.5s ease;
+}
+
+/* Hover Movement Properties */
+.xray-premium-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 22px 40px rgba(13, 148, 136, 0.08);
+  border-color: rgba(13, 148, 136, 0.15);
+}
+
+/* Subtle border glow expansion overlay */
+.xray-premium-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  pointer-events: none;
+  transition: border-color 0.5s ease;
+}
+
+.xray-premium-card:hover::after {
+  border-color: rgba(14, 165, 233, 0.2);
+}

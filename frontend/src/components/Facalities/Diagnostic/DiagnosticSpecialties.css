@@ -1,0 +1,66 @@
+/* Custom Styles for Diagnostic Section to avoid Tailwind overlap */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.diag-animate-fade-in {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Premium Glassmorphism Card */
+.diag-glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(2, 172, 240, 0.15);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Continuous Subtle Floating Animation for Icons */
+@keyframes diagFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.diag-glass-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 20px 40px rgba(47, 51, 149, 0.12);
+  border-color: rgba(2, 172, 240, 0.4);
+}
+
+.diag-glass-card:hover .diag-icon-container {
+  animation: diagFloat 2s ease-in-out infinite;
+  background: linear-gradient(135deg, #02acf0 0%, #2f3395 100%);
+  color: #ffffff;
+}
+
+/* Smooth Custom Indicator Line */
+.diag-line-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.diag-line-glow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #b5f5ff, transparent);
+  animation: diagGlow 3s infinite;
+}
+
+@keyframes diagGlow {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}

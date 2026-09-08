@@ -1,0 +1,127 @@
+/* Custom Premium Animations & Entrance Effects */
+
+/* 1. Page Load Entrance Animations */
+.hero-content-left {
+  animation: slideUpFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUpFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. Floating Effect for Diagnostic Cards */
+.diagnostic-card {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.card-1 {
+  animation: fadeInRight 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards, float1 6s ease-in-out infinite alternate;
+}
+
+.card-2 {
+  animation: fadeInLeft 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards, float2 7s ease-in-out infinite alternate-reverse;
+}
+
+.card-3 {
+  animation: slideUpFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards, float3 5s ease-in-out infinite alternate;
+}
+
+/* Specific Entrance Directions */
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(-40px) translateY(10px); }
+  100% { opacity: 1; transform: translateX(0) translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(40px) translateY(-10px); }
+  100% { opacity: 1; transform: translateX(0) translateY(0); }
+}
+
+/* Smooth Floating Keyframes */
+@keyframes float1 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-15px) rotate(1deg); }
+}
+
+@keyframes float2 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(12px) rotate(-1deg); }
+}
+
+/* Center Right Image Core Subtle Zoom/Float */
+.hero-visual-right .rounded-full {
+  animation: corePulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes corePulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.03); }
+}
+
+@keyframes float3 {
+  0% { transform: translateX(0px) translateY(0px); }
+  100% { transform: translateX(-8px) translateY(-12px); }
+}
+
+/* 3. Slow Spinning Outer Ring */
+.animate-spin-slow {
+  animation: spinSlow 35s linear infinite;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 4. Slow Pulse for Decorative Orbs */
+.animate-pulse-slow {
+  animation: pulseSlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes pulseSlow {
+  0% { transform: scale(1) translate(0px, 0px); opacity: 0.3; }
+  100% { transform: scale(1.1) translate(20px, -20px); opacity: 0.5; }
+}
+
+/* 5. Smart Report Progress Bar Animation */
+.animate-progress {
+  animation: progressFill 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes progressFill {
+  0% { width: 0%; }
+  100% { width: 85%; }
+}
+
+/* Premium Hover Transitions & Shimmers */
+.glass-tag {
+  transition: all 0.4s ease;
+}
+.glass-tag:hover {
+  background-color: rgba(162, 220, 255, 0.5);
+  border-color: #02acf0;
+  transform: scale(1.03);
+}
+
+.btn-primary-premium {
+  box-shadow: 0 10px 25px -5px rgba(2, 172, 240, 0.4);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary-premium:hover {
+  box-shadow: 0 15px 30px -5px rgba(47, 51, 149, 0.5);
+}
+
+/* Custom Text Selection color */
+::selection {
+  background: #b5f5ff;
+  color: #2f3395;
+}

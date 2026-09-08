@@ -1,0 +1,63 @@
+/* Custom Global Styling & Gradients for Section */
+.neuro-section-wrapper {
+  background: radial-gradient(120% 120% at 50% 10%, #f6fcfa 0%, #cdffff 40%, #aadcff 100%);
+}
+
+/* Glassmorphism Badge */
+.glass-badge {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Premium Glass Cards CSS */
+.neuro-card {
+  box-shadow: 0 8px 32px 0 rgba(47, 51, 149, 0.04);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.7);
+  animation: cardEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+/* Pinterest-style Smooth Hover Scale and Shadow */
+.neuro-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px 0 rgba(47, 51, 149, 0.08),
+              0 1px 2px 0 rgba(2, 172, 240, 0.1);
+}
+
+/* --- Entry Animations --- */
+
+/* Header Reveal Animation */
+.animate-fade-in-down {
+  animation: fadeInDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Grid Cards Delayed Entrance Animation */
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Optimization for reducing motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .neuro-card, .animate-fade-in-down, .animate-pulse, .animate-ping {
+    animation: none !important;
+    transform: none !important;
+  }
+}

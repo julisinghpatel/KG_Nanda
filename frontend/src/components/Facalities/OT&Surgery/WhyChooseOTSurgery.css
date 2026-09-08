@@ -1,0 +1,59 @@
+/* Custom premium font import */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+.ot-why-section {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Premium Metallic Gradient Text */
+.ot-gradient-text {
+  background: linear-gradient(135deg, #0056b3 0%, #00a3e0 50%, #007bff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shineText 4s linear infinite;
+}
+
+@keyframes shineText {
+  to { background-position: 200% center; }
+}
+
+/* Icon Resizing */
+.ot-icon {
+  font-size: 22px;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Initial Entry Animation for Cards */
+.ot-premium-card {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: cardReveal 0.8s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+}
+
+@keyframes cardReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle Pulse Shimmer on Card Icons on Section Load */
+.ot-icon-wrapper {
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.8);
+}
+
+/* Premium Button Hover Pulse Shadow effect */
+.ot-premium-btn:hover {
+  box-shadow: 0 15px 35px rgba(0, 163, 224, 0.45);
+}
+
+/* Main Layout Micro-adjustments for Container Entrance */
+.ot-container {
+  opacity: 0;
+  animation: containerFade 0.6s ease-out forwards;
+}
+
+@keyframes containerFade {
+  to { opacity: 1; }
+}

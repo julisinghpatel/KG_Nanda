@@ -1,0 +1,214 @@
+/* Custom Stylesheet for fine-grained control and performance tweaks */
+
+.about-section {
+  width: 100%;
+  position: relative;
+}
+
+/* Base structural layout resets */
+.about-wrapper {
+  width: 100%;
+}
+
+/* Prevent screen stutter or jerky element pops before GSAP loads initialization */
+.about-img-container,
+.experience-badge,
+.about-tag-badge,
+.about-right-content h2,
+.about-right-content > p,
+.info-card,
+.about-contact-bar,
+.about-cta-btn {
+  will-change: transform, opacity;
+}
+
+/* Card hover scaling mimicking image_0fe185.jpg interface rules */
+.info-card {
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+              border-color 0.25s ease, 
+              box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -10px rgba(53, 182, 180, 0.15);
+}
+
+/* Breakpoint adjustment overrides for intermediate tablet form factors */
+@media (max-width: 1024px) {
+  .about-left-block {
+    margin-bottom: 24px;
+  }
+  
+  .experience-badge {
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    max-width: 280px;
+  }
+}
+
+/* =========================================
+   ABOUT SECTION TYPOGRAPHY (PREMIUM SERIF)
+   ========================================= */
+
+.about-heading {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 36px;
+  font-weight: 900;
+  color: #003a70;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+
+@media (min-width: 768px) {
+  .about-heading {
+    font-size: 46px;
+  }
+}
+
+.about-heading-highlight {
+  color: #3f8f93;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.about-description {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #374151;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .about-description {
+    font-size: 18px;
+  }
+}
+
+.hospital-brand-name {
+  font-weight: 900;
+  color: #1a1a1a;
+  letter-spacing: 0.3px;
+}
+
+/* =========================================
+   FLOATING BADGES STYLING (PREMIUM LOOK)
+   ========================================= */
+
+.about-badge-top {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  background: #ffffff;
+  padding: 12px 28px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 58, 112, 0.12);
+  z-index: 10;
+  border: 1px solid rgba(0, 58, 112, 0.05);
+  animation: float-badge-up 4s ease-in-out infinite alternate;
+}
+
+.about-badge-top .badge-subtitle {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  color: #dd5200;
+  letter-spacing: 1.5px;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
+.about-badge-top .badge-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #003a70;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.about-badge-bottom {
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+  background: #003a70;
+  padding: 12px 24px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 58, 112, 0.25);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  animation: float-badge-down 4s ease-in-out infinite alternate;
+}
+
+.about-badge-bottom .badge-icon-wrapper {
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about-badge-bottom .badge-shield-icon {
+  width: 18px;
+  height: 18px;
+  color: #ff8833;
+}
+
+.about-badge-bottom .badge-text-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-badge-bottom .badge-main-text {
+  font-size: 15px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1px;
+}
+
+.about-badge-bottom .badge-sub-text {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+@keyframes float-badge-up {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-6px); }
+}
+
+@keyframes float-badge-down {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(6px); }
+}
+
+/* Adjustments for mobile view */
+@media (max-width: 640px) {
+  .about-badge-top {
+    left: 10px;
+    top: -15px;
+    padding: 8px 18px;
+  }
+  .about-badge-top .badge-title {
+    font-size: 14px;
+  }
+  .about-badge-bottom {
+    left: 20px;
+    bottom: -15px;
+    padding: 8px 16px;
+  }
+  .about-badge-bottom .badge-main-text {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,270 @@
+/* AboutNeurosurgery.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --ans-navy: #2f3395;
+  --ans-sky: #02acf0;
+  --ans-pastel: #aadcff;
+  --ans-glow: #b5f5ff;
+  --ans-slate-teal: #60a9bd;
+  --ans-soft-bg: #f6fcfa;
+  --ans-coral-pulse: #c90322;
+  --ans-amber-warn: #dd5200;
+}
+
+/* Base Level Scoping & Core Resets */
+.ans-about-wrapper *,
+.ans-about-wrapper *::before,
+.ans-about-wrapper *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.ans-about-wrapper {
+  font-family: 'Outfit', sans-serif;
+  background: var(--ans-soft-bg);
+  padding: 110px 6%;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Premium Medical Neural Ambient Glow Elements */
+.ans-ambient-flare {
+  position: absolute;
+  top: 25%;
+  right: -8%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(2, 172, 240, 0.1) 0%, transparent 75%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Two-Column Master Grid Layout Framework */
+.ans-about-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 70px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── LEFT COLUMN: VISUAL IMAGE STACK ─── */
+.ans-visual-stack {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+/* Main Image Structural Geometry */
+.ans-img-frame-master {
+  width: 85%;
+  height: 500px;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 25px 55px rgba(47, 51, 149, 0.12);
+  border: 2px solid #ffffff;
+  position: relative;
+}
+
+.ans-img-master {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.ans-img-frame-master:hover .ans-img-master {
+  transform: scale(1.06);
+}
+
+/* Floating High-End Glassmorphic Data Panel */
+.ans-glass-counter-pod {
+  position: absolute;
+  bottom: -25px;
+  right: 5%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 24px 30px;
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(47, 51, 149, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 180px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ans-glass-counter-pod:hover {
+  transform: translateY(-8px);
+  border-color: rgba(2, 172, 240, 0.35);
+  box-shadow: 0 25px 50px rgba(47, 51, 149, 0.15);
+}
+
+.ans-pod-metric {
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--ans-navy);
+  line-height: 1.1;
+  background: linear-gradient(135deg, var(--ans-navy) 0%, var(--ans-sky) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ans-pod-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ans-slate-teal);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+/* ─── RIGHT COLUMN: DETAILS CONTENT PANEL ─── */
+.ans-content-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Micro Header Pill Badge */
+.ans-section-badge {
+  color: var(--ans-sky);
+  background: rgba(2, 172, 240, 0.07);
+  border: 1px solid rgba(2, 172, 240, 0.18);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.ans-content-panel h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--ans-navy);
+  line-height: 1.25;
+  margin-bottom: 22px;
+  letter-spacing: -0.5px;
+}
+
+.ans-content-panel h2 span {
+  color: transparent;
+  background: linear-gradient(90deg, var(--ans-sky) 0%, var(--ans-slate-teal) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.ans-lead-text {
+  font-size: 16.5px;
+  color: var(--ans-slate-teal);
+  line-height: 1.7;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+/* Advanced Highlights Feature Row Cards */
+.ans-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ans-feature-item {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 18px 24px;
+  border-radius: 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ans-feature-item:hover {
+  background: #ffffff;
+  border-color: rgba(2, 172, 240, 0.22);
+  transform: translateX(8px);
+  box-shadow: 0 10px 25px rgba(47, 51, 149, 0.05);
+}
+
+/* Icon Shell Matrices inside Items */
+.ans-item-icon-box {
+  font-size: 18px;
+  color: var(--ans-sky);
+  background: rgba(2, 172, 240, 0.08);
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.ans-feature-item:hover .ans-item-icon-box {
+  background: linear-gradient(135deg, var(--ans-sky) 0%, var(--ans-navy) 100%);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.ans-item-texts h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ans-navy);
+  margin-bottom: 4px;
+}
+
+.ans-item-texts p {
+  font-size: 13.5px;
+  color: var(--ans-slate-teal);
+  line-height: 1.5;
+}
+
+/* ======================================================== */
+/* FLUID RESPONSIVE STRUCTURAL SYSTEM BREAKPOINTS CONFIG    */
+/* ======================================================== */
+
+@media (max-width: 1200px) {
+  .ans-about-grid { gap: 40px; }
+  .ans-content-panel h2 { font-size: 34px; }
+  .ans-img-frame-master { height: 440px; }
+}
+
+@media (max-width: 991px) {
+  .ans-about-wrapper { padding: 80px 5%; }
+  .ans-about-grid { grid-template-columns: 1fr; gap: 60px; }
+  .ans-visual-stack { justify-content: center; width: 100%; max-width: 550px; margin: 0 auto; }
+  .ans-img-frame-master { width: 100%; height: 420px; }
+  .ans-content-panel h2 { font-size: 32px; }
+}
+
+@media (max-width: 768px) {
+  .ans-about-wrapper { padding: 60px 24px; }
+  .ans-img-frame-master { height: 340px; border-radius: 24px; }
+  .ans-glass-counter-pod { padding: 18px 22px; bottom: -15px; right: 2%; min-width: 150px; }
+  .ans-pod-metric { font-size: 30px; }
+  .ans-content-panel h2 { font-size: 28px; }
+  .ans-lead-text { font-size: 15px; margin-bottom: 24px; }
+  .ans-feature-item { padding: 16px; }
+  .ans-item-texts h4 { font-size: 16px; }
+  .ans-item-texts p { font-size: 13px; }
+}
+
+@media (max-width: 480px) {
+  .ans-img-frame-master { height: 280px; }
+  .ans-glass-counter-pod { position: relative; right: auto; bottom: auto; margin-top: 20px; width: 100%; }
+  .ans-content-panel h2 { font-size: 24px; }
+}

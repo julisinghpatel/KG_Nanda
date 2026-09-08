@@ -1,0 +1,19 @@
+/* --- High-End Services Card Grid Micro-Interactions & Styling --- */
+
+/* Custom Physics Curve Setup */
+.service-card {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Card Hover Properties (Elevation shift, border illumination, soft multi-layer shadow drops) */
+.service-card:hover {
+  transform: translateY(-8px) !important;
+  border-color: rgba(53, 182, 180, 0.25);
+  box-shadow: 0 30px 60px -15px rgba(0, 58, 112, 0.08);
+}
+
+/* Click Compression Feedback Effect */
+.service-card:active {
+  transform: translateY(-2px) scale(0.98) !important;
+  transition: all 0.1s cubic-bezier(0.16, 1, 0.3, 1);
+}

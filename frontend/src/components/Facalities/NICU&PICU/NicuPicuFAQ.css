@@ -1,0 +1,27 @@
+/* Premium background gradient for a professional healthcare feel */
+.faq-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+}
+
+/* Base custom styling for standard FAQ rows */
+.faq-card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover feedback on closed questions */
+.faq-card:not(.faq-card-active):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.08);
+}
+
+/* Premium active state layout using deep medical blue matching image_6ff1db.png logic */
+.faq-card-active {
+  background: linear-gradient(135deg, #0f172a 0%, #0284c7 100%);
+  box-shadow: 0 12px 24px rgba(2, 132, 199, 0.25);
+}
+
+/* Smooth expansion mechanism */
+.faq-answer-wrapper {
+  overflow: hidden;
+}

@@ -1,0 +1,285 @@
+/* CardioDoctors.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --ccd-navy: #2f3395;
+  --ccd-sky: #02acf0;
+  --ccd-muted: #7396d3;
+  --ccd-ice: #b5f5ff;
+  --ccd-light-sky: #aadcff;
+  --ccd-soft-teal: #60a9bd;
+  --ccd-bg: #f6fcfa;
+  --ccd-coral: #dd5200;
+}
+
+/* Base Wrapper Safety Reset */
+.ccd-doctors-section *,
+.ccd-doctors-section *::before,
+.ccd-doctors-section *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.ccd-doctors-section {
+  font-family: 'Outfit', sans-serif;
+  background: var(--ccd-bg);
+  padding: 100px 6%;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Premium Ambient Vector Background Nodes */
+.ccd-ambient-glow-left {
+  position: absolute;
+  top: 15%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(2, 172, 240, 0.12) 0%, transparent 75%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ccd-ambient-glow-right {
+  position: absolute;
+  bottom: 5%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(181, 245, 255, 0.4) 0%, transparent 70%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Header Content Structure */
+.ccd-section-header {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 75px auto;
+  position: relative;
+  z-index: 1;
+}
+
+.ccd-section-header h2 {
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--ccd-navy);
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.ccd-section-header h2 span {
+  color: transparent;
+  background: linear-gradient(90deg, var(--ccd-sky), var(--ccd-soft-teal));
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.ccd-section-header p {
+  color: var(--ccd-soft-teal);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* Doctors Card Grid Master Layout */
+.ccd-doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Individual Premium Doctor Card Frame */
+.ccd-doctor-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 15px 40px rgba(115, 150, 211, 0.06);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.ccd-doctor-card:hover {
+  transform: translateY(-12px);
+  background: #ffffff;
+  border-color: rgba(2, 172, 240, 0.3);
+  box-shadow: 0 35px 70px rgba(47, 51, 149, 0.14);
+}
+
+/* Image Core Layer Frame */
+.ccd-image-frame {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+  background: #e2f4f8;
+}
+
+.ccd-doc-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.ccd-doctor-card:hover .ccd-doc-photo {
+  transform: scale(1.06);
+}
+
+/* Interactive Gradient Overlay Mask upon Hover */
+.ccd-image-mask {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(47, 51, 149, 0.85) 0%,
+    rgba(115, 150, 211, 0.2) 60%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 25px;
+}
+
+.ccd-doctor-card:hover .ccd-image-mask {
+  opacity: 1;
+}
+
+/* Quick Floating Action Hover Buttons */
+.ccd-floating-action-btn {
+  background: var(--ccd-ice);
+  color: var(--ccd-navy);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 10px 22px;
+  border-radius: 50px;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  border: none;
+}
+
+.ccd-doctor-card:hover .ccd-floating-action-btn {
+  transform: translateY(0);
+}
+
+.ccd-floating-action-btn:hover {
+  background: #ffffff;
+  color: var(--ccd-sky);
+  box-shadow: 0 10px 25px rgba(2, 172, 240, 0.3);
+}
+
+/* Meta Content Rendering Container */
+.ccd-details-panel {
+  padding: 30px;
+  text-align: center;
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Medical Department Node Tag */
+.ccd-doc-tag {
+  background: rgba(2, 172, 240, 0.08);
+  border: 1px solid rgba(2, 172, 240, 0.18);
+  color: var(--ccd-sky);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 5px 14px;
+  border-radius: 30px;
+  width: fit-content;
+  margin: 0 auto 14px auto;
+  transition: all 0.3s ease;
+}
+
+.ccd-doctor-card:hover .ccd-doc-tag {
+  background: var(--ccd-sky);
+  color: #ffffff;
+}
+
+.ccd-details-panel h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ccd-navy);
+  margin-bottom: 6px;
+}
+
+.ccd-doc-credentials {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ccd-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.ccd-divider-line {
+  width: 40px;
+  height: 2px;
+  background: var(--ccd-sky);
+  margin: 0 auto 14px auto;
+  transition: width 0.4s ease;
+}
+
+.ccd-doctor-card:hover .ccd-divider-line {
+  width: 120px;
+  background: linear-gradient(90deg, var(--ccd-sky), var(--ccd-coral));
+}
+
+.ccd-doc-exp {
+  font-size: 14px;
+  color: var(--ccd-soft-teal);
+  font-weight: 500;
+}
+
+/* ========================================================== */
+/* FLUID VIEWPORT GRID SYSTEMS RESPONSIVE BREAKPOINTS SETUP */
+/* ========================================================== */
+
+@media (max-width: 1200px) {
+  .ccd-doctors-grid { gap: 25px; }
+  .ccd-image-frame { height: 320px; }
+  .ccd-details-panel h3 { font-size: 20px; }
+}
+
+@media (max-width: 1024px) {
+  .ccd-doctors-section { padding: 80px 5%; }
+  .ccd-doctors-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .ccd-section-header h2 { font-size: 36px; }
+}
+
+@media (max-width: 768px) {
+  .ccd-doctors-section { padding: 60px 24px; }
+  .ccd-section-header { margin-bottom: 50px; }
+  .ccd-section-header h2 { font-size: 30px; }
+  .ccd-section-header p { font-size: 15px; }
+  .ccd-doctors-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .ccd-image-frame { height: 280px; }
+  .ccd-details-panel { padding: 22px; }
+  .ccd-details-panel h3 { font-size: 18px; }
+}
+
+@media (max-width: 520px) {
+  .ccd-doctors-grid { grid-template-columns: 1fr; gap: 24px; }
+  .ccd-image-frame { height: 340px; }
+}

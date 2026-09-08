@@ -1,0 +1,62 @@
+@import "tailwindcss";
+/* Top Google Translate Bar ko hide karne ke liye */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.skiptranslate,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf-ti6hGc {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+body {
+  top: 0px !important;
+  position: static !important;
+  overflow-x: clip !important;
+  max-width: 100vw;
+  width: 100%;
+}
+
+html {
+  overflow-x: clip !important;
+  max-width: 100vw;
+  width: 100%;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hide hover tooltip and text highlight */
+#goog-gt-tt, 
+.goog-tooltip, 
+.goog-tooltip:hover {
+  display: none !important;
+}
+.goog-text-highlight {
+  background-color: transparent !important;
+  border: none !important; 
+  box-shadow: none !important;
+}
+
+.goog-te-gadget {
+  font-family: inherit !important;
+  color: transparent !important;
+}
+
+.goog-te-gadget span {
+  display: none !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+}

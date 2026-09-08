@@ -1,0 +1,322 @@
+/* Scoped Unique CSS Architecture to avoid class collisions */
+.about-ortho-premium-section {
+  --ao-cyan-primary: #02acf0;
+  --ao-indigo-deep: #2f3395;
+  --ao-blue-slate: #7396d3;
+  --ao-ice-light: #aadcff;
+  --ao-crystal-cyan: #b5f5ff;
+  --ao-mint-white: #f6fcfa;
+  --ao-accent-red: #c90322;
+  --ao-accent-orange: #dd5200;
+  --ao-section-light-bg: #f9fdfc; /* Subtle tint from your #f6fcfa theme */
+
+  position: relative;
+  width: 100%;
+  padding: 100px 24px;
+  background-color: var(--ao-section-light-bg);
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Background Soft Ambient Blur Layer */
+.about-ortho-bg-glow {
+  position: absolute;
+  top: 40%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(2, 172, 240, 0.08) 0%, transparent 70%);
+  filter: blur(40px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.about-ortho-container {
+  position: relative;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.about-ortho-grid-system {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+/* ==========================================================================
+   LEFT SIDE VISUAL LAYERING (Image Frame Design)
+   ========================================================================== */
+.about-ortho-visual-side {
+  position: relative;
+}
+
+.about-ortho-image-composition {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.about-ortho-main-img-holder {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(47, 51, 149, 0.15);
+  border: 4px solid #ffffff;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Premium Hover Image Zoom Interaction */
+.about-ortho-main-img-holder:hover {
+  transform: scale(1.02);
+  box-shadow: 0 35px 60px -10px rgba(2, 172, 240, 0.25);
+}
+
+.about-ortho-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-ortho-main-img-holder:hover .about-ortho-hero-img {
+  transform: scale(1.06);
+}
+
+/* Glassmorphism Floating Box Overlay */
+.about-ortho-floating-box {
+  position: absolute;
+  bottom: 40px;
+  right: -40px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  padding: 18px 24px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(7, 9, 25, 0.08);
+  width: 280px;
+  transition: all 0.3s ease;
+}
+
+.about-ortho-floating-box:hover {
+  background: #ffffff;
+  border-color: var(--ao-cyan-primary);
+  box-shadow: 0 25px 50px rgba(2, 172, 240, 0.18);
+}
+
+.about-ortho-box-icon {
+  width: 46px;
+  height: 46px;
+  background-color: rgba(2, 172, 240, 0.1);
+  color: var(--ao-cyan-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about-ortho-box-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.about-ortho-box-info h5 {
+  margin: 0 0 2px 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ao-indigo-deep);
+}
+
+.about-ortho-box-info p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--ao-blue-slate);
+  font-weight: 500;
+}
+
+/* Decorative Accent Element */
+.about-ortho-geometric-line {
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  width: 120px;
+  height: 120px;
+  border-top: 5px solid var(--ao-ice-light);
+  border-left: 5px solid var(--ao-ice-light);
+  border-top-left-radius: 24px;
+  z-index: -1;
+}
+
+/* ==========================================================================
+   RIGHT SIDE CONTENT SYSTEM (Typography & Features Checklist)
+   ========================================================================== */
+.about-ortho-content-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Clinical Capsule Badge */
+.about-ortho-preheading-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  border: 1px solid rgba(47, 51, 149, 0.1);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.about-ortho-badge-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--ao-cyan-primary);
+  border-radius: 50%;
+}
+
+.about-ortho-badge-text {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ao-indigo-deep);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Main Titles */
+.about-ortho-section-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #111439; /* Corporate deep clinical color */
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.about-ortho-gradient-highlight {
+  background: linear-gradient(135deg, var(--ao-indigo-deep) 0%, var(--ao-cyan-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-ortho-main-desc {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4a4d6d;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.about-ortho-sub-desc {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ao-blue-slate);
+  margin-bottom: 36px;
+}
+
+/* Feature Pillars Checklist Grid */
+.about-ortho-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.ortho-feature-pill {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  padding: 16px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Premium micro-card hover effects */
+.ortho-feature-pill:hover {
+  transform: translateX(6px);
+  border-color: rgba(2, 172, 240, 0.2);
+  box-shadow: 0 10px 25px rgba(47, 51, 149, 0.05);
+}
+
+.ortho-pill-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: var(--ao-cyan-primary);
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px var(--ao-cyan-primary);
+}
+
+.ortho-bullet-orange {
+  background-color: var(--ao-accent-orange);
+  box-shadow: 0 0 8px var(--ao-accent-orange);
+}
+
+.ortho-bullet-blue {
+  background-color: var(--ao-indigo-deep);
+  box-shadow: 0 0 8px var(--ao-indigo-deep);
+}
+
+.ortho-pill-details h4 {
+  margin: 0 0 4px 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111439;
+}
+
+.ortho-pill-details p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #616485;
+}
+
+/* ==========================================================================
+   SMOOTH SCALING ARCHITECTURE FOR MOBILE DEVICES
+   ========================================================================== */
+
+@media (max-width: 1150px) {
+  .about-ortho-section-title { font-size: 2.4rem; }
+  .about-ortho-grid-system { gap: 40px; }
+  .about-ortho-floating-box { right: -20px; width: 250px; }
+}
+
+@media (max-width: 992px) {
+  .about-ortho-grid-system {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .about-ortho-visual-side { order: 2; width: 100%; }
+  .about-ortho-content-side { order: 1; align-items: center; text-align: center; }
+  .about-ortho-preheading-badge { justify-content: center; }
+  .about-ortho-features-list { text-align: left; }
+  .about-ortho-image-composition { max-width: 420px; }
+  .about-ortho-floating-box { right: -10px; bottom: 20px; }
+}
+
+@media (max-width: 520px) {
+  .about-ortho-premium-section { padding: 60px 16px; }
+  .about-ortho-section-title { font-size: 1.9rem; }
+  .about-ortho-main-desc { font-size: 1rem; }
+  .about-ortho-floating-box {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .about-ortho-geometric-line { display: none; }
+}

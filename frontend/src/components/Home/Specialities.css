@@ -1,0 +1,438 @@
+/* ==========================================================================
+   HOSPITAL KEY FEATURES SECTION — FULLY RESPONSIVE
+   Breakpoints: Mobile (<480px), SM (<640px), MD (<768px), LG (<1024px), XL+
+   ========================================================================== */
+
+/* ---- Base Section Layout ---- */
+.features-section {
+  padding: 80px 48px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.features-heading span {
+  color: #35b6b4;
+}
+
+/* ---- LEFT SIDE: Timeline Track ---- */
+.features-wrapper {
+  padding-left: 20px;
+  position: relative;
+}
+
+/* Vertical timeline line aligned with icons */
+.features-line {
+  position: absolute;
+  left: 42px;
+  top: 10px;
+  width: 3px;
+  height: calc(100% - 70px);
+  background: linear-gradient(180deg, #003a70 0%, rgba(53, 182, 180, 0.4) 100%);
+  border-radius: 99px;
+  transform-origin: top;
+}
+
+/* Each feature row */
+.feature-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.feature-row:last-child {
+  margin-bottom: 0;
+}
+
+/* Icon wrapper ring */
+.feature-icon-wrapper {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6f5ee;
+  border-radius: 50%;
+}
+
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  background-color: #ffffff;
+  border: 2px solid #003a70;
+  color: #003a70;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 58, 112, 0.06);
+}
+
+.feature-row:hover .feature-icon {
+  background-color: #003a70;
+  color: #ffffff;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 20px -5px rgba(0, 58, 112, 0.25);
+  border-color: #003a70;
+}
+
+/* Text content */
+.feature-content {
+  flex: 1;
+  padding-top: 8px;
+}
+
+.feature-content h3 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #003a70;
+  letter-spacing: -0.02em;
+}
+
+.feature-content p {
+  color: #556987;
+  line-height: 1.65;
+  font-size: 14.5px;
+  font-weight: 500;
+  max-width: 580px;
+}
+
+/* ---- RIGHT SIDE: Video Frame ---- */
+.image-frame-container {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+}
+
+.image-premium-frame {
+  width: 100%;
+  height: 540px;
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+  background: #ffffff;
+}
+
+.image-premium-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 65% !important;
+  will-change: transform;
+}
+
+.image-frame-container:hover .image-premium-frame video {
+  transform: scale(1.04);
+}
+
+/* ---- Play/Pause Overlay ---- */
+.video-controller-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(0, 58, 112, 0.2);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+}
+
+.video-paused .video-controller-overlay {
+  opacity: 1;
+  background: rgba(0, 58, 112, 0.35);
+}
+
+.image-premium-frame:hover .video-controller-overlay {
+  opacity: 1;
+}
+
+.controller-glass-btn {
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  transform: scale(0.9);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-paused .controller-glass-btn {
+  transform: scale(1);
+  background: #ffffff;
+  color: #003a70;
+}
+
+.controller-status-text {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 58, 112, 0.3);
+  transform: translateY(5px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-paused .controller-status-text {
+  transform: translateY(0);
+}
+
+.image-premium-frame:hover .controller-glass-btn {
+  transform: scale(1);
+  background: #ffffff;
+  color: #003a70;
+  box-shadow: 0 15px 35px rgba(53, 182, 180, 0.35);
+  border-color: #ffffff;
+}
+
+.image-premium-frame:hover .controller-status-text {
+  transform: translateY(0);
+}
+
+/* ---- Floating Stat Badge (Desktop) ---- */
+.floating-stat-badge {
+  position: absolute;
+  bottom: 24px;
+  left: -24px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #f1f1f1;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 58, 112, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+  z-index: 5;
+}
+
+.floating-stat-badge:hover {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* --- Tablet / iPad (max 1024px) --- */
+@media (max-width: 1024px) {
+  .features-section {
+    padding: 60px 32px;
+  }
+
+  .features-line {
+    left: 36px;
+  }
+
+  .image-premium-frame {
+    height: 460px;
+  }
+
+  .image-frame-container {
+    max-width: 100%;
+    margin-top: 24px;
+  }
+
+  /* Badge pulls in from edge on tablet */
+  .floating-stat-badge {
+    left: 0;
+    bottom: 16px;
+  }
+}
+
+/* --- Small Tablet / Large Phone (max 768px) --- */
+@media (max-width: 768px) {
+  .features-section {
+    padding: 50px 20px;
+  }
+
+  .features-wrapper {
+    padding-left: 8px;
+  }
+
+  .features-line {
+    left: 30px;
+  }
+
+  .image-premium-frame {
+    height: 380px;
+    border-radius: 22px;
+  }
+
+  .image-frame-container {
+    margin-top: 20px;
+  }
+
+  /* Badge sits inside frame on small tablet */
+  .floating-stat-badge {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin-top: 16px;
+    width: 100%;
+    border-radius: 14px;
+    padding: 14px;
+  }
+
+  .feature-content h3 {
+    font-size: 18px;
+  }
+
+  .feature-content p {
+    font-size: 14px;
+  }
+}
+
+/* --- Mobile (max 640px) --- */
+@media (max-width: 640px) {
+  .features-section {
+    padding: 44px 16px;
+  }
+
+  /* Hide vertical timeline on mobile */
+  .features-line {
+    display: none;
+  }
+
+  .features-wrapper {
+    padding-left: 0;
+  }
+
+  /* Horizontal row layout on mobile: icon stays left, text right */
+  .feature-row {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding: 16px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 58, 112, 0.06);
+    border: 1px solid rgba(0, 58, 112, 0.06);
+  }
+
+  .feature-icon-wrapper {
+    background: #f6f5ee;
+    flex-shrink: 0;
+  }
+
+  .feature-content {
+    padding-top: 4px;
+  }
+
+  .feature-content h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .feature-content p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .image-premium-frame {
+    height: 300px;
+    border-radius: 18px;
+  }
+
+  .image-frame-container {
+    max-width: 100%;
+    margin-top: 12px;
+  }
+
+  /* Always show play button on mobile (no hover) */
+  .video-controller-overlay {
+    background: transparent;
+  }
+
+  .controller-glass-btn {
+    width: 52px;
+    height: 52px;
+    font-size: 15px;
+    transform: scale(1);
+  }
+
+  .controller-status-text {
+    display: none;
+  }
+
+  /* Badge sits below video on mobile */
+  .floating-stat-badge {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin-top: 14px;
+    width: 100%;
+    border-radius: 14px;
+    padding: 12px 14px;
+    justify-content: center;
+  }
+}
+
+/* --- Small Mobile (max 480px) --- */
+@media (max-width: 480px) {
+  .features-section {
+    padding: 36px 12px;
+  }
+
+  .feature-row {
+    gap: 12px;
+    padding: 14px 12px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+  }
+
+  .feature-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .feature-icon-wrapper {
+    width: 44px;
+    height: 44px;
+  }
+
+  .feature-content h3 {
+    font-size: 15px;
+  }
+
+  .feature-content p {
+    font-size: 12.5px;
+  }
+
+  .image-premium-frame {
+    height: 260px;
+    border-radius: 16px;
+  }
+
+  .image-premium-frame video {
+    object-position: center 65% !important;
+  }
+
+  .controller-glass-btn {
+    width: 46px;
+    height: 46px;
+    font-size: 14px;
+  }
+}

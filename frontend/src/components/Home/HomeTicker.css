@@ -1,0 +1,106 @@
+.home-ticker-container {
+  position: relative;
+  z-index: 40;
+  background: #042351; /* Premium dark navy matching the logo and theme */
+  color: #ffffff;
+  border-bottom: 2px solid #35b6b4; /* Subtle teal line to separate it */
+  box-shadow: 0 4px 20px #042351;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Removed sticky media queries */
+
+.home-ticker-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Badge Style */
+.home-ticker-badge {
+  background: #042351;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: #dd5200; /* Theme orange */
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 10;
+  box-shadow: 10px 0 20px rgba(3, 16, 34, 0.5);
+  flex-shrink: 0;
+}
+
+.ticker-badge-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #dd5200;
+  border-radius: 50%;
+  display: inline-block;
+  animation: tickerPulse 1.5s infinite ease-in-out;
+}
+
+@keyframes tickerPulse {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Scrolling Track */
+.home-ticker-content {
+  flex-grow: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.home-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: tickerMarquee 25s linear infinite;
+}
+
+.home-ticker-track:hover {
+  animation-play-state: paused; /* Pause scrolling on hover for readability */
+}
+
+.home-ticker-items {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding-left: 40px;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 500;
+  color: #e2e8f0;
+  letter-spacing: 0.01em;
+}
+
+.ticker-divider {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 18px;
+}
+
+@keyframes tickerMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}

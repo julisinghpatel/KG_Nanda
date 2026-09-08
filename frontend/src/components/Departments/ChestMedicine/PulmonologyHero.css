@@ -1,0 +1,95 @@
+/* Entry Animations for Left Content */
+.pulmo-left-content {
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Entry Animation for Right Graphical Content */
+.pulmo-right-content {
+  animation: fadeInRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fluid Floating Animation for Glassmorphic Cards */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+/* Slow Rotation for Dotted Background Ring */
+.animate-spin-slow {
+  animation: spinSlow 25s linear infinite;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Background Ambient Orbs Animation */
+.animate-blob {
+  animation: blobTransform 10s ease-in-out infinite alternate;
+}
+
+@keyframes blobTransform {
+  0% {
+    transform: scale(1) translate(0px, 0px);
+  }
+  50% {
+    transform: scale(1.15) translate(20px, -30px);
+  }
+  100% {
+    transform: scale(0.95) translate(-10px, 15px);
+  }
+}
+
+/* Button Subtle Hover Micro-interactions */
+.premium-btn-primary::after, .premium-btn-secondary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 10px 20px rgba(2, 172, 240, 0.3);
+}
+
+.premium-btn-primary:hover::after {
+  opacity: 1;
+}

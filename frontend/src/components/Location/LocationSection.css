@@ -1,0 +1,535 @@
+/* ==========================================================================
+   KG NANDA MEDICAL RESORT - CENTRAL LOCATION MANAGEMENT SECTION
+   ========================================================================== */
+
+.kg-sec-container {
+  background-color: #f6f5ee; /* Brand Cream Background Base */
+  background-image:
+    radial-gradient(ellipse 60% 50% at 70% 0%, rgba(53, 182, 180, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 10% 100%, rgba(0, 58, 112, 0.04) 0%, transparent 50%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 4%;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  color: #003a70;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Microdot structural grid design */
+.kg-sec-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0, 58, 112, 0.04) 1.2px, transparent 1.2px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   HEADER SECTION DESIGN
+   ========================================================================== */
+
+.kg-sec-header {
+  text-align: center;
+  margin-bottom: 60px;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.kg-sec-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 58, 112, 0.15);
+  border-radius: 50px;
+  padding: 8px 24px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #003a70;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 58, 112, 0.05);
+}
+
+.kg-sec-badge-dot {
+  width: 7px;
+  height: 7px;
+  background: #dd5200; /* Deep Brand Orange */
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(221, 82, 0, 0.6);
+}
+
+.kg-sec-title {
+  font-size: clamp(34px, 4.5vw, 52px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  color: #003a70;
+  margin-bottom: 12px;
+}
+
+.kg-sec-title span {
+  color: #dd5200;
+}
+
+.kg-sec-subtitle {
+  font-size: 13px;
+  color: rgba(0, 58, 112, 0.5);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   MAIN DUAL DISPLAY GRID BLOCK
+   ========================================================================== */
+
+.kg-sec-body {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  max-width: 1200px;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 58, 112, 0.08);
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 30px 70px rgba(0, 58, 112, 0.08);
+  z-index: 2;
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+/* ==========================================================================
+   MAP FRAME LAYOUT CONTROL
+   ========================================================================== */
+
+.kg-sec-map-wrap {
+  position: relative;
+  height: 620px;
+  cursor: pointer;
+  overflow: hidden;
+  border-right: 1px solid rgba(0, 58, 112, 0.06);
+}
+
+.kg-sec-map-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: grayscale(0.1) contrast(1.02);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.kg-sec-map-wrap:hover iframe {
+  transform: scale(1.02);
+  filter: grayscale(0) contrast(1.05);
+}
+
+.kg-sec-map-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 58, 112, 0.05) 0%, transparent 50%);
+}
+
+.kg-sec-map-corner-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 58, 112, 0.15);
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-size: 11px;
+  color: #003a70;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.kg-sec-map-pin-icon {
+  width: 8px;
+  height: 8px;
+  background: #35b6b4;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(53, 182, 180, 0.8);
+  animation: kgMapPing 2s infinite ease-in-out;
+}
+
+.kg-sec-map-click-hint {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #003a70;
+  border-radius: 50px;
+  padding: 12px 28px;
+  font-size: 12px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 10px 25px rgba(0, 58, 112, 0.25);
+  font-weight: 600;
+}
+
+.kg-sec-map-wrap:hover .kg-sec-map-click-hint {
+  background: #dd5200;
+  box-shadow: 0 10px 25px rgba(221, 82, 0, 0.35);
+  transform: translateX(-50%) translateY(-2px);
+}
+
+/* ==========================================================================
+   METADATA INFORMATION SPECIFICS
+   ========================================================================== */
+
+.kg-sec-info {
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(145deg, #ffffff 0%, #fbfbfa 100%);
+}
+
+.kg-sec-hospital-name {
+  font-size: 32px;
+  font-weight: 800;
+  color: #003a70;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.kg-sec-hospital-tagline {
+  font-size: 12px;
+  color: #35b6b4;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.kg-sec-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(53, 182, 180, 0.3), transparent);
+  margin-bottom: 32px;
+}
+
+.kg-sec-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 26px;
+}
+
+.kg-sec-icon-box {
+  width: 44px;
+  height: 44px;
+  background: rgba(0, 58, 112, 0.04);
+  border: 1px solid rgba(0, 58, 112, 0.08);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.kg-sec-icon-box svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Color Variant Adaptations for Icons */
+.text-orange { color: #dd5200; }
+.text-teal { color: #35b6b4; }
+.text-blue { color: #003a70; }
+
+.kg-sec-info-row:hover .kg-sec-icon-box {
+  background: #003a70;
+  color: #ffffff;
+  transform: scale(1.08) rotate(4deg);
+  box-shadow: 0 8px 20px rgba(0, 58, 112, 0.15);
+}
+
+.kg-sec-info-label {
+  font-size: 11px;
+  color: rgba(0, 58, 112, 0.4);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.kg-sec-info-value {
+  font-size: 15px;
+  color: #003a70;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.kg-phone-link, .kg-email-link {
+  color: #003a70;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.kg-phone-link:hover, .kg-email-link:hover {
+  color: #dd5200;
+}
+
+.highlight-hours {
+  color: #35b6b4;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   EMERGENCY STRIP CONTAINER
+   ========================================================================== */
+
+.kg-sec-emergency-box {
+  background: rgba(221, 82, 0, 0.05);
+  border: 1px solid rgba(221, 82, 0, 0.2);
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.kg-sec-pulse-wrapper {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.kg-pulse-wave {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(221, 82, 0, 0.3);
+  border-radius: 50%;
+  animation: kgHeartPulse 1.4s infinite ease-in-out;
+}
+
+.kg-pulse-core {
+  width: 8px;
+  height: 8px;
+  background: #dd5200;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 10px #dd5200;
+}
+
+.kg-sec-emergency-text {
+  font-size: 14px;
+  font-weight: 800;
+  color: #dd5200;
+}
+
+.kg-sec-emergency-sub {
+  font-size: 11.5px;
+  color: rgba(221, 82, 0, 0.7);
+  margin-top: 2px;
+}
+
+/* Primary CTA Command Action Button */
+.kg-sec-cta-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #003a70;
+  border: none;
+  border-radius: 16px;
+  padding: 18px 32px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 24px;
+  width: 100%;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(0, 58, 112, 0.15);
+}
+
+.kg-sec-cta-btn:hover {
+  background: #dd5200;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(221, 82, 0, 0.3);
+}
+
+/* ==========================================================================
+   FULL PORTAL DIALOG SCREEN MODAL INTERFACES
+   ========================================================================== */
+
+.kg-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 58, 112, 0.6);
+  backdrop-filter: blur(16px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.kg-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 1150px;
+  height: 78vh;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.35);
+  animation: kgModalReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.kg-modal-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.kg-modal-close-trigger {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  color: #003a70;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 15;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.kg-modal-close-trigger:hover {
+  background: #dd5200;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.kg-modal-header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 58, 112, 0.15);
+  border-radius: 14px;
+  padding: 12px 22px;
+  font-size: 13px;
+  color: #003a70;
+  font-weight: 700;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.kg-modal-live-dot {
+  width: 8px;
+  height: 8px;
+  background: #35b6b4;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #35b6b4;
+}
+
+/* ==========================================================================
+   NATIVE KEYFRAME ANIMATIONS
+   ========================================================================== */
+
+.kg-fade-up {
+  animation: kgFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.kg-slide-in {
+  animation: kgSlideIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes kgFadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes kgSlideIn {
+  from { opacity: 0; transform: scale(0.96) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes kgMapPing {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+}
+
+@keyframes kgHeartPulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(221, 82, 0, 0.5); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(221, 82, 0, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(221, 82, 0, 0); }
+}
+
+@keyframes kgModalReveal {
+  from { opacity: 0; transform: scale(0.95) translateY(30px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ==========================================================================
+   RESPONSIVENESS (MOBILE FRIENDLY RENDERING)
+   ========================================================================== */
+
+@media (max-width: 960px) {
+  .kg-sec-body {
+    grid-template-columns: 1fr;
+  }
+  .kg-sec-map-wrap {
+    height: 340px;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 58, 112, 0.06);
+  }
+  .kg-sec-info {
+    padding: 36px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .kg-sec-title {
+    font-size: 28px;
+  }
+  .kg-sec-hospital-name {
+    font-size: 26px;
+  }
+}

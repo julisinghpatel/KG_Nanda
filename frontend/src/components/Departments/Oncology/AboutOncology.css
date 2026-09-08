@@ -1,0 +1,369 @@
+/* Scoped Styles Block Custom Architecture - No Global Duplication/Overlap Possible */
+.ab-onco-premium-section {
+  --ab-c-cyan: #02acf0;
+  --ab-c-indigo: #2f3395;
+  --ab-c-slate-blue: #7396d3;
+  --ab-c-ice-light: #aadcff;
+  --ab-c-crystal: #b5f5ff;
+  --ab-c-mint-bg: #f6fcfa;
+  --ab-c-orange: #dd5200;
+  --ab-c-white: #ffffff;
+  --ab-c-dark: #12153a;
+
+  position: relative;
+  width: 100%;
+  padding: 130px 24px;
+  background-color: var(--ab-c-mint-bg);
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Ambient Medical Backlit Gradients */
+.ab-onco-mesh-glow-left {
+  position: absolute;
+  top: 15%;
+  left: -8%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(2, 172, 240, 0.05) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ab-onco-mesh-glow-right {
+  position: absolute;
+  bottom: 10%;
+  right: -5%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(47, 51, 149, 0.04) 0%, transparent 70%);
+  filter: blur(50px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ab-onco-viewport-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.ab-onco-structural-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: center;
+}
+
+/* ==========================================================================
+   LEFT COLUMN: GEOMETRIC ASYMMETRIC PHOTOMONTAGE (Luxury Layout)
+   ========================================================================== */
+.ab-onco-visual-canvas {
+  position: relative;
+  width: 100%;
+  height: 580px;
+}
+
+.ab-onco-main-frame-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 78%;
+  height: 460px;
+  border-radius: 40px 140px 40px 40px; /* High-end asymmetric premium look curve */
+  border: 6px solid var(--ab-c-white);
+  overflow: hidden;
+  box-shadow: 0 30px 60px -20px rgba(47, 51, 149, 0.12);
+  transition: transform 0.4s ease;
+}
+
+.ab-onco-primary-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ab-onco-visual-canvas:hover .ab-onco-primary-photo {
+  transform: scale(1.04);
+}
+
+.ab-onco-image-gradient-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 65%, rgba(18, 21, 58, 0.2) 100%);
+}
+
+/* Secondary Overlapping Clinical Inset Grid Frame */
+.ab-onco-secondary-frame-holder {
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+  width: 48%;
+  height: 260px;
+  border-radius: 32px;
+  border: 5px solid var(--ab-c-white);
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(18, 21, 58, 0.15);
+  z-index: 3;
+  transition: transform 0.4s ease;
+}
+
+.ab-onco-secondary-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ab-onco-visual-canvas:hover .ab-onco-secondary-frame-holder {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.ab-onco-secondary-outline {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: calc(100% + 24px);
+  height: calc(100% + 24px);
+  border: 2px dashed var(--ab-c-ice-light);
+  border-radius: 40px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Floating Precision Experience Stats Capsule Badge */
+.ab-onco-experience-capsule {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+  background: var(--ab-c-indigo);
+  color: var(--ab-c-white);
+  padding: 16px 24px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(47, 51, 149, 0.25);
+  border-bottom: 4px solid var(--ab-c-cyan);
+  max-width: 160px;
+  text-align: center;
+  z-index: 4;
+  transition: transform 0.3s ease;
+}
+
+.ab-onco-visual-canvas:hover .ab-onco-experience-capsule {
+  transform: scale(1.06) rotate(1deg);
+}
+
+.ab-onco-experience-capsule h3 {
+  margin: 0 0 2px 0;
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.ab-onco-experience-capsule p {
+  margin: 0;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.3;
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   RIGHT COLUMN: EDITORIAL CONTENT & TEXT STYLING
+   ========================================================================== */
+.ab-onco-body-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ab-onco-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--ab-c-white);
+  border: 1px solid rgba(47, 51, 149, 0.08);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.ab-onco-pulse-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--ab-c-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--ab-c-cyan);
+}
+
+.ab-onco-badge-txt {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ab-c-indigo);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.ab-onco-heading-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--ab-c-dark);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px 0;
+}
+
+.ab-onco-color-glow {
+  background: linear-gradient(135deg, var(--ab-c-indigo) 0%, var(--ab-c-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ab-onco-lead-paragraph {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #4f5375;
+  margin: 0 0 35px 0;
+}
+
+/* ==========================================================================
+   INTERACTIVE BENTO GRID CARD MODULES
+   ========================================================================== */
+.ab-onco-features-grid-bento {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.ab-onco-feature-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background-color: var(--ab-c-white);
+  padding: 18px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(115, 150, 211, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ab-onco-feature-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(2, 172, 240, 0.25);
+  box-shadow: 0 12px 25px rgba(47, 51, 149, 0.04);
+}
+
+.ab-onco-icon-box {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(47, 51, 149, 0.06);
+  color: var(--ab-c-indigo);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.05rem;
+  transition: transform 0.3s ease;
+}
+
+.ab-icon-cyan-tint { background-color: rgba(2, 172, 240, 0.08); color: var(--ab-c-cyan); }
+.ab-icon-blue-tint { background-color: rgba(115, 150, 211, 0.12); color: var(--ab-c-slate-blue); }
+.ab-icon-orange-tint { background-color: rgba(221, 82, 0, 0.08); color: var(--ab-c-orange); }
+
+.ab-onco-feature-card:hover .ab-onco-icon-box {
+  transform: scale(1.06);
+}
+
+.ab-onco-card-details h4 {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ab-c-dark);
+}
+
+.ab-onco-card-details p {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: #5c6082;
+}
+
+/* Premium Action Interface Button CTA */
+.ab-onco-action-block {
+  width: 100%;
+}
+
+.ab-onco-premium-cta {
+  position: relative;
+  overflow: hidden;
+  padding: 15px 36px;
+  background: var(--ab-c-cyan);
+  color: var(--ab-c-white);
+  font-size: 0.92rem;
+  font-weight: 700;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(2, 172, 240, 0.25);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ab-onco-premium-cta:hover {
+  background: var(--ab-c-indigo);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(47, 51, 149, 0.3);
+}
+
+/* ==========================================================================
+   SMOOTH MEDIA RESPONSIVENESS VIEWPORT ADAPTATIONS
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .ab-onco-structural-layout { gap: 40px; }
+  .ab-onco-heading-title { font-size: 2.2rem; }
+  .ab-onco-visual-canvas { height: 500px; }
+  .ab-onco-main-frame-holder { height: 380px; }
+  .ab-onco-secondary-frame-holder { height: 210px; }
+}
+
+@media (max-width: 992px) {
+  .ab-onco-premium-section { padding: 90px 20px; }
+  .ab-onco-structural-layout {
+    grid-template-columns: 1fr; /* Conversion to single linear stack sequence */
+    gap: 50px;
+  }
+  .ab-onco-body-content { align-items: center; text-align: center; }
+  .ab-onco-features-grid-bento { text-align: left; }
+  .ab-onco-visual-canvas { max-width: 600px; margin: 0 auto; }
+  .ab-onco-experience-capsule { right: 120px; }
+}
+
+@media (max-width: 540px) {
+  .ab-onco-heading-title { font-size: 1.85rem; }
+  .ab-onco-features-grid-bento {
+    grid-template-columns: 1fr; /* Single column stack matrix */
+    gap: 16px;
+  }
+  .ab-onco-visual-canvas { height: 400px; width: 100%; }
+  .ab-onco-main-frame-holder { height: 300px; width: 85%; border-radius: 24px 80px 24px 24px; }
+  .ab-onco-secondary-frame-holder { height: 160px; bottom: 10px; right: 0; }
+  .ab-onco-experience-capsule {
+    top: 20px;
+    right: 20px;
+    padding: 10px 14px;
+    border-radius: 14px;
+    max-width: 110px;
+  }
+  .ab-onco-experience-capsule h3 { font-size: 1.4rem; }
+  .ab-onco-experience-capsule p { font-size: 0.65rem; }
+  .ab-onco-premium-cta { width: 100%; text-align: center; }
+}

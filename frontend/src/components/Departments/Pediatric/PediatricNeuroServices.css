@@ -1,0 +1,186 @@
+.pediatric-neuro-services{
+
+padding:70px 8%;
+text-align:center;
+
+}
+/* heading */
+
+.neuro-services-heading h2{
+
+font-size:40px;
+margin-bottom:12px;
+font-weight:700;
+
+}
+
+.neuro-services-heading span{
+
+color:#2E3192;
+
+}
+
+.neuro-services-heading h2{
+
+color:#00AEEF;
+
+}
+
+.neuro-services-heading p{
+
+max-width:650px;
+margin:auto;
+color:#555;
+margin-bottom:70px;
+
+}
+
+/* grid */
+
+.neuro-services-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:40px;
+
+}
+
+/* card */
+
+.neuro-service-card{
+
+text-align:center;
+cursor:pointer;
+
+}
+
+/* icon */
+
+.neuro-icon{
+
+font-size:38px;
+color:#2E3192;
+margin-bottom:12px;
+transition:0.6s;
+
+}
+
+/* 🔥 hover rotation */
+
+.neuro-service-card:hover .neuro-icon{
+
+transform:rotateY(360deg);
+
+}
+
+.neuro-service-card h4{
+
+font-size:16px;
+color:#222;
+line-height:1.4;
+
+}
+
+/* bottom text */
+
+.neuro-services-note{
+
+margin-top:70px;
+max-width:800px;
+margin-left:auto;
+margin-right:auto;
+color:#555;
+line-height:1.7;
+
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Large Tablets */
+@media (max-width:1024px){
+
+  .pediatric-neuro-services{
+    padding:60px 6%;
+  }
+
+  .neuro-services-heading h2{
+    font-size:34px;
+  }
+
+  .neuro-services-grid{
+    gap:30px;
+  }
+
+}
+
+
+/* Tablets */
+@media (max-width:768px){
+
+  .neuro-services-heading h2{
+    font-size:30px;
+  }
+
+  .neuro-services-heading p{
+    font-size:15px;
+    margin-bottom:50px;
+  }
+
+  .neuro-icon{
+    font-size:34px;
+  }
+
+}
+
+
+/* Mobile Devices */
+/* Mobile Devices */
+@media (max-width:480px){
+
+  .pediatric-neuro-services{
+    padding:40px 5%;
+  }
+
+  .neuro-services-heading h2{
+    font-size:24px;
+  }
+
+  .neuro-services-heading p{
+    font-size:14px;
+  }
+
+  .neuro-services-grid{
+    grid-template-columns: repeat(2,1fr); /* yaha change */
+    gap:25px;
+  }
+
+  .neuro-icon{
+    font-size:30px;
+  }
+
+  .neuro-service-card h4{
+    font-size:14px;
+  }
+
+  .neuro-services-note{
+    margin-top:40px;
+    font-size:14px;
+  }
+
+}
+
+
+/* Very Small Devices */
+@media (max-width:360px){
+
+  .neuro-services-heading h2{
+    font-size:22px;
+  }
+
+  .neuro-icon{
+    font-size:26px;
+  }
+
+}
