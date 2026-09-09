@@ -3,6 +3,80 @@ import doctorService from "../../services/doctorService";
 import bookingService from "../../services/bookingService";
 import "./BookAppointment.css";
 
+const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+const DEPARTMENTS = [
+  "Obstetrics & Gynecology",
+  "General Consultant",
+  "General Medicine",
+  "Critical Care",
+  "Orthopaedics",
+  "General & Laparoscopy Surgery",
+  "General Surgery",
+  "Urology",
+  "Anaesthetist",
+  "Ayurvedic General Surgeons",
+  "Paediatric",
+  "ENT",
+  "RMO - Resident Medical Officer",
+];
+
+const DOCTORS_BY_DEPT = {
+  "Obstetrics & Gynecology": [
+    "Dr. Anand Prakash Tiwari",
+    "Dr. Shobha Jaiswal",
+    "Dr. Sadhna Chaurasiya",
+  ],
+  "General Consultant": [
+    "Dr. Ankit Kumar Singh",
+    "Dr. Akhilesh Kumar Singh",
+    "Dr. Umesh Kumar Maurya",
+    "Dr. Parvez Ahmad",
+  ],
+  "General Medicine": [
+    "Dr. Ankit Kumar Singh",
+  ],
+  "Critical Care": [
+    "Dr. Umesh Kumar Maurya",
+  ],
+  "Orthopaedics": [
+    "Dr. Arun Kumar Singh",
+    "Dr. Pankaj Kumar Singh",
+    "Dr. Niket Raj Garg",
+  ],
+  "General & Laparoscopy Surgery": [
+    "Dr. Abhinav Katiyar",
+    "Dr. Vishwanath Pratap Singh",
+  ],
+  "General Surgery": [
+    "Dr. Mrityunjay Prasad",
+    "Dr. Yogesh Kumar Pandey",
+  ],
+  "Urology": [
+    "Dr. Vikram Singh",
+  ],
+  "Anaesthetist": [
+    "Dr. Sushil Krishna Murti",
+  ],
+  "Ayurvedic General Surgeons": [
+    "Dr. Mrityunjay Prasad",
+    "Dr. Yogesh Kumar Pandey",
+  ],
+  "Paediatric": [
+    "Dr. Dilip Kumar Gupta",
+    "Dr. Prabhunath Dubey",
+  ],
+  "ENT": [
+    "Dr. Abhinav Mishra",
+  ],
+  "RMO - Resident Medical Officer": [
+    "Dr. Ankit Kumar Singh",
+    "Dr. Akhilesh Kumar Singh",
+    "Dr. Parvez Ahmad",
+    "Dr. Umesh Kumar Maurya",
+  ],
+};
+
 const getTodayStr = () => {
   const d = new Date();
   const year = d.getFullYear();
@@ -414,34 +488,7 @@ export default function BookAppointment() {
                   </div>
                 </div>
 
-                {/* Preferred Time Slot */}
-                <div className="kg-form-row kg-row-1col">
-                  <div className="kg-field-group">
-                    <label htmlFor="preferredTime">
-                      Preferred Time Slot <span className="kg-optional">(Optional)</span>
-                    </label>
-                    <div className="kg-select-wrapper">
-                      <select
-                        id="preferredTime"
-                        name="preferredTime"
-                        value={form.preferredTime}
-                        onChange={handleChange}
-                        className="kg-input"
-                      >
-                        <option value="">Select Time Slot</option>
-                        <option value="Morning (09:00 AM - 12:00 PM)">
-                          Morning (09:00 AM - 12:00 PM)
-                        </option>
-                        <option value="Afternoon (01:00 PM - 03:00 PM)">
-                          Afternoon (01:00 PM - 03:00 PM)
-                        </option>
-                        <option value="Evening (04:00 PM - 07:00 PM)">
-                          Evening (04:00 PM - 07:00 PM)
-                        </option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
+                
 
                 <hr className="kg-form-divider" />
 
@@ -524,7 +571,7 @@ export default function BookAppointment() {
                 <div className="kg-form-row kg-row-1col">
                   <div className="kg-field-group">
                     <label htmlFor="message">
-                      Message <span className="kg-optional">(optional)</span>
+                      Patient Problem <span className="kg-optional">(optional)</span>
                     </label>
                     <textarea
                       id="message"
